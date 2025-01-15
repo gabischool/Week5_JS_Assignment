@@ -17,6 +17,14 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.unshift("Oranges", "Banana")
+console.log(`Added to the inventory:${inventory}`)
+inventory.shift()
+
+console.log(`Updated the inventory: ${inventory}`)
+
+
 
 
 
