@@ -15,8 +15,14 @@ sendMessage("Amina", theCallBackFunction);
 Expected Output:
 - "Welcome, Amina!"
 */
-
 // ✍️ Solve it here ✍️
+// function sendMessage(name,cb){
+//   return cb(name)
+// }
+// function callback(name){
+//   return name = `"welcome" ${name}`
+// }
+// console.log(sendMessage("amina!", callback))
 
 
 
@@ -48,6 +54,21 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature(Hot, Warm, Cold, cb){
+  return cb(Hot, Warm, Cold)
+}
+function theCallBackFunction(Hot, Warm, Cold){
+  if(temperature >30){
+    console.log("hot")
+  }else if (temperature >= 15 && temperature <=30 ){
+    console.log("warm")
+  }else{
+    console.log("cold")
+  }
+}
+console.log(checkTemperature(35, theCallBackFunction));
+
+
 
 
 
@@ -73,3 +94,15 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function evaluateAnswer(question, correctAnswer,cb){
+  const userAnser = prompt(question)
+}
+function theCallBackFunction(userAnser, correctAnswer){
+  if(userAnser === correctAnswer){
+    console.log("correct!")
+  }else{
+    console.log(`Incorrect. the corret answer is ${ correctAnswer}`)
+  }
+}
+
+evaluateAnswer("What is 5 + 5?", "10", theCallBackFunction);

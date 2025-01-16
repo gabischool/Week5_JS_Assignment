@@ -16,6 +16,17 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// 1. solve one
+
+// inventory.push("Orange","banana")
+
+// // 2. solve two
+// inventory.shift()
+
+// // 3. solve three
+
+// console.log(inventort)
+
 
 
 
@@ -39,6 +50,15 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+// const students = ["Ali", "Fatima", "Hassan", "Layla"];
+// function isPresent(name){
+//   if(students.includes(name)){
+//     return `${name} is present.`
+//   }else{
+//     return `${name} is apsent.`
+//   }
+// }
+// console.log(isPresent("Haasan"))
 
 
 
@@ -66,10 +86,35 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 },    
+  
+];
+function updateScore(player , score){
+  const foundPlayer = topScorers.find(scorer => scorer.name === player);
+
+  if(foundPlayer){
+    foundPlayer.score += score;
+  } else{
+    topScorers.push({ name: player, score });
+  }
+}
+
+function printLeaderboard() {
+  const sortedScorers = [...topScorers].sort((a, b) => b.score - a.score); 
+  sortedScorers.forEach(scorer => {
+    console.log(`${scorer.name}: ${scorer.score}`);
+  });
+}
 
 
 
 
+updateScore("Messi", 2); // Messi wuxuu yeelan doonaa score = 5 + 2 = 7.
+updateScore("Mbappe", 6); // Mbappe wuxuu noqon doonaa ciyaaryahan cusub oo leh score = 6.
+printLeaderboard();
 
 
 
