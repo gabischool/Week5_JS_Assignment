@@ -29,9 +29,17 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false,
+ };
+ function updateOnlineStatus() {
+   user.isOnline = user.status === "online"
+   console.log(`${user.username} is now ${user.isOnline ? "online" : "ofline"}.`);
+ }
 
-
-
+ 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
 
@@ -63,6 +71,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true
+ };
+ 
+ function checkAvailability(dress) {
+   if (dress.inStock) {
+     console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+     console.log(`${dress.name} is out of stock.`);
+   }
+ }
 
 
 
@@ -104,3 +126,22 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red"
+   }
+ };
+function addFeature(supercar, featureName) {
+   supercar.features[featureName] = true;
+   console.log(`${featureName} has been added to ${supercar.model}.`);
+ }
+addFeature(supercar, "Ceramic Brakes");
+addFeature(supercar, "Carbon Fiber Roof");
+addFeature(supercar, "Track Package");
+console.log("Available Features:");
+for (const feature in supercar.features) {
+  console.log(feature + ": " + supercar.features[feature]);
+}
