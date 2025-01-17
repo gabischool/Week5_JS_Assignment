@@ -29,8 +29,6 @@ Expected Output:
 
 
 
-
-
 /*
 Task 2: Student Attendance Checker 📚✅
 
@@ -50,19 +48,16 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
-// const students = ["Ali", "Fatima", "Hassan", "Layla"];
-// function isPresent(name){
-//   if(students.includes(name)){
-//     return `${name} is present.`
-//   }else{
-//     return `${name} is apsent.`
-//   }
-// }
-// console.log(isPresent("Haasan"))
 
-
-
-
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(name){
+  if(students.includes(name)){
+    return `${name} is present.`
+  }else{
+    return `${name} is apsent.`
+  }
+}
+console.log(isPresent("Haasan"))
 
 
 /*
@@ -101,23 +96,15 @@ function updateScore(player , score){
     topScorers.push({ name: player, score });
   }
 }
-
 function printLeaderboard() {
   const sortedScorers = [...topScorers].sort((a, b) => b.score - a.score); 
   sortedScorers.forEach(scorer => {
     console.log(`${scorer.name}: ${scorer.score}`);
   });
 }
-
-
-
-
-updateScore("Messi", 2); // Messi wuxuu yeelan doonaa score = 5 + 2 = 7.
-updateScore("Mbappe", 6); // Mbappe wuxuu noqon doonaa ciyaaryahan cusub oo leh score = 6.
+updateScore("Messi", 2); 
+updateScore("Mbappe", 6); 
 printLeaderboard();
-
-
-
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
 
