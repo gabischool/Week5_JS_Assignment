@@ -72,6 +72,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true
+ };
+ 
+ function checkAvailability(dress) {
+   if (dress.inStock) {
+     console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+     console.log(`${dress.name} is out of stock.`);
+   }
+ }
+
 
 
 /*

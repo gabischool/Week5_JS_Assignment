@@ -16,15 +16,14 @@ Expected Output:
 - "Welcome, Amina!"
 */
 // ✍️ Solve it here ✍️
-// function sendMessage(name,cb){
-//   return cb(name)
-// }
-// function callback(name){
-//   return name = `"welcome" ${name}`
-// }
-// console.log(sendMessage("amina!", callback))
 
-
+function sendMessage(name,cb){
+  return cb(name)
+}
+function callback(name){
+  return name = `"welcome" ${name}`
+}
+console.log(sendMessage("amina!", callback))
 
 
 /*
@@ -67,9 +66,6 @@ function theCallBackFunction(Hot, Warm, Cold){
   }
 }
 console.log(checkTemperature(35, theCallBackFunction));
-
-
-
 
 
 /*

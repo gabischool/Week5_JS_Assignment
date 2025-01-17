@@ -18,14 +18,15 @@ Expected Output:
 
 // 1. solve one
 
-// inventory.push("Orange","banana")
+inventory.push("Orange","banana")
 
 // // 2. solve two
-// inventory.shift()
+
+inventory.shift()
 
 // // 3. solve three
 
-// console.log(inventort)
+console.log(inventort)
 
 
 
@@ -171,3 +172,68 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+const clues = ["Map", "Compass", "Key", "Shovel"];
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"]; 
+const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+
+
+function findClue(clues, clueName) {
+  if (clues.includes(clueName)) {
+    return `Clue ${clueName} found!`;
+  } else {
+    return `Clue ${clueName} is missing, search again!`;
+  }
+}
+
+
+function decipherMessage(clueMessages) {
+  return clueMessages.map(message => message.split('').reverse().join(''));
+}
+
+function followSteps(treasureMapSteps) {
+  for (let i = 0; i < treasureMapSteps.length; i++) {
+    console.log(`Step ${i + 1}: ${treasureMapSteps[i]}`);
+    if (treasureMapSteps[i] === "Danger") {
+      console.log("Stopped at danger. Cannot continue.");
+      break;
+    }
+  }
+}
+
+
+function finalTreasureHunt() {
+ 
+  let allCluesFound = true;
+  for (const clue of clues) {
+    if (findClue(clues, clue) === `Clue ${clue} is missing, search again!`) {
+      allCluesFound = false;
+      break;
+    }
+  }
+
+  
+  const decipheredMessages = decipherMessage(clueMessages);
+  let messagesMatch = true;
+  for (let i = 0; i < clues.length; i++) {
+    if (clues[i] !== decipheredMessages[i]) {
+      messagesMatch = false;
+      break;
+    }
+  }
+
+  
+  followSteps(treasureMapSteps);
+  let reachedTreasure = treasureMapSteps[treasureMapSteps.length - 1] === "Treasure";
+
+  if (allCluesFound && messagesMatch && reachedTreasure) {
+    console.log("Congratulations! You found the ultimate treasure!");
+  } else {
+    console.log("The treasure remains hidden. Try again!");
+  }
+}
+
+
+console.log(findClue(clues, "Map")); 
+console.log(decipherMessage(clueMessages)); 
+followSteps(treasureMapSteps); 
+finalTreasureHunt();
