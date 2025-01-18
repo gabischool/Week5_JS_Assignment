@@ -29,9 +29,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
+const gamerProfile={
+   username:'ShadowSlayer',
+   level:5,
+   isOnline:false,
+   }
+   function updateLineStatus(gamerProfile,status){
+      return gamerProfile.username + " is now online"
+      
+      }
+     console.log( updateLineStatus(gamerProfile,true))
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
 
@@ -43,6 +50,7 @@ Steps:
    - `size` (string): Size of the dress.
    - `inStock` (boolean): Whether the dress is available.
 
+  
 2. Write a function `checkAvailability` that:
    - Takes the `dress` object as an argument.
    - Logs: "[name] is available in size [size]." if the dress is in stock.
@@ -63,9 +71,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const dress={
+   name:'Evening Gown',
+   size:'M',
+   inStock:true,
+   }
 
-
-
+function checkAvailability(dress){
+   if(dress.inStock){
+   console.log(dress.name + " is available in size  "+ dress.size)
+   }
+   else {
+   console.log(dress.name + ' is out of stock')}
+   }
+checkAvailability(dress)
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
 
@@ -76,6 +95,9 @@ Steps:
    - `model` (string): The car's model.
    - `price` (number): The base price.
    - `features` (object): An object with a `color` property.
+
+};
+
 
 2. Write a function `addFeature` that:
    - Takes the `supercar` object and a feature name (string) as arguments.
@@ -104,3 +126,19 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red"
+   }
+ };
+ function addFeature(supercar,name){
+ return supercar.features.name=name
+ 
+ }
+ addFeature(supercar,"turbo")
+ console.log(supercar.features.name +  " has been aded")
+for(feature in supercar.features){
+   console.log( feature+":"+supercar.features[feature])
+}
