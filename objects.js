@@ -136,6 +136,17 @@ const supercar = {
      color: "Red"
    }
  };
-   function addFeature(supercar, "turbo");{
-    
+ // step 2
+   function addFeature(car, featureName){
+      car.features[featureName] = true;
+      console.log(`${featureName.charAt(0).toUpperCase() + featureName.slice(1)} has been added to ${car.model}.`);
    }
+ // step 3
+ function listFeatures(car){
+   console.log("Features:");
+   for (let feature in car.features) {
+     console.log(`- ${feature}: ${car.features[feature]}`);
+   }
+ }
+   addFeature(supercar, "turbo")
+   listFeatures(supercar)

@@ -168,3 +168,62 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+
+  function findClue(clues, name) {
+  if (clues.includes(name)) {
+    return `Clue ${name} found!`;
+  } else {
+    return `Clue ${name} is missing, search again!`;
+  }
+}
+
+
+function decipherMessage(clueMessages) {
+  return clueMessages.map(message => message.split('').reverse().join(''));
+}
+
+
+function followSteps(treasureMapSteps) {
+  for (let i = 0; i < treasureMapSteps.length; i++) {
+    console.log(`Step ${i + 1}: ${treasureMapSteps[i]}`);
+    if (treasureMapSteps[i] === "Danger") {
+      console.log("Stopped at danger. Cannot continue.");
+      return false; 
+    }
+  }
+  return true; 
+}
+
+
+function treasureHunt(clues, clueMessages, treasureMapSteps) {
+  
+  const allCluesFound = clues.every(clue => findClue(clues, clue).includes("found"));
+
+  
+  const decodedMessages = decipherMessage(clueMessages);
+  console.log("Decoded Messages:", decodedMessages);
+
+  
+  const allStepsSafe = followSteps(treasureMapSteps);
+
+  
+  const foundTreasure = treasureMapSteps[treasureMapSteps.length - 1] === "Treasure";
+
+  
+  if (allCluesFound && allStepsSafe && foundTreasure) {
+    console.log("Congratulations! You found the ultimate treasure!");
+  } else {
+    console.log("The treasure remains hidden. Try again!");
+  }
+}
+
+
+const clues = ["Map", "Compass", "Key", "Shovel"];
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"];
+const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+
+
+treasureHunt(clues, clueMessages, treasureMapSteps);
+
+
+
