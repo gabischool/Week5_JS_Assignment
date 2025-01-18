@@ -47,7 +47,39 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+const students = ["Ali", "Fatima", "Hassan", "layla"];// Liistigaan waxaa ku keydsan ardayda magacyadooda.
 
+
+//funcktion-kaan ayaan isticmaala si aan u ogaado in ardayga maqan ama jooga.
+  const isPresent = (name)=>{
+    let Get = false;
+
+    //wuxuu eegaya ardayda dhan ee ku jirta [array-ga kore]
+    for (let student = 0; student < students.length; student++){
+      //Hadii ardayga ku jiro arrayga iyo midka isticmaalaha soo geliyo is yeeshan ,soo daabac [ali is present.]
+      if(students[student] === name){
+      Get == true;
+
+      return `${name} is present.`;
+     
+    }
+    else if (students[student] !== name){
+      Get == true;
+
+      return `${name} is absent.`;
+      } 
+    }
+  
+    
+  }
+    
+
+  console.log(isPresent(`ahmed`));
+
+
+
+
+  
 
 
 
