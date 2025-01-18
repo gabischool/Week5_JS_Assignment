@@ -29,7 +29,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
+const gamerprofile={
+   username: "shadawslayer",
+   level:5,
+   isonline: false
+}
+ function updateOnlineStatus(profile,status){
+   profile.isonline=status
+    let message=profile.isonline `${profile.username} is now online.:
+     ${profile.username} is now offline.`;
+      
+     console.log(message);
+    
+ }
+    updateOnlineStatus(gamerprofile,true);
 
 
 /*
@@ -64,7 +77,19 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+const dress ={
+   name: "Evening Gown",
+   size: "M",
+   inStock: true,
+}
+ function checkAvailability(dress){
+   if(dress.inStock){
+   console.log(`${dress.name} is available in size ${dress.size}`)
+ } else{
+   console.log(`${dress.name} is out of the stock`)
+ }
+ }
+        checkAvailability(dress);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +129,13 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red"
+   }
+ };
+   function addFeature(supercar, "turbo");{
+    
+   }
