@@ -17,9 +17,14 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function sendMessage(name, cb) {
+  return cb(name);
+}
+function welcome(name) {
+  console.log(`Welcome ${name}`);
+}
 
-
-
+sendMessage("Amina", welcome);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -47,9 +52,19 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
+function checkTemperature(temp, cb) {
+  return cb(temp);
+}
+function evaluateTemperature(temp) {
+  if (temp > 30) {
+    console.log("Hot");
+  } else if (temp >= 15 && temp <= 30) {
+    console.log("Warm");
+  } else {
+    console.log("Cold");
+  }
+}
+checkTemperature(35, evaluateTemperature);
 
 /*
 Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +88,12 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function evaluateAnswer(quesion, answer, cb) {
+  return cb(quesion, answer);
+}
+function result(quesion, answer) {
+  if (quesion == answer) {
+    console.log("Correct!");
+  } else console.log(`Incorrect. The correct answer is ${answer}`);
+}
+evaluateAnswer(5 + 5, 10, result);
