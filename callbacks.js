@@ -19,7 +19,16 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+function sendMessage(userName, cb){
+  return cb(userName)
 
+}
+function CallBack(name){
+  
+  return `Welcome ${name}`
+}
+let name= prompt("Enter your name")
+console.log( sendMessage(name, CallBack))
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,7 +57,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature (tempValue, cb){
+  return cb(tempValue)
 
+}
+function temperatureChecker(value){
+  if(value >= 30){
+    return `${value}\u00B0C Hot`
+
+  }else if(value < 30 && value >= 15){
+    return `${value}\u00B0C Warm`
+
+  }else { 
+    return`${value}\u00B0C Cold`
+
+  }
+}
+let temp = Number(prompt("Enter the temperature"))
+console.log(checkTemperature(temp, temperatureChecker))
 
 
 /*
@@ -73,3 +99,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function evaluateAnswer(question, answr, cb){
+  return cb(question, answr)
+}
+function checkAnswer(question, answr){
+  if (question === answr){
+    return`${answr} is correct`
+  }
+  else{
+    return `${question} is incorrect. and the correct answer is ${answr}`
+  }
+}
+let que  = Number(prompt("what is 5 + 5"))
+let ans = 10
+
+console.log(evaluateAnswer(que, ans, checkAnswer))
+
