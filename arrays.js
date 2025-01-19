@@ -70,19 +70,37 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
-// const topScorers = [
-//   { name: "Messi", score: 5 },
-//   { name: "Ronaldo", score: 3 },
-//   { name: "Neymar", score: 4 }
-// ];
-// function updateScore(name , score){
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+function updateScore(name , score){
+  let playerexist = false
+  for(let i=0; i<topScorers.length; i++){
+    if(topScorers[i].name.toLowerCase() == name.toLowerCase()){
+      topScorers[i].score+= score
+      playerexist = true
+      break
+    }
+    
+  }
+  if(!playerexist){
+    updateScore.push({name,score})
+  }
 
-// }
-// function printLeaderboard(){
+}
+function printLeaderboard(){
+  let sortscores = [...updateScore].sort((a , b)=>b.score-a.score)
+sortscores.forEach((value, index)=>{ 
+  console.log(`${index+1}.${value.name} , ${value.score}`)
 
-// }
+})
 
-// updateScore("Ronaldo" , 2 )
+}
+
+updateScore("Ronaldo" , 2 )
+printLeaderboard()
 
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
