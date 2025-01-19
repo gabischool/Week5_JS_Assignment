@@ -1,3 +1,4 @@
+
 /*
 Task 1: Grocery Store Restock 🛒🍎
 
@@ -15,6 +16,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+
+// 1. Add "Oranges" and "Bananas" to the inventory
+inventory.push("Oranges", "Bananas");
+
+// 2. Remove the first item from the array
+inventory.shift();
+
+// 3. Print the updated inventory
+console.log("Updated inventory:", inventory);
 
 
 
@@ -39,6 +50,20 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+
+// Function to check if a student is present
+function isPresent(name) {
+  if (students.includes(name)) {
+    return `${name} is present.`;
+  } else {
+    return `${name} is absent.`;
+  }
+}
+
+// Example usage
+console.log(isPresent("Ali")); // Output: "Ali is present."
+console.log(isPresent("Zara")); // Output: "Zara is absent."
 
 
 
@@ -66,6 +91,36 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+
+// Function to update a player's score
+function updateScore(playerName, scoreToAdd) {
+  const player = topScorers.find(p => p.name === playerName);
+
+  if (player) {
+    // If player exists, update their score
+    player.score += scoreToAdd;
+  } else {
+    // If player does not exist, add them to the leaderboard
+    topScorers.push({ name: playerName, score: scoreToAdd });
+  }
+}
+
+// Function to print the leaderboard sorted in descending order of scores
+function printLeaderboard() {
+  // Sort by score in descending order
+  const sortedLeaderboard = topScorers.sort((a, b) => b.score - a.score);
+
+  // Print each player's score
+  console.log("Leaderboard:");
+  sortedLeaderboard.forEach(player => {
+    console.log(`${player.name}: ${player.score}`);
+  });
+}
 
 
 
