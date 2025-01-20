@@ -29,10 +29,30 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+ 
 
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: true
+ };
 
+function updatesOnlineStatus(profile,status){
 
+   profile.isOnline = status
+
+if(profile.isOnline){
+return `${profile.username} is online `
+}
+else{return `${profile.username} is offline `}
+
+}
+console.log(updatesOnlineStatus(gamerProfile, true))
 /*
+why the result is not showing up at when i call the function gamerProfile.status
+
+
+
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
 
 You are helping a fashion designer manage their dress inventory.
@@ -64,8 +84,22 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true
+ };
+ function checkAvailability(status){
+    
+if(status.inStock){
+   return `${status.name} is available in size ${status.size}`
+}
+
+else{return `${status.name} is unvailable in size ${status.size}`}
 
 
+ }
+ console.log(checkAvailability(dress))
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
 
@@ -104,3 +138,30 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+// const supercar = {
+//    model: "Ferrari SF90",
+//    price: 500000,
+//    features: {
+//      color: "Red"
+//    }}
+
+//    function addFeature(super)
+
+
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red"}
+   }
+
+   function addFeature (suberCarObject,featureName){
+suberCarObject.features[featureName]= "true"
+   
+
+console.log(`${featureName} has been added to ${suberCarObject.model} `)
+
+   }
+   addFeature(supercar,"speed")
+
+   console.log(supercar)
