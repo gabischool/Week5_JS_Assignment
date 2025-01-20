@@ -17,6 +17,15 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function theCallBackFunction(name) {
+  console.log(`Welcome, ${name}!`);
+}
+
+// Step 2: Write the sendMessage function
+function sendMessage(userName, callback) {
+  callback(userName);
+}
+
 
 
 
@@ -47,6 +56,24 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function checkTemperature(temp){
+  if (temp > 30) {
+    console.log(`${temp}°C is Hot.`);
+  } else if (temp >= 15 && temp <= 30) {
+    console.log(`${temp}°C is Warm.`);
+  } else {
+    console.log(`${temp}°C is Cold.`);
+  }
+}
+function checkTemperature(tempValue, callback) {
+  callback(tempValue);
+}
+
+
+
+
+/*
+
 
 
 
@@ -73,3 +100,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function evaluateUserAnswer(userAnswer, correctAnswer) {
+  if (userAnswer === correctAnswer) {
+    console.log("Correct!");
+  } else {
+    console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+
+  }
+}
+
+function evaluateAnswer(question, correctAnswer, callback) {
+  const userAnswer = prompt(question); // Simulate user input
+  callback(userAnswer, correctAnswer);
+}

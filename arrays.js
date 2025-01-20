@@ -15,6 +15,12 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const inventory = ["apples", "Bread" , "milk" , "Eggs"];
+inventory.push("Oranges", "Banans");
+delete inventory[0];
+console.log(inventory);
+
+
 
 
 
@@ -39,6 +45,19 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+
+
+function isPresent(name){
+  const students = ["Ali", "Fatima", "Hassan", "Layla"];
+
+if(students.include(name)){
+  return isPresent;
+} else{
+  return isabsent;
+}
+}
+
+
 
 
 
@@ -66,6 +85,32 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+
+
+
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+function updateScore(name , addedScore){
+  const player = topScorers.find(player => player.name === name);
+
+if (player){
+  player.score += addedScore;
+}
+else{
+  topScorers.push ({name: name , score: addedScore});
+}
+}
+
+function printLeaderboard() {
+  topScorers.sort(slice.reverse)
+  console.log(topScorers);
+}
+
+
+
 
 
 
@@ -139,3 +184,67 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+function findClue(clues, clueName) {
+  if (clues.includes(clueName)) {
+    return `Clue ${clueName} found!`;
+  } else {
+    return `Clue ${clueName} is missing, search again!`;
+  }
+}
+
+// Example usage
+const clues = ["Map", "Compass", "Key", "Shovel"];
+console.log(findClue(clues, "Map")); // "Clue Map found!"
+console.log(findClue(clues, "Flashlight")); // "Clue Flashlight is missing, search again!"
+
+function decipherMessage(clueMessages) {
+  return clueMessages.map(message => message.split('').reverse().join(''));
+}
+
+// Example usage
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"];
+console.log(decipherMessage(clueMessages)); // ["Map", "Compass", "Key", "Shovel"]
+
+
+function followSteps(treasureMapSteps) {
+  for (let i = 0; i < treasureMapSteps.length; i++) {
+    console.log(`Step ${i + 1}: ${treasureMapSteps[i]}`);
+    if (treasureMapSteps[i] === "Danger") {
+      console.log("Stopped at danger. Cannot continue.");
+      return false;
+    }
+  }
+  return true;
+}
+
+// Example usage
+const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+followSteps(treasureMapSteps);
+
+
+function finalTreasureHunt(clues, clueMessages, treasureMapSteps) {
+  // Check if all clues exist
+  for (let clue of clues) {
+    if (!findClue(clues, clue).includes("found")) {
+      console.log("The treasure remains hidden. Try again!");
+      return;
+    }
+  }
+
+  // Decipher the messages
+  const decipheredMessages = decipherMessage(clueMessages);
+  console.log("Deciphered Messages:", decipheredMessages);
+
+  // Follow the map
+  const allStepsCompleted = followSteps(treasureMapSteps);
+
+  // Check final condition
+  if (allStepsCompleted && treasureMapSteps[treasureMapSteps.length - 1] === "Treasure") {
+    console.log("Congratulations! You found the ultimate treasure!");
+  } else {
+    console.log("The treasure remains hidden. Try again!");
+  }
+}
+
+// Example usage
+finalTreasureHunt(clues, clueMessages, treasureMapSteps);
