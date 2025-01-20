@@ -22,6 +22,7 @@ const gamerProfile = {
   isOnline: false
 };
 
+
 updateOnlineStatus(gamerProfile, true);
 
 Expected Output:
@@ -30,6 +31,27 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// const gamerProfile = {
+//   username: "ShadowSlayer",
+//   level: 5,
+//   isOnline: false,
+// updateOnlineStatus: function(status) 
+
+// {
+
+// if(status=== true) {
+//    console.log(`${this.username}, is now online`);
+// }
+
+// else {
+//    console.log(`${this.username}, is now offline`);
+// }
+// }
+// };
+
+// gamerProfile.updateOnlineStatus(true);
+
+// gamerProfile.updateOnlineStatus(false);
 
 
 /*
@@ -63,6 +85,28 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+// const dress = {
+//   name: "Evening Gown",
+//   size: "M",
+//   inStock: true,
+
+// checkAvailability: function(status) 
+
+// {
+//   this.inStock = status;
+
+//   if (this.inStock) {
+//     console.log(`${this.name} is available in size ${this.size}.`);
+//   } else {
+//     console.log(`${this.name} is out of stock.`);
+//   }
+
+// }
+
+// };
+
+// dress.checkAvailability(true);
 
 
 
@@ -104,3 +148,31 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red"
+   },
+ 
+ addFeature: function(supercar, featureName) {
+ 
+ supercar.features[featureName] = true; 
+ 
+ {
+   console.log(`${featureName} has been added to ${this.model}` );
+ }
+ 
+ }
+ 
+ };
+ 
+ supercar.addFeature(supercar,"turbo");
+ supercar.addFeature(supercar, "sparks")
+ 
+ console.log(supercar);
+ 
+ 
+ 
