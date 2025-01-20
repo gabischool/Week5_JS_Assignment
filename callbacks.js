@@ -1,7 +1,8 @@
 /*
 Task 1: Simple Welcome Message 💌💌💌💌
 
-You are building a simple messaging system. Write a function called `sendMessage` that:
+You are building a simple messaging system. 
+Write a function called `sendMessage` that:
 1. Takes a user name and a callback function as arguments.
 2. The callback function should log a welcome message.
 
@@ -18,7 +19,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// function sendMessage(name, message) {
+//   return message(name)
+// }
 
+// function message(name) {
+//   console.log("Welcome", name);
+// }
+
+// sendMessage('maryan',message);
 
 
 /*
@@ -49,7 +58,23 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+// function checkTemperature(temp, tempCb){
+//   return tempCb(temp);
+// }
 
+// function tempChecker(temp) {
+
+//  if(temp >= 30) {
+//   console.log( "Hot");
+// } else if(temp >= 15 && temp <= 30) {
+//   console.log("Warm");
+// } else{
+//   console.log("Cold");
+// }
+// }
+
+
+// checkTemperature(14,tempChecker);
 
 /*
 Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +98,19 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+
+function evaluateAnswer(Qs,ans,cb){
+  return cb(ans,Qs); 
+}
+
+function checkAnswer(Qs,ans) {
+  if (ans === Qs) {
+    console.log("Correct");
+  } else {
+    console.log("Incorrect");
+  }
+}
+
+
+evaluateAnswer(5,6, checkAnswer);
