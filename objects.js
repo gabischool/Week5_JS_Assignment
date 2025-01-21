@@ -22,7 +22,7 @@ const gamerProfile = {
   isOnline: false
 };
 
-updateOnlineStatus(gamerProfile, true);
+input: updateOnlineStatus(gamerProfile, true);
 
 Expected Output:
 "ShadowSlayer is now online."
@@ -30,8 +30,25 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false
+ };
+ 
+ const updateOnlineStatus = function (gamerProfile,status,) {
 
+ 
+   if (status) {
+      console.log (gamerProfile.username, "is now online") 
+   } else {
+      console.log (gamerProfile.username, "is offline")
+ }
+   
+   }
 
+   updateOnlineStatus(gamerProfile,true)
+ 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
 
@@ -64,9 +81,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = { 
+   name: "Evening Gown",
+   size: "M",
+   inStock: true ,
+   checkAvailability: function (){
+   if (dress.inStock){
+      console.log(`${this.name} is available in size ${this.size} `)
+   }else{
+      console.log(`${this.name} out of stock`)
+   }
+   
+   }
+}
+dress.checkAvailability()
 
 
 /*
+ 
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
 
 You are building a configurator for a supercar. 
@@ -76,7 +108,7 @@ Steps:
    - `model` (string): The car's model.
    - `price` (number): The base price.
    - `features` (object): An object with a `color` property.
-
+ 
 2. Write a function `addFeature` that:
    - Takes the `supercar` object and a feature name (string) as arguments.
    - Adds the feature to the `features` object and sets it to `true`.
@@ -94,9 +126,10 @@ const supercar = {
   }
 };
 
-addFeature(supercar, "turbo");
 
-Expected Output:
+//addFeature(supercar, "turbo"());
+
+/*expected Output:
 "Turbo has been added to Ferrari SF90."
 Features:
 - color: Red
@@ -104,3 +137,32 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+      color: "Red",
+     
+   }
+   };
+
+   function addFeature() {
+
+      supercar.features["turbo"] = true;
+      
+{  
+     console.log(supercar.features(` has been added to`) ${supercar.model})
+
+   }
+}
+    
+ addFeature(supercar, "turbo");
+
+
+for (let key in supercar ){
+   console.log(key, supercar [key])
+}
+
+
+ 

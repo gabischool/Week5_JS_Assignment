@@ -14,10 +14,13 @@ Expected Output:
 - Updated inventory
 */
 
-// ✍️ Solve it here ✍️
+//✍️ Solve it here ✍️
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
-
+inventory.push("oranges", "bananas")
+inventory.shift()
+console.log(inventory)
 
 
 /*
@@ -39,10 +42,15 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
-
-
-
+function isPresent(name){
+  if (students.includes (name)){ 
+    console.log(`${name} is present`)
+  } else { 
+    console.log(`${name} is absent`)}
+       }
+ isPresent ("Ali")
 
 
 /*
@@ -68,7 +76,38 @@ Output: Sorted leaderboard with updated scores
 // ✍️ Write your functions here ✍️
 
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 },
+];
 
+function updateScore(playerName,scoreToAdd){
+ let newPlayer = false
+  for (let i = 0; i < topScorers.length;i++) { 
+  
+if (topScorers[i].name == playerName){
+topScorers[i].score +=scoreToAdd
+    } else {
+   
+      newPlayer = true
+      
+   }
+    }
+ 
+if (newPlayer == true ){
+  topScorers.push({
+    name: playerName,
+    score: scoreToAdd,
+    
+  })
+}
+
+topScorers.push("Mpappe")
+}
+
+console.log(topScorers)
+updateScore("Ronaldo", 2)
 
 
 
@@ -139,3 +178,11 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+
+
+
+
+
+
+
+
