@@ -18,8 +18,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessage(name, cb){
+return cb(name)
+}
 
-
+function welcomeUsers(name){
+  console.log(`Welcome ${name}`)
+}
+sendMessage( "Amina", welcomeUsers)
+  
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -45,13 +52,39 @@ Expected Output:
 - "22°C is Warm."
 - "10°C is Cold."
 */
+/*
+// ✍️ Solve it here 
+*/
 
-// ✍️ Solve it here ✍️
+
+function checkTemperature (temperature,cb){
+  return cb (temperature)
+
+}
+
+function evaluateTemp(temperature){
+  if (temperature > 30){
+    console.log(`${temperature}°C is hot `)
+  } else if 
+     (temperature > 15 && temperature < 30){
+      console.log(`${temperature}°C is warm `)
+    } else {
+      console.log(`${temperature}°C is cold `)
+
+    }
+  }
+  
+checkTemperature(35, evaluateTemp);
+checkTemperature(22, evaluateTemp);
+checkTemperature(10, evaluateTemp);
 
 
 
 
 /*
+
+
+
 Task 3: Quiz Evaluator 📚📚📚📚
 
 You are building a quiz system. Write a function called `evaluateAnswer` that:
@@ -73,3 +106,23 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+
+
+function evaluateAnswer(  question ,correctAnswer,compareUsersAnswer){
+
+  compareUsersAnswer( correctAnswer)
+}
+
+function compareUsersAnswer(correctAnswer){
+
+if ( correctAnswer== 10 ){
+  console.log("Correct!")
+
+} else {
+  console.log ("Incorrect.The correct answer is 10." )
+}
+
+}
+evaluateAnswer("What is 5 + 5?", 10,compareUsersAnswer);
+
