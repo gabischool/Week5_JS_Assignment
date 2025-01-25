@@ -16,9 +16,11 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
-
+// Array:
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.push("Oranges", "Bananas");
+inventory.shift();
+console.log(inventory)
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -40,7 +42,36 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
-
+// Array: List of students
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+// 1. Write a function called `isPresent` that takes a student's name as input.
+function isPresent(name) {
+  // 2. Use an if statement to check if the name exists in the `students` array.
+  if (students.includes(name)) {
+    return `${name} is present.`; // - If present, return "[name] is present."
+   } else {
+    return `${name} is absent.`; // - If not present, return "[name] is absent."
+  
+  // Through the researches I discovered that to solve this task you can use the following Methods;
+  // .includes() method & indexOf() method.
+  /* And/or for loop
+  function isPresent(name) {
+  const students = ["Ali", "Fatima", "Hassan", "Layla"];
+  for (let i = 0; i < students.length; i++) {
+    if (students[i] === name) {
+      return `${name} is present.`;
+    } else {
+  return `${name} is absent.`;
+}
+  }
+  }
+console.log(isPresent("Ali"));
+console.log(isPresent("Sarah"));*/
+  
+ }
+}
+console.log(isPresent("Ali"));
+console.log(isPresent("Sarah"));
 
 
 
