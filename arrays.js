@@ -51,6 +51,11 @@ function isPresent(name) {
     return `${name} is present.`; // - If present, return "[name] is present."
    } else {
     return `${name} is absent.`; // - If not present, return "[name] is absent."
+
+  }
+}
+console.log(isPresent("Ali"));
+console.log(isPresent("Sarah"));
   
   // Through the researches I discovered that to solve this task you can use the following Methods;
   // .includes() method & indexOf() method.
@@ -68,12 +73,6 @@ function isPresent(name) {
 console.log(isPresent("Ali"));
 console.log(isPresent("Sarah"));*/
   
- }
-}
-console.log(isPresent("Ali"));
-console.log(isPresent("Sarah"));
-
-
 
 
 /*
@@ -98,10 +97,47 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+// Array:
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+
+function updateScore(playerName, scoreToAdd) {
+  // Loop through the array
+  for (let i = 0; i < topScorers.length; i++) {
+    // Check if the player is found
+    if (topScorers[i].name === playerName) {
+      // Add the score if the player is found
+      topScorers[i].score += scoreToAdd;
+      return; // Exit the function once the score is updated
+    }
+  }
+
+  // If player is not found, add a new player to the leaderboard
+  topScorers.push({ name: playerName, score: scoreToAdd });
+}
+
+function printLeaderboard() {
+  // Sort the leaderboard in descending order based on score
+  topScorers.sort((a, b) => b.score - a.score); // Sort by score in descending order
+  // Loop through the leaderboard and print each player's name and score
+  for (let i = 0; i < topScorers.length; i++) {
+    console.log(`${i + 1}. ${topScorers[i].name}: ${topScorers[i].score}`);
+
+  }
+}
 
 
+// Test the functions
+updateScore("Ronaldo", 2); // Add 2 points to Ronaldo's score
+updateScore("Nuno", 6);  // Add Nuno to the leaderboard with 6 points
+updateScore("Ronaldo", 2); // Add 2 points to Ronaldo's score
+updateScore("Messi", 1); // Add 1 point to Messi's score
 
-
+// Print the leaderboard
+printLeaderboard();
 
 
 /*
