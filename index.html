@@ -1,12 +1,105 @@
 <!DOCTYPE html>
-<html>
-    <head>Week 5 Assignment</head>
-    <body>
-        <h1>Look at the console to see the results</h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 5 JavaScript Assignment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-        <!-- Before starting, add the javascript files in this html fie -->
-         <script src="arrays.js"></script>
-         <script src="objects.js"></script>
-         <script src="callbacks.js"></script>
-    </body>
+  <body>
+    <header>
+      <h1>Welcome to the Week 5 JavaScript Assignment</h1>
+      <p>Below are the tasks and their solutions along with the expected outputs in the console.</p>
+    </header>
+
+    <section class="task" id="task1">
+      <h2>Task 1: Grocery Store Restock 🛒🍎</h2>
+      <p><strong>Task Description:</strong> Manage a grocery store inventory and restock items.</p>
+      <pre>
+    <code> const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+        inventory.push("Oranges", "Bananas");
+        inventory.shift();
+        console.log(inventory); </code>
+      </pre>
+      <p><strong>Expected Output in Console:</strong></p>
+      <pre><code>["Bread", "Milk", "Eggs", "Oranges", "Bananas"]</code></pre>
+    </section>
+
+    <section class="task" id="task2">
+      <h2>Task 2: Student Attendance Checker 📚✅</h2>
+      <p><strong>Task Description:</strong> Check if a student is present or absent.</p>
+      <pre>
+        <code>
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(name) {
+  if (students.includes(name)) {
+    return name is present.;
+   else 
+    return {name} is absent.;
+  }
+}
+console.log(isPresent("Ali"));
+console.log(isPresent("Sarah"));
+        </code>
+      </pre>
+      <p><strong>Expected Output in Console:</strong></p>
+      <pre><code>Ali is present.
+Sarah is absent.</code></pre>
+    </section>
+
+    <section class="task" id="task3">
+      <h2>Task 3: Top Scorers Leaderboard 🏆⚽</h2>
+      <p><strong>Task Description:</strong> Update and print a leaderboard of top scorers.</p>
+      <pre>
+        <code>
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+
+function updateScore(playerName, scoreToAdd) {
+  for (let i = 0; i < topScorers.length; i++) {
+    if (topScorers[i].name === playerName) {
+      topScorers[i].score += scoreToAdd;
+      return;
+}
+}
+
+topScorers.push({ name: playerName, score: scoreToAdd });
+}
+
+function printLeaderboard() {
+  topScorers.sort((a, b) => b.score - a.score);
+  for (let i = 0; i < topScorers.length; i++) {
+    console.log(i + 1.{topScorers[i].name}: ${topScorers[i].score});
+  }
+}
+
+updateScore("Ronaldo", 2);
+updateScore("Nuno", 6);
+updateScore("Ronaldo", 2);
+updateScore("Messi", 1);
+printLeaderboard();
+        </code>
+      </pre>
+      <p><strong>Expected Output in Console:</strong></p>
+      <pre><code>1. Nuno: 6
+2. Messi: 6
+3. Ronaldo: 5
+4. Neymar: 4</code></pre>
+    </section>
+
+    <footer>
+      <p>Reviewers: Eng. Miirshe and Eng. Duuran</p>
+      <p>Make sure to check the console for detailed outputs of each task!</p>
+      <p>&copy; 2025 Abdulrahman Ali</p>
+
+    </footer>
+
+    <script src="arrays.js"></script>
+    <script src="objects.js"></script>
+    <script src="callbacks.js"></script>
+  </body>
 </html>

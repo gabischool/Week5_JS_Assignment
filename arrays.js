@@ -18,8 +18,11 @@ Expected Output:
 
 // Array:
 const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+// 1. Add "Oranges" and "Bananas" to the inventory.
 inventory.push("Oranges", "Bananas");
+// 2. Remove the first item from the array.
 inventory.shift();
+// 3. Print the updated inventory.
 console.log(inventory)
 
 /*
@@ -97,28 +100,31 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
-// Array:
+// Array of objects:
 const topScorers = [
   { name: "Messi", score: 5 },
   { name: "Ronaldo", score: 3 },
   { name: "Neymar", score: 4 }
 ];
 
+// 1. Write a function called `updateScore`.
+// that takes a player's name and a score to add.
 function updateScore(playerName, scoreToAdd) {
   // Loop through the array
   for (let i = 0; i < topScorers.length; i++) {
-    // Check if the player is found
+    // Check If the player exists in the leaderboard
     if (topScorers[i].name === playerName) {
-      // Add the score if the player is found
+      // Add the score to their total. if the player is found.
       topScorers[i].score += scoreToAdd;
       return; // Exit the function once the score is updated
     }
   }
-
-  // If player is not found, add a new player to the leaderboard
+  
+  // If player is not found, add the player to the array with the given score.
   topScorers.push({ name: playerName, score: scoreToAdd });
 }
 
+// 2. Write another function called `printLeaderboard`.
 function printLeaderboard() {
   // Sort the leaderboard in descending order based on score
   topScorers.sort((a, b) => b.score - a.score); // Sort by score in descending order
@@ -128,7 +134,6 @@ function printLeaderboard() {
 
   }
 }
-
 
 // Test the functions
 updateScore("Ronaldo", 2); // Add 2 points to Ronaldo's score
