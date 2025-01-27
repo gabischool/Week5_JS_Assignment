@@ -29,6 +29,30 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Task 1
+
+const gamerProfile = {
+   username: "Gaucho", 
+   level: 6, 
+   isOnline: true,
+   uppdateOnlineStatus: function (status) {
+   
+ this.isOnline = status
+ 
+   if(status) {
+ console.log(`${this.username} is now online.`)
+ } else {
+ console.log(`${this.username} is now offline.`)
+ }
+ 
+   }
+}
+gamerProfile.uppdateOnlineStatus(false) 
+
+//uppdateOnlineStatus(gamerProfile, false)
+//uppdateOnlineStatus(gamerProfile, true)
+
+
 
 
 
@@ -38,6 +62,9 @@ Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
 You are helping a fashion designer manage their dress inventory.
 
 Steps:
+*/
+
+/*
 1. Create an object named `dress` with the following properties:
    - `name` (string): Name of the dress.
    - `size` (string): Size of the dress.
@@ -63,7 +90,21 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Task 2
+const dress = {
+name: "Chelseafootballkit",
+size: "M",
+inStock: true
+};
 
+function checkAvailability(dress) {
+ if(dress.inStock) {
+  console.log(`${dress.name} is available in size ${dress.size}.`)
+ } else 
+  console.log(`${dress.name} is out of stock.`)
+}
+
+checkAvailability(dress)
 
 
 /*
@@ -104,3 +145,26 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+//Task 3 
+
+const supercar = {
+model: "GS7",
+price: 300000,
+features: {
+   color: "Blue"
+}
+};
+
+function addFeature (car, newFeature) {
+ car.features[newFeature] = true
+ console.log(`${newFeature} has been added ${car.model}`)
+}
+
+function logAllfeatures (car){
+for (let feature in car.features){
+ console.log(`${feature} ${car.features[feature]}`)
+}
+}
+logAllfeatures(supercar)
+addFeature (supercar, "turbo")
+
