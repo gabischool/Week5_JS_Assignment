@@ -98,6 +98,7 @@ Input: updateScore("Ronaldo", 2)
 Output: Sorted leaderboard with updated scores
 */
 
+
 // ✍️ Write your functions here ✍️
 
 // Array of objects:
