@@ -18,6 +18,19 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// - Create the callback function to log: "Welcome, [name]!"
+const theCallbackFunction = (name) => { // HOF - higher-order function
+  console.log(`Welcome, ${name}!`);
+};
+
+// Write a function called `sendMessage` that:
+// 1. Takes a user name and a callback function as arguments.
+function sendMessage(userName, callback) {
+  callback(userName);
+};
+
+// 2. The callback function should log a welcome message.
+sendMessage("Amina", theCallbackFunction);
 
 
 
@@ -48,6 +61,27 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// Write a function called `checkTemperature` that:
+function checkTemperature(temperature, callback) {
+  callback(temperature); // 1. Takes a temperature value and a callback function as arguments.
+}
+
+// - Create the callback function to evaluate and log:
+// - "[temperature]°C is Hot/Warm/Cold."
+function callback(temperature) {
+  if (temperature > 30) {
+    console.log(`- ${temperature}°C is Hot.`);
+  } else if (temperature >= 15 && temperature <= 30) {
+    console.log(`- ${temperature}°C is Warm.`);
+  } else {
+    console.log(`- ${temperature}°C is Cold.`);
+  }
+}
+
+// Example Input:
+checkTemperature(35, callback);
+checkTemperature(22, callback);
+checkTemperature(10, callback);
 
 
 
@@ -73,3 +107,23 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+// Write a function called `evaluateAnswer` that:
+// 1. Takes a question, a correct answer, and a callback function as arguments.
+function evaluateAnswer(question, correctAnswer, callback) {
+  const userAnswer = prompt(question);
+// 2. Compare the user's answer with the correct answer and log whether the answer is correct or not.
+  callback(userAnswer, correctAnswer);
+}
+
+// - Create the callback function to evaluate:
+function checkAnswer(userAnswer, correctAnswer) {
+  if (userAnswer === correctAnswer) { // - If the user's answer matches the correct answer, log: "Correct!"
+    console.log("Correct!");
+  } else { // - Otherwise, log: "Incorrect. The correct answer is [correctAnswer]."
+    console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+// Example Input:
+evaluateAnswer("What is 5 + 5?", "10", checkAnswer);

@@ -16,9 +16,14 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
-
+// Array:
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+// 1. Add "Oranges" and "Bananas" to the inventory.
+inventory.push("Oranges", "Bananas");
+// 2. Remove the first item from the array.
+inventory.shift();
+// 3. Print the updated inventory.
+console.log(inventory)
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -40,9 +45,37 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+// Array: List of students
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+// 1. Write a function called `isPresent` that takes a student's name as input.
+function isPresent(name) {
+  // 2. Use an if statement to check if the name exists in the `students` array.
+  if (students.includes(name)) {
+    return `${name} is present.`; // - If present, return "[name] is present."
+   } else {
+    return `${name} is absent.`; // - If not present, return "[name] is absent."
 
-
-
+  }
+}
+console.log(isPresent("Ali"));
+console.log(isPresent("Sarah"));
+  
+  // Through the researches I discovered that to solve this task you can use the following Methods;
+  // .includes() method & indexOf() method.
+  /* And/or for loop
+  function isPresent(name) {
+  const students = ["Ali", "Fatima", "Hassan", "Layla"];
+  for (let i = 0; i < students.length; i++) {
+    if (students[i] === name) {
+      return `${name} is present.`;
+    } else {
+  return `${name} is absent.`;
+}
+  }
+  }
+console.log(isPresent("Ali"));
+console.log(isPresent("Sarah"));*/
+  
 
 
 /*
@@ -65,12 +98,52 @@ Input: updateScore("Ronaldo", 2)
 Output: Sorted leaderboard with updated scores
 */
 
+
 // ✍️ Write your functions here ✍️
 
+// Array of objects:
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
 
+// 1. Write a function called `updateScore`.
+// that takes a player's name and a score to add.
+function updateScore(playerName, scoreToAdd) {
+  // Loop through the array
+  for (let i = 0; i < topScorers.length; i++) {
+    // Check If the player exists in the leaderboard
+    if (topScorers[i].name === playerName) {
+      // Add the score to their total. if the player is found.
+      topScorers[i].score += scoreToAdd;
+      return; // Exit the function once the score is updated
+    }
+  }
+  
+  // If player is not found, add the player to the array with the given score.
+  topScorers.push({ name: playerName, score: scoreToAdd });
+}
 
+// 2. Write another function called `printLeaderboard`.
+function printLeaderboard() {
+  // Sort the leaderboard in descending order based on score
+  topScorers.sort((a, b) => b.score - a.score); // Sort by score in descending order
+  // Loop through the leaderboard and print each player's name and score
+  for (let i = 0; i < topScorers.length; i++) {
+    console.log(`${i + 1}. ${topScorers[i].name}: ${topScorers[i].score}`);
 
+  }
+}
 
+// Test the functions
+updateScore("Ronaldo", 2); // Add 2 points to Ronaldo's score
+updateScore("Nuno", 6);  // Add Nuno to the leaderboard with 6 points
+updateScore("Ronaldo", 2); // Add 2 points to Ronaldo's score
+updateScore("Messi", 1); // Add 1 point to Messi's score
+
+// Print the leaderboard
+printLeaderboard();
 
 
 /*
