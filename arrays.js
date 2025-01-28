@@ -16,7 +16,8 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+const inventory = ["Apples", "bread", "milk",];
+console.log(inventory)
 
 
 
