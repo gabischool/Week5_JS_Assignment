@@ -17,6 +17,21 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function theCallBackFunction(name) {
+  console.log(`Welcome, ${name}!`);
+}
+
+function sendMessage(userName, callback) {
+  callback(userName);
+}
+sendMessage("Amina", theCallBackFunction);
+
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
+
 
 
 
@@ -47,6 +62,23 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function temperatureEvaluator(temp) {
+  let status;
+  if (temp > 30) {
+      status = "Hot";
+  } else if (temp >= 15 && temp <= 30) {
+      status = "Warm";
+  } else {
+      status = "Cold";
+  }
+  console.log(`${temp}°C is ${status}.`);
+}
+
+// Example usage:
+checkTemperature(35, temperatureEvaluator); 
+checkTemperature(22, temperatureEvaluator);
+checkTemperature(10, temperatureEvaluator); 
+
 
 
 
@@ -71,5 +103,39 @@ Expected Output:
 - If user's input is "10": "Correct!"
 - If user's input is "15": "Incorrect. The correct answer is 10."
 */
+function checkTemperature(temp, callback) {
+  callback(temp);
+}
 
-// ✍️ Solve it here ✍️
+function temperatureEvaluator(temp) {
+  let status;
+  if (temp > 30) {
+      status = "Hot";
+  } else if (temp >= 15 && temp <= 30) {
+      status = "Warm";
+  } else {
+      status = "Cold";
+  }
+  console.log(`${temp}°C is ${status}.`);
+}
+
+// Example usage:
+checkTemperature(35, temperatureEvaluator); // "35°C is Hot."
+checkTemperature(22, temperatureEvaluator); // "22°C is Warm."
+checkTemperature(10, temperatureEvaluator); // "10°C is Cold."
+
+function evaluateAnswer(question, correctAnswer, callback) {
+  const userAnswer = prompt(question);
+  callback(userAnswer.trim(), correctAnswer);
+}
+
+function answerEvaluator(userAnswer, correctAnswer) {
+  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+      console.log("Correct!");
+  } else {
+      console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+// Example usage:
+evaluateAnswer("What is 5 + 5?", "10", answerEvaluator);
