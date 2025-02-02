@@ -16,9 +16,10 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
-
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.push("Oranges", "Bananas");
+inventory.shift();
+console.log(inventory);
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -39,11 +40,14 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
-
-
-
-
-
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(name) {
+  if (students.includes(name)) {
+    return `${name} is present.`;
+  } else return `${name} is absent.`;
+}
+console.log(isPresent("Ali"));
+console.log(isPresent("Bashir"));
 
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
@@ -66,12 +70,37 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+function updateScore(name , score){
+  let playerexist = false
+  for(let i=0; i<topScorers.length; i++){
+    if(topScorers[i].name.toLowerCase() == name.toLowerCase()){
+      topScorers[i].score+= score
+      playerexist = true
+      break
+    }
+    
+  }
+  if(!playerexist){
+    updateScore.push({name,score})
+  }
 
+}
+function printLeaderboard(){
+  let sortscores = [...updateScore].sort((a , b)=>b.score-a.score)
+sortscores.forEach((value, index)=>{ 
+  console.log(`${index+1}.${value.name} , ${value.score}`)
 
+})
 
+}
 
-
-
+updateScore("Ronaldo" , 2 )
+printLeaderboard()
 
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
