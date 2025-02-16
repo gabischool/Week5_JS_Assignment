@@ -17,7 +17,15 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const funtionFeeder  = (name) => { 
+  console.log(`Welcome, ${name}!`);
+}
 
+function sendMessage(name, callback) {
+  callback(name);
+}
+
+sendMessage("Amina", funtionFeeder);
 
 
 
@@ -47,7 +55,23 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function callback(temperature) {
+  if (temperature > 30) {
+    console.log(`${temperature}°C is Hot.`);
+  } else if (temperature >= 15 && temperature <= 30) {
+    console.log(`${temperature}°C is Warm.`);
+  } else {
+    console.log(`${temperature}°C is Cold.`);
+  }
+} 
 
+function checkTemperature(temperature, callback) {
+  callback(temperature);
+}
+
+checkTemperature(35, callback);
+checkTemperature(22, callback);
+checkTemperature(10, callback);
 
 
 
@@ -73,3 +97,23 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function evaluateAnswer(question, correctAnswer, callback) {
+  const userAnswer = prompt(question);
+  if (userAnswer === correctAnswer) {
+    callback("Correct!");
+  } else {
+    callback(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+function thecallback(answer) {
+  console.log(answer);
+}
+
+evaluateAnswer("What is 5 + 5?", "10", thecallback);
+
+
+
+
+
+
