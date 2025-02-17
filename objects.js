@@ -22,15 +22,32 @@ const gamerProfile = {
   isOnline: false
 };
 
-updateOnlineStatus(gamerProfile, true);
+ //updateOnlineStatus(gamerProfile, true);
 
-Expected Output:
+Expected Output:game
 "ShadowSlayer is now online."
 */
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false
+ };
+console.log(gamerProfile)
 
+const updateOnlineStatus = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: true
+}
+ console.log(updateOnlineStatus)
+
+
+   
+
+ 
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -63,7 +80,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true
+ };
+    console.log(dress)
 
+  const checkAvailability = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: false
+
+  };
+    console.log(checkAvailability)
 
 
 /*
@@ -104,3 +134,12 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+    profile: function() {
+      return `Turbo has been added to ${this.model}` 
+     }
+ };
+  console.log(supercar.profile())
