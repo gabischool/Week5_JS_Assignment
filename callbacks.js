@@ -18,6 +18,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+ function welcomeMessage(user) {
+
+  console.log(`Welcome, ${user}!`);
+  Sendmessage("Amina", SooDhawoow);
+};
+  console.log(welcomeMessage)
+
+
+  
 
 
 
@@ -48,8 +57,22 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+let temperature = 36;
+const IsHot = temperature > 35;
+const isWarm = temperature > 22;
+const isCold = temperature < 10;
+if (isWarm) {
+    console.log("It's warm!");
+} else if (isCold) {
+    console.log("It's cold!");
+} else {
+    console.log("It's cool!");
+}
 
-
+if (isWarm) {
+    console.log("Turn on the A/C!");
+}
+ console.log(temperature)
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +96,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function evaluateAnswer(question, correctAnswer, callback) {
+  
+  return callback(question, correctAnswer);
+}  
+function checkAnswer(userAnswer, correctAnswer) {
+  if (userAnswer == correctAnswer) {
+    console.log("Correct!");
+  } else {
+    console.log("Incorrect. The correct answer is: " + correctAnswer);
+  }
+}
+evaluateAnswer( 8 , 10, checkAnswer);

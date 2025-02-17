@@ -15,9 +15,10 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.push ("oranges","bannanas")
+inventory.shift()
+console.log(inventory)
 
 
 /*
@@ -37,12 +38,21 @@ Example:
 Input: isPresent("Ali")
 Output: "Ali is present."
 */
-
 // ✍️ Write your function here ✍️
-
-
-
-
+const studens = ["Ali", "Fatima", "Hassan", "Layla"];
+console.log(studens)
+console.log(studens.length)
+console.log(studens[studens.length - 1]) 
+function isPresent(studentName, studentArray) {
+  return studentArray.includes(studentName);
+}
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+const nameToCheck = "Ali";
+if (studens.includes("Ali")) {
+  console.log(`${"Ali"} exists in the arrey`);
+} else {
+  console.log(`${"Ali"} does not exis in the arrey`);
+}
 
 
 /*
@@ -66,6 +76,55 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+const players = ["Messi", "Ronaldo", "Naymar"]
+console.log(players)
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+console.log(topScorers) 
+const leaderboard = ["Ronaldo", 6];
+function updateScore(playerName, score) {
+  //let playerIndex = leaderboard.findIndex(player => player.Ronaldo === Ronaldo);
+  let playerexists = false
+  let arrey = topScorers
+  for(let i = 0; i <= arrey.length; i++) {
+    if (arrey[i]["name"] == playerName) {
+       topScorers[i].score += score 
+       playerexists = true
+    } 
+  }
+  }
+   console.log(playerexists)
+   if (playerexists) { 
+    topScorers.push({name: playerName, score: score})
+   }
+
+updateScore("ali", 6)
+console.log(topScorers)
+function printLeaderboard(leaderboard) {
+  leaderboard.sort((a, b, c) => b.score - a.score);
+  console.log("Leaderboard:");
+  leaderboard.forEach((entry) => {
+    console.log(`${entry.name}: ${entry.score}`);
+  })
+}
+const PrintLeaderboard = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 6 },
+  { name: "Neymar", score: 4 }
+];
+console.log(PrintLeaderboard)
+
+
+
+
+ 
+
+
+
+
 
 
 
