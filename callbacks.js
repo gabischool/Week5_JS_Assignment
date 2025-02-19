@@ -18,6 +18,16 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessage(userName, callback) {
+  callback(userName);
+}
+
+function theCallBackFunctions(name) {
+  console.log(`Welcome, ${name}!`);
+}
+
+sendMessage("Mohamed", theCallBackFunctions);
+
 
 
 
@@ -48,7 +58,27 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature(temperature, callback) {
+callback(temperature);
+}
 
+function theCallBackFunction(temp) {
+  let status;
+  if (temp > 30) {
+      status = "Hot";
+  } else if (temp >= 15 && temp <= 30) {
+      status = "Warm";
+  } else {
+      status = "Cold";
+  }
+   
+  console.log(`${temp}°C is ${status}.`);
+}
+
+
+checkTemperature(35, theCallBackFunction);
+checkTemperature(22, theCallBackFunction); 
+checkTemperature(10, theCallBackFunction); 
 
 
 /*
@@ -73,3 +103,19 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function evaluateAnswer(question, correctAnswer, callback) {
+
+  const userAnswer = prompt(question); 
+  callback(userAnswer, correctAnswer);
+}
+
+
+function TheCallBackFunction(userAnswer, correctAnswer) {
+  if (userAnswer === correctAnswer) {
+      console.log("Correct!");
+  } else {
+      console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+evaluateAnswer("What is 10 + 9?", "19", TheCallBackFunction)
