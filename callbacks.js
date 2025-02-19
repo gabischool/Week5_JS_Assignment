@@ -18,8 +18,14 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// function sendMessage(name , callback){
+//   return callback (name)
+// }
 
-
+// const callback =(name)=>{
+// console.log (name)
+// }
+//  sendMessage("welcome amina",callback);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,7 +54,26 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// const checkTemperature = (temperature , weatherCallback)=>{
+//   
+//   if(temperature > 30){
+//     return callback `${temperature}°C is hot`;
+//   }
+//   else if(temperature >= 15 && temperature <=30)
+//   {
+//     return callback `${temperature}°C is Warm`;
+//   }
+//   else
+//   {
+//     return callback `${temperature}°C is Cold`;
+//   }
+// }
+// const weatherCallback=(temperature)=>{
 
+//   console.log(temperature)
+// }
+// const temp = parseInt(prompt("Enter the temperature:"));
+// checkTemperature(temp , weatherCallback);
 
 
 /*
@@ -73,3 +98,21 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+
+// const evaluateAnswer =(question, correctAnswer, callback)=>{
+  
+//   return callback(question, correctAnswer);
+
+// }
+
+// const checkAnswer =(question,correctAnswer)=>{
+//  if (question === correctAnswer){
+//   console.log("correct")
+//  }
+//  else{
+//   console.log("Incorrect")
+//  }
+// }
+// const userAnswer = prompt("What is 5+5?");
+// evaluateAnswer(userAnswer, "10", checkAnswer);
