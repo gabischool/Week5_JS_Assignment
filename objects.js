@@ -29,7 +29,30 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
+// 1. Create an object named `gamerProfile` with the following properties:
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false
+ };
+ // 2. Write a function `updateOnlineStatus` that:
+ // - Takes the `gamerProfile` object and a boolean `status` as arguments.
+ function updateOnlineStatus(gamerProfile, status) {
+ // - Updates the `isOnline` property based on the `status`.
+   gamerProfile.isOnline = status;
+   
+ // - Logs: "[username] is now online." or "[username] is now offline."
+   if (status) {
+     console.log(`${gamerProfile.username} is now online.`);
+   } else {
+       console.log(`${gamerProfile.username} is now offline.`);
+    }
+    
+ };
+ 
+ 
+ updateOnlineStatus(gamerProfile, true);  // "ShadowSlayer is now online."
+ updateOnlineStatus(gamerProfile, false); // "ShadowSlayer is now online."
 
 
 /*
@@ -63,8 +86,26 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
+// 1. Create an object named `dress` with the following properties:
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true
+ };
+ 
+ // 2. Write a function `checkAvailability` that:
+ //  - Takes the `dress` object as an argument.
+ function checkAvailability(dress) {
+   if (dress.inStock) {
+ // - Logs: "[name] is available in size [size]." if the dress is in stock.
+     console.log(`${dress.name} is available in size ${dress.size}.`);
+ } else {
+ // - Logs: "[name] is out of stock." if the dress is not available.
+     console.log(`${dress.name} is out of stock.`);
+   }
+ };
+ 
+ checkAvailability(dress);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +145,29 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+// 1. Create an object named `supercar` with the following properties:
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red"
+   }
+ };
+
+ // 2. Write a function `addFeature` that:
+ // - Takes the `supercar` object and a feature name (string) as arguments.
+  function addFeature(supercar, featureName) {
+   // - Adds the feature to the `features` object and sets it to `true`.
+   supercar.features[featureName] = true;
+     console.log(`${featureName} has been added to ${supercar.model}.`);
+   };
+
+ // - Logs: "[featureName] has been added to [model]."
+ addFeature(supercar, "turbo");
+
+ // 3. Use a **for...in loop** to log all the features of the `supercar` object.
+      console.log("Features:");
+for (let feature in supercar.features) {
+console.log(`- ${feature}: ${supercar.features[feature]}`);
+};
