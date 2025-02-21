@@ -30,6 +30,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+   username: "playerOner",
+   level: 7,
+   isOnline: true,
+
+}
+function updateOnlineStatus(gamerProfile, status) {
+   if (status) {
+      console.log(`${gamerProfile.username} is now online.`);
+    } else {
+      console.log(`${gamerProfile.username} is now offline.`);
+    }
+}
+updateOnlineStatus(gamerProfile, true)
 
 
 /*
@@ -64,7 +78,19 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+const dress = {
+   name: 'Bridal dress',
+   size: 'M',
+   inStock: true
+ };
+ function checkAvailability(dress) {
+   if (dress.inStock) {
+     console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+     console.log(`${dress.name} is out of stock.`);
+   }
+ }
+ checkAvailability(dress);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +130,22 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+let supercar = {
+   model: "Honda CRV",
+   price: 25000,
+   features: {
+     color: 'red'
+   }
+ };
+ 
+ function addFeature(supercar, featureName) {
+   supercar.features[featureName] = true;
+   console.log(`${featureName} has been added to ${supercar.model}.`);
+ }
+ 
+ addFeature(supercar, "leather seats");
+ 
+ 
+ for (let feature in supercar.features) {
+   console.log(`${feature}: ${supercar.features[feature]}`);
+ }
