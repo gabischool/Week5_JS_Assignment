@@ -7,18 +7,18 @@ You manage a grocery store. The array `inventory` shows the items currently in s
 2. Remove the first item from the array.
 3. Print the updated inventory.
 
-Array:
-const inventory = ["Apples", "Bread", "Milk", "Eggs"];
-
+Array:const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 Expected Output:
 - Updated inventory
 */
 
 // ✍️ Solve it here ✍️
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
-
-
+ inventory.push("Oranges","Bananas")
+inventory.shift()
+console.log(inventory);
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -37,12 +37,20 @@ Example:
 Input: isPresent("Ali")
 Output: "Ali is present."
 */
-
 // ✍️ Write your function here ✍️
 
-
-
-
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(name) {
+  for (let i=0; i<=students.length;i++){
+    if(students[i]==name){
+      console.log(`${name} is present.`);
+    }else{
+      console.log(`${name} is absent`);i
+    }
+  }
+}
+ isPresent("Ali")
+ 
 
 
 /*
@@ -67,12 +75,40 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+  function updateScore (playerName,scoreadd){
+    let playerexists=false
+    for (let i=0;i <=topScorers.length; i++){
+         if (topScorers[i] && topScorers[i].name==playerName){
+     topScorers[i].score +=scoreadd
 
+     playerexists=true
+    }
 
+    
+    }
+ 
+if(playerexists==false){
+  topScorers.push({name:playerName,score:scoreadd})
+}
 
+      
+  
+  }
+updateScore("Ronaldo",2)
+  console.log(topScorers)
+  function printLeaderboard() {
+    const sortedLeaderboard = topScorers.sort((a, b) => b.score - a.score);
 
-
-
+    console.log("Leaderboard:");
+    for (let i = 0; i < sortedLeaderboard.length; i++) {
+        console.log(`${sortedLeaderboard[i].name}: ${sortedLeaderboard[i].score}`);
+    }
+  }
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
 

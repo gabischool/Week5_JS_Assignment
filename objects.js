@@ -1,7 +1,7 @@
 /* 
 Task 1: Gamer Profile Manager 🎮 🎮 🎮 🎮
 
-You are creating a system to manage a gamer's profile. 
+You are creating a system to manage a gamer's profile.
 
 Steps:
 1. Create an object named `gamerProfile` with the following properties:
@@ -31,6 +31,21 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false
+ };
+ function updateOnlineStatus(Profile, status){
+   profile.isOnline = status
+   if(status){
+      console.log(`${profile.username} is now online.`)
+   } else{
+      console.log(`${Profile.username} is now offline.`);
+
+ }
+}
+updateOnlineStatus((gamerProfile ,true))
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -64,8 +79,22 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true,
+}
+    function checkAvailability(dress){
+      if (dress.inStock){
+         console.log (`${dress.name} is available in size ${dress.size}.`);
+      }else{
+         console.log(`${dress.name} is out of stock.`);
 
-
+      } 
+   }
+   console.log(checkAvailability(dress))
+   
+   
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
 
@@ -104,3 +133,20 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red"
+   }
+ };
+ function addFeature(car, featureName) {
+   car.features[featureName] = true;
+   console.log(`${featureName} has been added to ${car.model}.`);
+}
+const featureKeys = Object.keys(car.features);
+    for (let i = 0; i < featureKeys.length; i++) {
+        let key = featureKeys[i];
+        console.log(`- ${key}: ${car.features[key]}`);
+    }
+    addFeature(supercar, "turbo");
