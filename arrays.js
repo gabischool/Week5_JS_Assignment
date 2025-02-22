@@ -16,6 +16,10 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.push("Orange", "Bananas")
+inventory.shift()
+console.log(inventory)
 
 
 
@@ -40,6 +44,17 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(name) {
+  if(students.includes(name)) {
+    console.log(`[${name}] is present`)
+ }
+  else {
+    console.log(`[${name}] is absent`)
+ }
+    
+}
+isPresent("Ali")
 
 
 
@@ -50,7 +65,8 @@ Task 3: Top Scorers Leaderboard 🏆⚽
 
 You are creating a leaderboard for a soccer game. The array `topScorers` contains the names of players and their scores.
 
-1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, add the score to their total. If not, add the player to the array with the given score.
+1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, 
+    add the score to their total. If not, add the player to the array with the given score.
 2. Write another function called `printLeaderboard` that sorts the leaderboard in descending order of scores and prints it.
 
 Array:
@@ -67,6 +83,27 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+
+const topScorers = [
+  { name: "Abokor", score: 5 },
+  { name: "Farey", score: 3 },
+  { name: "Eliye", score: 4 }
+];
+
+
+function updateScore(playerName, score) {
+  const found = topScorers.find((player) => playerName == player.name);
+  if(found){
+    found.score += score
+  }
+  else{
+    topScorers.push({name:playerName, score: score})
+  }
+  
+}
+
+updateScore("Farey", 4)
+console.log(topScorers)
 
 
 
