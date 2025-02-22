@@ -14,10 +14,24 @@ Expected Output:
 - Updated inventory
 */
 
-// ✍️ Solve it here ✍️
+// ✍️ Solve it here
+
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+//index               0        1        2         3
+console.log (inventory);
+
+inventory.splice(0)
+
+console.log(inventory);
 
 
+inventory.unshift("oranges");
 
+console.log(inventory);
+
+
+inventory.unshift("bananas")
+console.log(inventory);
 
 
 /*
@@ -40,9 +54,26 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
 
+function isPresent (students,isPresent) 
+{
 
+
+  if (isPresent==true)
+  
+  
+  {console.log ( ` ${students} is present.`)}
+  
+   else if (isPresent=false) {console.log (`${students}is absent.`)}
+  
+  
+  
+  
+  }
+  
+  isPresent("ali",true)
 
 
 /*
@@ -66,6 +97,41 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+
+function updateScore(playerName, scoreToAdd) {
+
+  const player = topScorers.find(player => player.name === playerName);
+  
+  if (player) {
+
+    player.score += scoreToAdd;
+  } else {
+
+    topScorers.push({ name: playerName, score: scoreToAdd });
+  }
+}
+
+
+function printLeaderboard() {
+ 
+  topScorers.sort((a, b) => b.score - a.score);
+  
+  topScorers.forEach(player => {
+    console.log(`${player.name}: ${player.score}`);
+  });
+}
+
+updateScore("ronaldo",10)
+
+printLeaderboard();
+
+
+
 
 
 
