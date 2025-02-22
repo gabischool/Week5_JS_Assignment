@@ -31,6 +31,24 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const gamerProfile = {
+   username: "Osman",
+   level: 6,
+   isOnline: false,
+}
+
+function updateOnlineStatus(gamerProfile, status) {
+   gamerProfile.isOnline = status
+   if (gamerProfile.isOnline == true) {
+      console.log(`${gamerProfile.username} is now online.`)
+   } 
+    else{
+      console.log(`${gamerProfile.username} is now offline.`)
+   }
+}
+
+updateOnlineStatus(gamerProfile, true)
+
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -63,6 +81,27 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+const dress = {
+   name: "Evening gown",
+   size: "L",
+   stock: true,
+   
+}
+
+function checkAvailability(dress, status) {
+   dress.stock = status
+   if(dress.stock == true) {
+      console.log(`${dress.name} is available in size ${dress.size}.`)
+    } 
+     else{
+       console.log(`${dress.name} is out of stock.`)
+    } 
+}
+
+checkAvailability(dress, false)
+
+
 
 
 
@@ -104,3 +143,21 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+
+const supercars = {
+   name:"Volvo s90",
+   price: 6000,
+   features: {
+      color: "white",
+   }
+}
+
+function addfeatures (feature){
+   supercars.features = feature
+   console.log(`${feature} has been added to Volvo s90.`)
+   
+}
+
+addfeatures("Horsepower", true)
+   

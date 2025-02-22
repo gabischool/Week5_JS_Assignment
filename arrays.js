@@ -17,10 +17,9 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 const inventory = ["Apples", "Bread", "Milk", "Eggs"];
-//inventory.push("Orange", "Bananas")
-//inventory.shift()
-//console.log(inventory)
-
+inventory.push("Orange", "Bananas")
+inventory.shift()
+console.log(inventory)
 
 
 
@@ -84,16 +83,27 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
-Array:
+
 const topScorers = [
-  { name: "Messi", score: 5 },
-  { name: "Ronaldo", score: 3 },
-  { name: "Neymar", score: 4 }
+  { name: "Abokor", score: 5 },
+  { name: "Farey", score: 3 },
+  { name: "Eliye", score: 4 }
 ];
 
-function UpdateScore(name, score) {
 
+function updateScore(playerName, score) {
+  const found = topScorers.find((player) => playerName == player.name);
+  if(found){
+    found.score += score
+  }
+  else{
+    topScorers.push({name:playerName, score: score})
+  }
+  
 }
+
+updateScore("Farey", 4)
+console.log(topScorers)
 
 
 

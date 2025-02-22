@@ -18,6 +18,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessage(userName, callback) {
+  return callback (userName)
+}
+
+function greeTing(userName) {
+  console.log("Welcome", userName)
+}
+
+sendMessage("Abokor", greeTing)
+
+/*Arrow function 
+const greeTing = (userName) => console.log("Welcome", userName)
+sendMessage("Abokor", greeTing)*/
+
 
 
 
@@ -47,6 +61,26 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function checkTemperature (temperature, callback) {
+  return callback(temperature)
+}
+
+function checkWeather (temperature){
+  if (temperature >= 30) {
+    console.log(`${temperature}°C is hot`)
+  }
+  else if(temperature >= 15 && temperature <= 30){
+    console.log(`${temperature}°C is warm`)
+  }
+  else{
+    console.log(`${temperature}°C is cold`)
+  }
+   
+}
+
+checkTemperature(2, checkWeather)
+
 
 
 
