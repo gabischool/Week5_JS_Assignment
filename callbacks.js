@@ -18,9 +18,22 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessageHOF(name, callback){
+
+  return callback(name)
+}
+
+function sendMessageCB(name)
+
+{ console.log (`welcome ${name}`)
 
 
 
+
+
+}
+
+sendMessageHOF("abdi",sendMessageCB)
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
 
@@ -48,8 +61,38 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperatureHOF (temperature,callback){
+
+return callback(temperature)
+
+}
+
+function checkTemperatureCB(temperature){
+
+if (temperature > 10 && temperature <22)
+
+console.log (`${temperature} is Warm`)
+ 
+
+else if (temperature < 10)
+  
+  {
+
+console.log (`${temperature} is Cold` )
+
+}
+
+else  {
+console.log (`${temperature} is Hot`)
 
 
+
+}
+}
+
+checkTemperatureHOF (100,checkTemperatureCB)
+
+let temperature = prompt("please enter the temp")
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -71,5 +114,5 @@ Expected Output:
 - If user's input is "10": "Correct!"
 - If user's input is "15": "Incorrect. The correct answer is 10."
 */
-
+  
 // ✍️ Solve it here ✍️
