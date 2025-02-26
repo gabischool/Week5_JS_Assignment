@@ -18,8 +18,18 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessage(userName, callback) {
+  if (typeof callback === "function")
+  {callback(userName); }
+
+  else {console.error("Invalid callback function");}
+}
+
+function theCallBackFunction(name) {
+  console.log(`Welcome, ${name}!` );}
 
 
+sendMessage("Amina", theCallBackFunction);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,8 +58,27 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature(temp, callback) {
+  if (typeof callback === "function")
 
+    {callback(temp);}
 
+    else {console.error("Invalid callback function");}
+}
+
+function theCallBackFunction (temperature) {
+    let status;
+    if (temperature > 30) 
+      {status = "Hot"}
+    else if (temperature >= 15 && temperature <=30)
+    {status= "Warm";}
+
+    else {status= "Cold";}
+
+    console.log(`${temperature}°C is ${status}.`);
+}
+
+checkTemperature(18, theCallBackFunction);
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
