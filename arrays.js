@@ -15,9 +15,19 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+//1. Add "Oranges" and "Bananas" to the inventory.
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
+inventory.push("Oranges", "Bananas")
 
+console.log(inventory);
 
+//2. Remove the first item from the array.
+
+inventory.shift()
+//3. Print the updated inventory.
+
+console.log(inventory);
 
 
 /*
@@ -39,9 +49,19 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+//1. Write a function called `isPresent` that takes a student's name as input.
 
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
+function isPresent(name) {
+ // 2. Use an if statement to check if the name exists in the `students` array.
+if (students.includes(name)) {
+  return `${name} is present.`;}
+else{return `${name}is absent.`;}
 
+}
+
+console.log(isPresent("Ali"))
 
 
 
@@ -50,7 +70,8 @@ Task 3: Top Scorers Leaderboard 🏆⚽
 
 You are creating a leaderboard for a soccer game. The array `topScorers` contains the names of players and their scores.
 
-1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, add the score to their total. If not, add the player to the array with the given score.
+1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, add the score to their total. 
+If not, add the player to the array with the given score.
 2. Write another function called `printLeaderboard` that sorts the leaderboard in descending order of scores and prints it.
 
 Array:
@@ -67,6 +88,33 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+
+function updateScore(playerName, scoreToAdd) {
+  let player = topScorers.find(p => p.name === playerName);
+
+  if (player) {player.score += scoreToAdd; 
+
+  }
+  else {topScorers.push({name:playerName, score: scoreToAdd});}
+
+}
+
+function printLeaderboard() {
+  const sortedLeaderboard = [...topScorers].sort((a,b) => b.score - a.score);
+
+  console.log("leaderboard:"); 
+  sortedLeaderboard.forEach(player => {
+    console.log(`${player.name}: ${player.score}`);
+  });
+}
+
+updateScore("Ronaldo", 2)
+printLeaderboard();
 
 
 
