@@ -30,6 +30,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile={
+   username:"shadowslayer",
+   level : 5,
+   isonline: false;
+};
+function updateOnlineStatus(gamerProfile,status){
+   if(status){
+      console.log("shadowslayer is now online");
+   };
+   else{
+      console.log("shadowslayer is now offline");
+
+   }
+   
+   
+
+   
+
 
 
 /*
@@ -64,6 +82,18 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress={
+   name "Evening Gown",
+   size "M",
+   instock: true;
+};
+function checkAvailability(dress){
+   if (dress.instock){
+      console.log("Evening Gown is available in size M");
+   };
+
+   
+
 
 
 /*
@@ -90,6 +120,7 @@ const supercar = {
   model: "Ferrari SF90",
   price: 500000,
   features: {
+
     color: "Red"
   }
 };
@@ -104,3 +135,19 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+const supercar={
+   model : "ferri sf90",
+   price = 500000,
+   feature:{
+      color: "red"
+   
+};
+function addfeature:(supercar,featurename){
+   supercar.features[featurename]=true;
+   console.log `$(featurename)has been added to $(supercar.model);
+}
+addfeature(supercar,"turbo");
+for (const feature in supercar.features){
+   consolele.log `${feature}:${supercar.features[feature);
+   }
+
