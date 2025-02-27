@@ -16,7 +16,14 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const grocery = ["apple", "bread", "milk", "eggs"];
+grocery.push("oranges";"banana" );
+grocery.shift(apple);
+console.log(grocery);
 
+
+
+}
 
 
 
@@ -39,6 +46,12 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+
+const students =
+ ["Ali", "Fatima", "hassan", "Layla,];
+  function is present("Ali");
+  if(students.includes(ali));
+  consolele.log("Ali" is present); 
 
 
 
@@ -66,6 +79,13 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+const topscores =[
+  {name:"messi", score : 5};
+  {name:"ronaldo", score : 3};
+  {name:"neymar", score  : 4};
+  
+
+
 
 
 
@@ -138,4 +158,66 @@ Final Output:
 - "The treasure remains hidden. Try again!" (if danger is encountered)
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
-*/
+*/const clues =[ "map", "compass", "key", "shovel"];
+const clueMessages=["ppaM","ssapmoc","yek","levohs"];
+const treasureMapSteps =["start at the beach","cross the forest","climb the mountain";
+  "dandger", "treasure",];
+  function findclue("clues", "map");
+  if(clues.includes("maps");
+  console.log("clue map found");
+
+  function decipherMessage("cluemessages");
+ for(let 1-0; 1 <clueMessages.length; 1++);
+ console,log(clueMessages [1].split("").reverse().join("");
+ function followSteps(" treasuremapsteps");
+ for(let 1=0; 1<treasureMapSteps.length; 1++);
+ if(treasureMapSteps[1] ==="danger");
+ console.log("stopped at danger.cannot continue");
+ else if(treasureMapSteps [1] === "treasure");
+ console.log(congralation you found the ultimate treature);
+}g
+  
+ 
+ 
+
+
+ 
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
