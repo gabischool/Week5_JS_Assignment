@@ -16,8 +16,11 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
-
+inventory.push("Oranges", "Banana")
+  inventory.shift()
+  console.log("iventory")
 
 
 /*
@@ -31,7 +34,7 @@ You are a teacher tracking attendance. Use the `students` array to check if spec
    - If not present, return "[name] is absent."
 
 Array:
-const students = ["Ali", "Fatima", "Hassan", "Layla"];
+const students = ["Ali", "Fatima", "Hassan", "Layla"]; 
 
 Example:
 Input: isPresent("Ali")
@@ -39,7 +42,19 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+const students = ["Ali", "Fatima", "Hassan", "Layla"]; 
+function isPresent(name){
+  if(students.includes()){
+    return `${name}ispresent`;}
+    else{
+      return`${name} isabsent`;
+    }
+  }
 
+  
+    console.log(isPresent("Ali"))
+
+  
 
 
 
@@ -66,7 +81,41 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
 
+function updateScore (playerName,scoreadd){
+  let playerexists=false
+  for (let i=0;i <=topScorers.length; i++){
+       if (topScorers[i] && topScorers[i].name==playerName){
+   topScorers[i].score +=scoreadd
+
+   playerexists=true
+  }
+
+  
+  }
+
+if(playerexists==false){
+topScorers.push({name:playerName,score:scoreadd})
+}
+
+    
+
+}
+updateScore("Ronaldo",2)
+console.log(topScorers)
+function printLeaderboard() {
+  const sortedLeaderboard = topScorers.sort((a, b) => b.score - a.score);
+
+  console.log("Leaderboard:");
+  for (let i = 0; i < sortedLeaderboard.length; i++) {
+      console.log(`${sortedLeaderboard[i].name}: ${sortedLeaderboard[i].score}`);
+  }
+}
 
 
 
