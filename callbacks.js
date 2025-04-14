@@ -13,11 +13,14 @@ Input:
 sendMessage("Amina", theCallBackFunction);
 
 Expected Output:
-- "Welcome, Amina!"
+ - "Welcome, Amina!"
 */
 
 // ✍️ Solve it here ✍️
 
+function sendMessage (Amina) {
+  console.log(`Welcome, ${Amina}!`);
+}
 
 
 
@@ -47,9 +50,21 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+f
+function checkTemperature (35) {console.log(`${35}°C is Hot.`);}
 
+}   
 
+function checkTemperature (t) {console.log(`${35}°C is Hot.`);}
+function checkTemperature (22) {console.log(`${22}°C is Warm.`);}
+function checkTemperature (10) {console.log(`${10}°C is Cold.`);} 
 
+function checkTemperature (35, callback) { 
+  return callback(35);}
+  function checkTemperature (22, callback) { 
+    return callback(22);}
+    function checkTemperature (10, callback) { 
+      return callback(10);} 
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +88,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+evaluateAnswer("What is 5 + 5?", "10", TheCallBackFunction);
+function evaluateAnswer (10) {console.log("Correct!");}
+function evaluateAnswer (15) {console.log("Incorrect. The correct answer  is 10.");}
+
+function evaluateAnswer (10, callback) { 
+  return callback(10);}
+  function evaluateAnswer (15, callback) { 
+    return callback(15);} 
+  
+
+/*
+
+
