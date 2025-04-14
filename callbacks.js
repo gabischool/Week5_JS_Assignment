@@ -18,7 +18,13 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+// function sendMessage(name , cb){
+//   return cb(name);
+// }
+// function username(name){
+//   console.log (`Welcome, ${name}!`)
+// }
+// sendMessage("Amina",username)
 
 
 /*
@@ -48,7 +54,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// function checkTemperature(Value, cb){
 
+//   return cb (Value);
+// }
+// function Temperature (Value){
+//   if (Value >30){
+//     console.log(`${Value} is Hot.`)
+//   }
+//   else if (Value <=30 && Value >=15){
+//     console.log(`${Value} is Warm`)
+//   }
+//   else if (Value <15){
+//     console.log(`${Value} is Cold`)
+//   }
+// }
+// checkTemperature(35, Temperature)
+// checkTemperature(22, Temperature)
+// checkTemperature(10, Temperature)
 
 
 /*
@@ -73,3 +96,23 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// function evaluateAnswer(callback){
+  
+//   const number1 = parseFloat(prompt("Enter 1st number"))
+//   const number2 = parseFloat(prompt("Enter 2nd number"))
+  
+//   const sum=number1+number2
+//   const correctAnswer = parseFloat(prompt("Enter correct Answer"))
+
+//   return callback(sum,correctAnswer)
+// }
+
+// function evaluate(sum, correctAnswer){
+//   if (correctAnswer=== sum){
+//     console.log( "Is correct!")
+//   }
+//   else {
+//     console.log("Incorrect.\n",` The correct answer is ${sum}.`)
+//   }
+// }
+// evaluateAnswer(evaluate)
