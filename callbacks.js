@@ -19,6 +19,18 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+function theCallBackFunction(name) {
+  console.log(`Welcome, ${name}!`);
+}
+
+
+function sendMessage(userName, callback) {
+  callback(userName); 
+}
+
+
+sendMessage("Amina", theCallBackFunction); 
+sendMessage("Omar", theCallBackFunction);  
 
 
 /*
@@ -50,6 +62,25 @@ Expected Output:
 
 
 
+function temperatureEvaluator(temp) {
+  if (temp > 30) {
+      console.log(`${temp}°C is Hot.`);
+  } else if (temp >= 15 && temp <= 30) {
+      console.log(`${temp}°C is Warm.`);
+  } else {
+      console.log(`${temp}°C is Cold.`);
+  }
+}
+
+
+function checkTemperature(temp, callback) {
+  callback(temp); 
+}
+
+
+checkTemperature(35, temperatureEvaluator); 
+checkTemperature(22, temperatureEvaluator); 
+checkTemperature(10, temperatureEvaluator); 
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +104,21 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+
+function checkAnswer(userAnswer, correctAnswer) {
+  if (userAnswer === correctAnswer) {
+      console.log("Correct!");
+  } else {
+      console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+
+function evaluateAnswer(question, correctAnswer, callback) {
+  const userAnswer = prompt(question); 
+  callback(userAnswer, correctAnswer);
+}
+
+
+evaluateAnswer("What is 5 + 5?", "10", checkAnswer);
