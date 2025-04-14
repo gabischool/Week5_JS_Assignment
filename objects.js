@@ -29,6 +29,17 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function updateOnlineStatus(profile, status) {
+   // Update the isOnline property
+   profile.isOnline = status;
+ 
+   // Log the appropriate message based on the status
+   if (status) {
+       console.log(`${profile.username} is now online.`);
+   } else {
+       console.log(`${profile.username} is now offline.`);
+   }
+ }
 
 
 
@@ -63,6 +74,24 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true
+ };
+ 
+ // Define the checkAvailability function
+ function checkAvailability(dress) {
+   if (dress.inStock) {
+     console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+     console.log(`${dress.name} is out of stock.`);
+   }
+ }
+ 
+ // Example usage
+ checkAvailability(dress);
+
 
 
 
@@ -104,3 +133,40 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+function checkAvailability(dress) {
+   if (dress.inStock) {
+     console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+     console.log(`${dress.name} is out of stock.`);
+   }
+ }
+
+ checkAvailability(dress);
+ 
+ 
+ function checkAvailability(dress) {
+   if (dress.inStock) {
+     console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+     console.log(`${dress.name} is out of stock.`);
+   }
+ }
+ 
+ const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+     color: "Red",
+   },
+ };
+ 
+ function addFeature(supercar, featureName) {
+   supercar.features[featureName] = true;
+   console.log(`${featureName.charAt(0).toUpperCase() + featureName.slice(1)} has been added to ${supercar.model}.`);
+ }
+ 
+ addFeature(supercar, "turbo");
+ 
+ console.log("Features:");
+ for (const key in supercar.features) 
+   console.log(`- ${key}: ${supercar.features[key]}`);
