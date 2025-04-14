@@ -19,6 +19,18 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+function theCallBackFunction(name) {
+  console.log(`Welcome, ${name}!`);
+}
+
+
+function sendMessage(userName, callback) {
+  callback(userName);
+}
+
+
+sendMessage("Amina", theCallBackFunction);
+
 
 
 /*
@@ -49,6 +61,28 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+// Define the callback function
+function theCallBackFunction(temperature) {
+  let evaluation;
+  if (temperature > 30) {
+      evaluation = "Hot";
+  } else if (temperature >= 15) {
+      evaluation = "Warm";
+  } else {
+      evaluation = "Cold";
+  }
+  console.log(`${temperature}°C is ${evaluation}.`);
+}
+
+
+function checkTemperature(temperature, callback) {
+  callback(temperature);
+}
+
+
+checkTemperature(35, theCallBackFunction); 
+checkTemperature(22, theCallBackFunction); 
+checkTemperature(10, theCallBackFunction); 
 
 
 /*
@@ -72,4 +106,20 @@ Expected Output:
 - If user's input is "15": "Incorrect. The correct answer is 10."
 */
 
-// ✍️ Solve it here ✍️
+function theCallBackFunction(userAnswer, correctAnswer) {
+  if (userAnswer === correctAnswer) {
+      console.log("Correct!");
+  } else {
+      console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+
+function evaluateAnswer(question, correctAnswer, callback) {
+  
+  const userAnswer = prompt(question);
+  callback(userAnswer, correctAnswer);
+}
+
+
+evaluateAnswer("What is 5 + 5?", "10", theCallBackFunction);
