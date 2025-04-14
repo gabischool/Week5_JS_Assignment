@@ -17,10 +17,13 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
-
+function sendMessage(name,callback){
+  return ` ${callback()} ${name}` 
+}
+const callback=()=>{
+  return 'Welcome'
+}
+console.log(sendMessage('Aamina!',callback))
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
 
@@ -49,8 +52,21 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
-
-
+function checkTemperature(temp,callBack){
+return callBack(temp)
+}
+function callBack(temp){
+  if(temp>30){
+    return temp + ' is Hot'
+  }
+  else if(temp===15||temp>30){
+    return temp + ' is warm'
+  }
+  if(temp<15){
+    return temp + ' is cold'
+  }
+}
+console.log(checkTemperature(10,callBack))
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
 
@@ -73,3 +89,18 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function evaluateAnswer(question,answer,TheCallBackFunction){
+ const userAnswer= prompt(question)
+const result= TheCallBackFunction(userAnswer,answer)
+console.log(result)
+}
+function theCallBackFunction(userAnswer,answer){
+  if(userAnswer===answer){
+    return 'correct'
+  }
+  else{
+    return ` Incorrect. the correct answer is  ${answer}`
+  }
+}
+evaluateAnswer("What is 5 + 5?", "10", theCallBackFunction);
+
