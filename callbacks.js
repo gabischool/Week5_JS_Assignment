@@ -17,15 +17,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
+ function sendMessage(name, theCallBackFunction){
+  return ("welcome, Amina!")
+ }
+   function message(name){
+         return "welcome Amina"
+   }
+      console.log(sendMessage(message))
+       
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
 
 
-You are creating a temperature monitoring system. Write a function called `checkTemperature` that:
+ou are creating a temperature monitoring system. Write a function called `checkTemperature` that:
 1. Takes a temperature value and a callback function as arguments.
 2. The callback function should evaluate whether the temperature is "Hot", "Warm", or "Cold" based on the following:
    - "Hot" if the temperature is above 30.
@@ -43,11 +48,23 @@ checkTemperature(35, theCallBackFunction);
 Expected Output:
 - "35°C is Hot."
 - "22°C is Warm."
-- "10°C is Cold."
+- "10°C is Cold."Y
 */
 
 // ✍️ Solve it here ✍️
+function temperatureevaluater(temp){
+  if(temp>30){
+    console.log(`${temp} is hot`)
+  }else if(Temp>=15){
+    console.log(`${temp} is warm`)
+  }else{
+    console.log(`${temp} is cold`)
+  }
 
+} function checkTemperature(theCallBackFunction){
+  callback=(temp)
+}  
+     console.log(temperatureevaluater(35,22,10,checkTemperature));
 
 
 
@@ -73,3 +90,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function answerAvaluator(userAnswer,correctAnswer){
+  if (userAnswer===correctAnswer){
+    console.log( "correct!")
+  }else{
+    (`Incorrect the correct answer is ${correctAnswer}.`)
+  }
+}
+ function evaluateAnswer(question, correctAnswer,callback){
+  const userAnswer = prompt(question);
+  callback(userAnswer, correctAnswer);
+ }
+   evaluateAnswer("What is 5 + 5?", "10", answerEvaluator);
