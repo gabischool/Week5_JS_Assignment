@@ -17,6 +17,14 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.unshift("Oranges", "Banana")
+console.log(`Added to the inventory:${inventory}`)
+inventory.shift()
+
+console.log(`Updated the inventory: ${inventory}`)
+
+
 
 
 
@@ -39,7 +47,39 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+const students = ["Ali", "Fatima", "Hassan", "layla"];// Liistigaan waxaa ku keydsan ardayda magacyadooda.
 
+
+//funcktion-kaan ayaan isticmaala si aan u ogaado in ardayga maqan ama jooga.
+  const isPresent = (name)=>{
+    let Get = false;
+
+    //wuxuu eegaya ardayda dhan ee ku jirta [array-ga kore]
+    for (let student = 0; student < students.length; student++){
+      //Hadii ardayga ku jiro arrayga iyo midka isticmaalaha soo geliyo is yeeshan ,soo daabac [ali is present.]
+      if(students[student] === name){
+      Get == true;
+
+      return `${name} is present.`;
+     
+    }
+    else if (students[student] !== name){
+      Get == true;
+
+      return `${name} is absent.`;
+      } 
+    }
+  
+    
+  }
+    
+
+  console.log(isPresent(`ahmed`));
+
+
+
+
+  
 
 
 
@@ -50,7 +90,8 @@ Task 3: Top Scorers Leaderboard 🏆⚽
 
 You are creating a leaderboard for a soccer game. The array `topScorers` contains the names of players and their scores.
 
-1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, add the score to their total. If not, add the player to the array with the given score.
+1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, 
+add the score to their total. If not, add the player to the array with the given score.
 2. Write another function called `printLeaderboard` that sorts the leaderboard in descending order of scores and prints it.
 
 Array:
@@ -67,11 +108,38 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
 
 
+function updateScore(name, score){
+  find_player = false;
+  for(p = 0; p < topScorers.length; p++){
+    if(topScorers[p].name === name){
+      topScorers[p].score = score + score;
+      find_player = true;
+      break;
+    }
+  }
 
+  if(!find_player){
+    topScorers.push({name: name, score: score});
+  }
 
+}
 
+function printLeaderboard(){
+  topScorers.sort((a, b) => b.score - a.score);
+
+  for (player = 0; player < topScorers.length; player++ ){
+    console.log(`${topScorers[player].name}: ${topScorers[player].score}`);
+  }
+}
+updateScore("Ronaldo", 3);
+printLeaderboard()
 
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
