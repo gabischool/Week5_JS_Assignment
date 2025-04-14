@@ -18,9 +18,14 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
-
+function callBackFunction(name)
+{
+  console.log(`Welcome ${name}`)
+}
+function sendMessage(userName, callback){
+  callback(userName);
+}
+sendMessage("Mohamed", callBackFunction)
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
 
@@ -49,6 +54,27 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+function evaluateTemperature(temp) {
+  if (temp > 30) {
+      console.log(`${temp}°C is Hot.`);
+  } else if (temp >= 15) {
+      console.log(`${temp}°C is Warm.`);
+  } else {
+      console.log(`${temp}°C is Cold.`);
+  }
+}
+
+function checkTemperature(temperature, callback) {
+
+  callback(temperature);
+}
+
+
+checkTemperature(35, evaluateTemperature);
+checkTemperature(22, evaluateTemperature);
+checkTemperature(10, evaluateTemperature); 
+
+
 
 
 /*
@@ -73,3 +99,18 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+
+function TheCallBackFunction(userAnswer, correctAnswer) {
+  if (userAnswer === correctAnswer) {
+      console.log("Correct!");
+  } else {
+      console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+function evaluateAnswer(question, correctAnswer, callback) {
+  const userAnswer = prompt(question); 
+  callback(userAnswer, correctAnswer);
+}
+evaluateAnswer("What is 5 + 5?", "10", TheCallBackFunction);
+10
