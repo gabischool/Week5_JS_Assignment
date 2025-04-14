@@ -30,6 +30,29 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false
+ };
+ const updateOnlineStatus = function(gamertaple,status){
+   gamertaple.isOnline=status
+   if(status){
+      console.log(`${gamertaple.username}is online`)
+
+   }
+   else{
+      console.log(`${gamertaple.username}is ofline`)
+
+   }
+      
+   
+      
+ }
+ updateOnlineStatus(gamerProfile, true);
+
+
+
 
 
 /*
@@ -63,6 +86,25 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const dress ={
+   name: "evening gown",
+   size:"M",
+   inStock: false,
+   checkAvailability:function(){
+      if (dress.inStock){
+         console.log(`${this.name}is available in size ${this.size}`)
+      } else{
+
+         console.log(`${this.name} out of stock`) 
+      }
+      
+           
+      
+   
+   }
+}
+
+dress.checkAvailability()
 
 
 
