@@ -17,7 +17,18 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+// const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
+// //Step One: Add "Oranges" and "Bananas" to the inventory.
+
+// inventory.push("Oranges", "Bananas");
+// console.log(inventory);
+
+// //StepTwo: Remove the first item from the array.
+
+// inventory.shift()
+
+// console.log(inventory);
 
 
 /*
@@ -41,8 +52,24 @@ Output: "Ali is present."
 // ✍️ Write your function here ✍️
 
 
+// const students = ["Ali", "Fatima", "Hassan", "Layla"];
+
+// function isPresent (studentName) {
+  
+//   if(students.includes(studentName))
+//   {
+//      return  `${studentName} is present`;
+//   }
+//   else{
+//       return  `${studentName} is absent`;
+//   }
+
+//   }
 
 
+// console.log(isPresent("Ali"));
+
+// console.log(isPresent("Asho"));
 
 
 /*
@@ -53,7 +80,7 @@ You are creating a leaderboard for a soccer game. The array `topScorers` contain
 1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, add the score to their total. If not, add the player to the array with the given score.
 2. Write another function called `printLeaderboard` that sorts the leaderboard in descending order of scores and prints it.
 
-Array:
+Array: 
 const topScorers = [
   { name: "Messi", score: 5 },
   { name: "Ronaldo", score: 3 },
@@ -68,9 +95,41 @@ Output: Sorted leaderboard with updated scores
 // ✍️ Write your functions here ✍️
 
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+
+];
+
+function updateScore(name, score) {
+
+  let playerExists = false;
+
+for(let i = 0; i < topScorers.length; i++) {
+
+  if(topScorers[i].name === name) {
+    topScorers[i].score += score;
+    playerExists = true 
+
+    break
+  } 
 
 
+}
 
+if(!playerExists){
+    topScorers.push({name, score})
+  }
+
+};
+
+
+console.log(topScorers);
+
+updateScore("Ronaldo",2);
+
+console.log(topScorers);
 
 
 /*
