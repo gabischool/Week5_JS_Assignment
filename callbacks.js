@@ -18,8 +18,13 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function calculate() {
+  kajshdkjas
+}
 
-
+function add() {
+  return
+}
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
