@@ -18,6 +18,16 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function welcomeMessage(name) {
+  console.log("Welcome, " + name + "!");
+}
+
+function sendMessage(userName, callback) {
+  callback(userName);
+}
+
+// Example
+sendMessage("Amina", welcomeMessage); // Output: Welcome, Amina!
 
 
 
@@ -48,6 +58,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function temperatureEvaluator(temp) {
+  if (temp > 30) {
+    console.log(temp + "°C is Hot.");
+  } else if (temp >= 15 && temp <= 30) {
+    console.log(temp + "°C is Warm.");
+  } else {
+    console.log(temp + "°C is Cold.");
+  }
+}
+
+function checkTemperature(value, callback) {
+  callback(value);
+}
+
+// Example 
+checkTemperature(35, temperatureEvaluator); // Output: 35°C is Hot.
+checkTemperature(22, temperatureEvaluator); // Output: 22°C is Warm.
+checkTemperature(10, temperatureEvaluator); // Output: 10°C is Cold.
 
 
 

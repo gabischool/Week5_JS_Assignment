@@ -30,6 +30,23 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
+
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
+  if (status) {
+    console.log(`${profile.username} is now online.`);
+  } else {
+    console.log(`${profile.username} is now offline.`);
+  }
+}
+
+// Example 
+updateOnlineStatus(gamerProfile, true); // Output: ShadowSlayer is now online.
 
 
 /*
@@ -64,6 +81,23 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// Dress Object
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+
+function checkAvailability(dressItem) {
+  if (dressItem.inStock) {
+    console.log(`${dressItem.name} is available in size ${dressItem.size}.`);
+  } else {
+    console.log(`${dressItem.name} is out of stock.`);
+  }
+}
+
+// Example 
+checkAvailability(dress); // Output: Evening Gown is available in size M.
 
 
 /*
@@ -104,3 +138,27 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+function addFeature(car, featureName) {
+  car.features[featureName] = true;
+  console.log(`${featureName} added to ${car.model}.`);
+}
+
+function showFeatures(car) {
+  console.log("Features:");
+  for (let feature in car.features) {
+    console.log(`${feature}: ${car.features[feature]}`);
+  }
+}
+
+// Example
+addFeature(supercar, "turbo");
+showFeatures(supercar);
