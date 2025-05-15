@@ -18,8 +18,17 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
+//Answer 1
+//task 1: simple welcome message
+// function callbackfunction(name) {
+//   console.log(`Welcome, ${name}!`);
+// }
+// function sendMessage(name, callback){
+//   callback(name);
+// }
+// sendMessage("mohamed", callbackfunction); 
+// sendMessage("abdalle", callbackfunction); 
+// sendMessage("barre", callbackfunction); 
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,6 +57,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+//Answer 2
+//task 2: temperature checker
+
+// function temcallback(temperture){
+//   if (temperture > 30){
+//     console.log('${temperture}°C is Hot');
+//   }
+//   else if (temperture >= 15 && temperture <= 30){
+//     console.log('${temperture}°C is Warm');
+//   }
+//   else {
+//     console.log('${temperture}°C is Cold');
+//   }
+// }
+// function checkTemperature(temperture, callback){
+//   callback(temperture);
+// }
+// checkTemperature(20, temcallback);
 
 
 
@@ -73,3 +100,26 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+//Answer 3
+//task 3: quiz evaluator
+// 1. Callback function - evaluates the answer
+// function theCallBackFunction(userAnswer, correctAnswer) {
+//   if (userAnswer === correctAnswer) {
+//     console.log("Correct!");
+//   } else {
+//     console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+//   }
+// }
+
+
+// function evaluateAnswer(question, correctAnswer, userAnswer, callback) {
+//   console.log("Question:", question);
+//   callback(userAnswer, correctAnswer);
+// }
+
+
+// evaluateAnswer("What is 5 + 5?", "10", "10", theCallBackFunction);
+// evaluateAnswer("What is 5 + 5?", "10", "17", theCallBackFunction);
+
+

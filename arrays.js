@@ -16,6 +16,13 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+//Answer 1
+
+//task 1: grocery store restock
+// const inventory = ["apples", "bread", "milk", "Eggs"];
+// inventory.push("Oranges", "Bananas");
+// inventory.shift();
+// console.log("updated inventory: ", inventory);
 
 
 
@@ -40,9 +47,18 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
-
-
-
+//Answer 2
+//task 2: student attendance checker
+// const students = ["Ali", "Fatima", "Hassan", "Layla"];
+// function isPresent(name) {
+//   if (students.includes(name)) {
+//     return `${name} is present.`;
+//   } else {
+//     return `${name} is absent.`;
+//   }
+// }
+// console.log(isPresent("Ali")); 
+// console.log(isPresent("mohamed"))
 
 
 /*
@@ -68,6 +84,33 @@ Output: Sorted leaderboard with updated scores
 // ✍️ Write your functions here ✍️
 
 
+// Answer 3
+// task 3: top scorers leaderboard
+// const topScorers = [
+//   { name: "messi", score : 5 },
+//   { name: "ronaldo", score : 3 },
+//   { name: "neymar", score : 4 }
+// ]
+// function updateScore(playerName, scoreToAdd) {
+//   const player = topScorers.find(player => player.name === playerName);
+//   if (player) {
+//     player.score += scoreToAdd;
+//   } else {
+//     topScorers.push({ name: playerName, score: scoreToAdd });
+//   }
+// }
+// function printLeaderboard() {
+//   topScorers.sort((a, b) => b.score - a.score);
+//   console.log("Leaderboard:");
+//   topScorers.forEach(player => {
+//     console.log(`${player.name}: ${player.score}`);
+//   });
+// }
+// printLeaderboard();
+
+// updateScore("ronaldo", 2);
+// updateScore("mohamed", 5);
+// printLeaderboard();
 
 
 
@@ -139,3 +182,46 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+
+//Answer 4
+// //task 4: the ultimate treasure hunt
+// function findClue(clues, clueName) {
+//   if (clues.includes(clueName)) {
+//     return `Clue ${clueName} found!`;
+//   } else {
+//     return `Clue ${clueName} is missing, search again!`;
+//   }
+// }
+// function decipherMessage(clueMessages) {
+//   const decoded = [];
+//   for (let i = 0; i < clueMessages.length; i++) {
+//     decoded.push(clueMessages[i].split("").reverse().join(""));
+//   }
+//   return decoded;
+// }
+// function followSteps(treasureMapSteps) {
+//   for (let i = 0; i < treasureMapSteps.length; i++) {
+//     console.log(`Step ${i + 1}: ${treasureMapSteps[i]}`);
+//     if (treasureMapSteps[i] === "Danger") {
+//       console.log("Stopped at danger. Cannot continue.");
+//       return;
+//     }
+//   }
+// }
+// function treasureHunt(clues, clueMessages, treasureMapSteps) {
+//   const allCluesFound = clues.every(clue => findClue(clues, clue).includes("found"));
+//   const decodedMessages = decipherMessage(clueMessages);
+//   followSteps(treasureMapSteps);
+
+//   if (allCluesFound && !treasureMapSteps.includes("Danger") && treasureMapSteps[treasureMapSteps.length - 1] === "Treasure") {
+//     console.log("Congratulations! You found the ultimate treasure!");
+//   } else {
+//     console.log("The treasure remains hidden. Try again!");
+//   }
+// }
+// const clues = ["Map", "Compass", "Key", "Shovel"];
+// const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"];
+// const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+
+// treasureHunt(clues, clueMessages, treasureMapSteps);
+
