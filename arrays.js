@@ -16,7 +16,11 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+// inventory.push("Oranges","Bananas")
+// inventory.shift()
 
+// console.log(inventory)
 
 
 
@@ -42,7 +46,15 @@ Output: "Ali is present."
 
 
 
+// function isPresent (name) {
+//   const students = ["Ali", "Fatima", "Hassan", "Layla" ,"hani"];
+//   if(students.includes(name)){
+//     return`${name} is present`;
+//   }
+//   else { return `${name} is absent`}
+// }
 
+// console.log(isPresent("Ali"))
 
 
 /*
@@ -67,6 +79,43 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+
+// const topScorers = [
+//   { name: "Messi", score: 5 },
+//   { name: "Ronaldo", score: 3 },
+//   { name: "Neymar", score: 4 }
+// ];
+
+// function updateScore(name, score) {
+//   // Find player by name
+//   const player = topScorers.find(p => p.name === name);
+
+//   if (player) {
+//     // If found, add the new score to existing
+//     player.score += score;
+//   } else {
+//     // If not found, add new player
+//     topScorers.push({ name: name, score: score });
+//   }
+// }
+
+// function printLeaderboard() {
+//   // Sort descending by score
+//   topScorers.sort((a, b) => b.score - a.score);
+
+//   // Print leaderboard
+//   topScorers.forEach(player => {
+//     console.log(`${player.name}: ${player.score}`);
+//   });
+// }
+
+
+
+
+
+// updateScore("Ronaldo", 2);  // Ronaldo's score becomes 5
+// updateScore("Mbappe", 3);   // New player added
+// printLeaderboard();
 
 
 
