@@ -29,8 +29,21 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const gamerProfile = {
+  username: "jamal abdi",
+  level: 7,
+  isOnline: false,
+};
 
-
+const updateOnlineStatus = function (gamerProfile, status) {
+  if (status === true) {
+    console.log(`${gamerProfile.username} is now online`);
+  } else {
+    console.log(`${gamerProfile.username} is now offline`);
+  }
+};
+updateOnlineStatus(gamerProfile, true);
+updateOnlineStatus(gamerProfile, false);
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -64,8 +77,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+  name: "khamiis",
+  size: "xl",
+  inStock: true,
+};
 
-
+const checkAvailability = function (dress) {
+  if (dress.inStock === true) {
+    console.log(`${dress.name} in availabe in size ${dress.size}`);
+  } else {
+    console.log(`${dress.name} is out of stock`);
+  }
+};
+checkAvailability(dress);
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
 
@@ -77,6 +102,7 @@ Steps:
    - `price` (number): The base price.
    - `features` (object): An object with a `color` property.
 
+  
 2. Write a function `addFeature` that:
    - Takes the `supercar` object and a feature name (string) as arguments.
    - Adds the feature to the `features` object and sets it to `true`.
@@ -104,3 +130,21 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red",
+  },
+};
+
+const addFeature = function (supercar, featureName) {
+  supercar.features[featureName] = true;
+  console.log(`${featureName} has been added to ${supercar.model}`);
+  for (let key in supercar.features) {
+    console.log(`${key}: ${supercar.features[key]}`);
+  }
+};
+
+addFeature(supercar, "turbo");

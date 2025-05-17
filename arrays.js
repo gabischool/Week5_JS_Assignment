@@ -16,10 +16,16 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+// 1. Add "Oranges" and "Bananas" to the inventory.
+inventory.push("Bananas");
+inventory.push("Oranges");
+// console.log(inventory);
 
-
-
-
+// 2. Remove the first item from the array.
+inventory.shift();
+// 3. Print the updated inventory.
+console.log(inventory);
 /*
 Task 2: Student Attendance Checker 📚✅
 
@@ -39,12 +45,15 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
-
-
-
-
-
-
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+const isPresent = function (name) {
+  if (students.includes(name)) {
+    console.log(`${name} is present`);
+  } else {
+    console.log(`${name} is absent`);
+  }
+};
+isPresent("jamal");
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
 
@@ -67,75 +76,159 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 },
+];
+// console.log(topScorers);
+const updateScore = function (pname, score) {
+  for (let i = 0; i < topScorers.length; i++) {
+    if (topScorers[i].name === pname) {
+      topScorers[i].score += score;
+      // playerFound = true;
+      return;
+    }
+  }
+  topScorers.push({ name: pname, score: score });
+};
+updateScore("jamal", 7);
+updateScore("Ahmed", 10);
+updateScore("Ronaldo", 4);
+updateScore("Neymar", 7);
 
+console.log(topScorers);
 
+// printing player oders
 
+const printLeaderboard = function () {
+  const leaderboard = topScorers.sort((a, b) => b.score - a.score);
+  console.log(leaderboard);
+};
 
+printLeaderboard();
 
+// STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
 
-/*
-STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
+// You are a legendary adventurer searching for the ultimate treasure!
+// The treasure is hidden in a remote island, and you have a map with a series
+// of clues stored in arrays. Your task is to navigate through the clues,
+// decode them, and uncover the treasure.
 
-You are a legendary adventurer searching for the ultimate treasure! 
-The treasure is hidden in a remote island, and you have a map with a series 
-of clues stored in arrays. Your task is to navigate through the clues, 
-decode them, and uncover the treasure.
+// Here’s the plan:
 
-Here’s the plan:
-
-1. **Clue Checkpoint**:
-   - Write a function called `findClue` that takes a `clues` array and a clue name (string).
-   - Check if the clue exists in the array:
-     - If it exists, return "Clue [name] found!"
-     - If it doesn’t exist, return "Clue [name] is missing, search again!"
-
-2. **Decipher Hidden Messages**:
-   - Each clue is a scrambled message stored in the `clueMessages` array.
-   - Write a function called `decipherMessage` that uses a loop to reverse each message in the `clueMessages` array and return the updated array.
-
-3. **Follow the Treasure Map**:
-   - You are given an array of steps to reach the treasure: `treasureMapSteps`.
-   - Write a function called `followSteps` that:
-     - Uses a loop to log each step in the journey.
-     - Tracks your current position in the array.
-     - Stops if the step says "Danger" and logs: "Stopped at danger. Cannot continue."
-
-4. **Final Treasure Hunt**:
-   - Use all the above functions to:
-     - Check if all the clues exist.
-     - Decipher the messages.
-     - Follow the map.
-     - If all clues are found, all steps are completed without danger, and the final step is "Treasure," log:
-       "Congratulations! You found the ultimate treasure!"
-     - Otherwise, log: "The treasure remains hidden. Try again!"
-
----
-
-### Input Data
+// 1. **Clue Checkpoint**:
+//    - Write a function called `findClue` that takes a `clues` array and a clue name (string).
+//    - Check if the clue exists in the array:
+//      - If it exists, return "Clue [name] found!"
+//      - If it doesn’t exist, return "Clue [name] is missing, search again!"
 
 const clues = ["Map", "Compass", "Key", "Shovel"];
-const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"]; // scrambled clues
-const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
-
----
-
-### Example Usage
+const findClue = function (clues, clueName) {
+  if (clues.includes(clueName)) {
+    console.log(`clue ${clueName} found!`);
+  } else {
+    console.log(`clue ${clueName} is missing, search again! `);
+  }
+};
 
 findClue(clues, "Map");
-// Output: "Clue Map found!"
+findClue(clues, "Compass");
+findClue(clues, "Key");
+findClue(clues, "jamal");
 
-decipherMessage(clueMessages);
-// Output: ["Map", "Compass", "Key", "Shovel"]
+// 2. **Decipher Hidden Messages**:
+//    - Each clue is a scrambled message stored in the `clueMessages` array.
+//    - Write a function called `decipherMessage` that uses a loop to reverse each message in the `clueMessages` array and return the updated array.
 
-followSteps(treasureMapSteps);
-// Output:
-// "Step 1: Start at the beach"
-// "Step 2: Cross the forest"
-// "Step 3: Climb the mountain"
-// "Stopped at danger. Cannot continue."
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"]; // scrambled clues
+const decipherMessage = function () {
+  let correctMessage = [];
+  for (let i = 0; i < clueMessages.length; i++) {
+    const reversedArry = clueMessages[i].split("").reverse().join(" ");
+    correctMessage.push(reversedArry);
+  }
+  console.log(correctMessage);
+};
+decipherMessage();
+// 3. **Follow the Treasure Map**:
+//    - You are given an array of steps to reach the treasure: `treasureMapSteps`.
+//    - Write a function called `followSteps` that:
+//      - Uses a loop to log each step in the journey.
+//      - Tracks your current position in the array.
+//      - Stops if the step says "Danger" and logs: "Stopped at danger. Cannot continue."
+const treasureMapSteps = [
+  "Start at the beach",
+  "Cross the forest",
+  "Climb the mountain",
+  "Danger",
+  "Treasure",
+];
+const followSteps = function () {
+  for (let i = 0; i < treasureMapSteps.length; i++) {
+    if (treasureMapSteps[i] === "Danger") {
+      console.log(`Stopped at danger. Cannot continue.`);
+      break;
+    }
+    console.log(`step ${i + 1}: ${treasureMapSteps[i]}`);
+  }
+};
+followSteps();
 
-Final Output:
-- "The treasure remains hidden. Try again!" (if danger is encountered)
-- "Congratulations! You found the ultimate treasure!" (if all conditions are met)
+// 4. **Final Treasure Hunt**:
+//    - Use all the above functions to:
+//      - Check if all the clues exist.
+//      - Decipher the messages.
+//      - Follow the map.
+//      - If all clues are found, all steps are completed without danger, and the final step is "Treasure," log:
+//        "Congratulations! You found the ultimate treasure!"
+//      - Otherwise, log: "The treasure remains hidden. Try again!"
 
-*/
+// ---
+
+// ### Input Data
+
+// const clues = ["Map", "Compass", "Key", "Shovel"];
+// const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"]; // scrambled clues
+// const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+
+const ultimateTreasureHunt = function () {
+  console.log("🧭 Starting the Ultimate Treasure Hunt!");
+  let allCluesFound = true;
+  for (let i = 0; i < clues.length; i++) {
+    const found = findClue(clues, clues[i]);
+    if (!found) {
+      allCluesFound = false;
+    }
+  }
+  const messages = decipherMessage();
+  const safeJourney = followSteps();
+  const lastStep = treasureMapSteps[treasureMapSteps.length - 1];
+  if (allCluesFound && safeJourney && lastStep === "Treasure") {
+    console.log("Congratulations! You found the ultimate treasure!");
+  } else {
+    console.log("The treasure remains hidden. Try again!");
+  }
+};
+
+ultimateTreasureHunt();
+// ---
+
+// ### Example Usage
+
+// findClue(clues, "Map");
+// // Output: "Clue Map found!"
+
+// decipherMessage(clueMessages);
+// // Output: ["Map", "Compass", "Key", "Shovel"]
+
+// followSteps(treasureMapSteps);
+// // Output:
+// // "Step 1: Start at the beach"
+// // "Step 2: Cross the forest"
+// // "Step 3: Climb the mountain"
+// // "Stopped at danger. Cannot continue."
+
+// Final Output:
+// - "The treasure remains hidden. Try again!" (if danger is encountered)
+// - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
