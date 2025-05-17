@@ -17,6 +17,12 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function displaywelcome(name) {
+    console.log(`welcome, {name}!`);
+}
+function sendmassage(username, callback){
+callback(username);
+}
 
 
 
@@ -48,7 +54,18 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+function checkTemperature(){
+  if (temp > 30) {
+    console.log(`${temp}°C is Hot.`);
+  } else if (teo >= 15 && temp <=30){
+    console.log(`$${temp}°C is warm.`)
+  } else {
+    console.log(`$${temp}°C is cold.`);
+  }
+}
+function checkTemperature(callback,Temperature){
+Callback(Temperature)
+}
 
 
 /*
@@ -73,3 +90,14 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function evaluateAnswer(useranswer, usercorrect){
+  if (useranswe == usercorrect) {
+    console.log("correctanswer!");
+  }else {(`incorrect.the correct answer is ${correctanswer}.`);
+  }
+}
+function evaluateAnswer(question, correctAnswer, callback){
+  const userAnswer = prompt(question);
+  callback(userAnswer,correctAnswer);
+}
