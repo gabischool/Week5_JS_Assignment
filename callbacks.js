@@ -18,6 +18,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// function calback (name , cb) {
+//   return cb(name)
+// }
+
+// function sendMessage (name) {
+// return (`welcome, ${name}! `)
+// }
+
+// console.log(calback("amina", sendMessage ))
 
 
 
@@ -48,7 +57,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+ 
+// function callback (x,cb) {
+//   return cb(x);
+// }
 
+// function checkTemperature(tem ) {
+//   if (tem > 30) {
+//      return `${tem}°C is hot`;
+//   } else if (tem >= 15 && tem <= 30) {
+//     return `${tem}°C is warm`;
+//   } else {
+//     return `${tem}°C is cold`;
+//   }
+// }
+
+// console.log(callback(35 , checkTemperature))
+// console.log(callback(22 , checkTemperature))
+// console.log(callback(10 , checkTemperature))
 
 
 /*
@@ -73,3 +99,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function call ( back, cb) {
+  return cb(back)
+}
+
+
+
+function sax (number) {
+  if (number == 10) {
+    return `is correct`
+  } else {
+     return ` is InCorrect!, correct is 10`
+  } 
+}
+
+console.log(call(15 , sax))
+console.log(call(10 , sax))
