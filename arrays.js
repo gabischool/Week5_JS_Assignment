@@ -16,9 +16,11 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
-
+const inventory = ["Apples", "Bread", "Milk", "Eggs"]
+inventory.push("Oranges"); 
+inventory.push("Bananas"); 
+inventory.shift(); 
+console.log(inventory); 
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -40,10 +42,18 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+const isPresent = () => {
+  const students = ["Ali", "Fatima", "Hassan", "Layla"]; 
+  const inputName = prompt("Enter The Stdents Name"); 
 
+  if(students.includes(inputName)){ 
+    console.log(`${inputName} is present`); 
+  } else{ 
+    console.log(`${inputName} is absent`);
+  }
+}
 
-
-
+isPresent(); 
 
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
@@ -67,12 +77,37 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
 
+const updateScore = (name, score) => {
 
+let playerFound = false; 
 
+for(let i = 0; i < topScorers.length; i++){ 
+  if(topScorers[i].name === name){ 
+    topScorers[i].score += score 
+    playerFound = true; 
+    break; 
+  }
+}
 
+if(!playerFound){ 
+  topScorers.push({name, score});
+}
+}
 
+updateScore("Khaid", 2); 
 
+const printLeaderboard = () => { 
+  topScorers.sort(function(a,b) {return b.score - a.score} ); 
+  console.log(topScorers) 
+}
+
+printLeaderboard(); 
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
 
@@ -139,3 +174,54 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+
+const clues = ["Map", "Compass", "Key", "Shovel"];
+
+const findClue = (clues, clueName) => {
+  if(clues.includes(clueName)){
+    return `Clue ${clueName} found!`;
+  }else {
+    return `Clue ${clueName} is missing, search again!`;
+  }
+}
+
+findClue(clues, "Map");
+
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"];
+const reverseMessage = [];
+
+const decipherMessage = (clueMessages) => {
+  for(let i = 0; i < clueMessages.length; i++){
+    reverseMessage.push(clueMessages[i].split('').reverse().join(''));
+  }
+  return reverseMessage;
+}
+
+decipherMessage(clueMessages);
+
+const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Stopped at danger. Cannot continue." ]
+
+const followSteps = (treasureMapSteps) => {
+  for(let i = 0; i < treasureMapSteps.length; i++){
+    const currentPosition = treasureMapSteps[i];
+    if(currentPosition === "Danger"){
+      console.log("Stopped at danger. Cannot continue.");
+      break;
+    }else {
+      console.log(`Step ${i+1}: ${currentPosition}`);
+    }
+  }
+}
+
+followSteps(treasureMapSteps);
+
+let allCluesFound = true;
+
+for(let i = 0; i < clues.length; i++){
+  if(findClue(clues, clues[i]).includes("Missing")) {
+    allCluesFound = false;
+    break;
+  }
+}
+
+console.log("All clues found: ", allCluesFound);

@@ -18,8 +18,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+sendMessage = (name, theCallBackFunction) => {
+  theCallBackFunction(name)
+}
 
+theCallBackFunction = (name) => {
+  console.log(`"Welcome, ${name}!"`);
+}
 
+sendMessage("Amina", theCallBackFunction);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,8 +55,21 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+checkTemperature = (temperature) => {
+  theCallBackFunction(temperature);
+}
 
+theCallBackFunction = (temperature) => {
+  if(temperature > 30){
+    console.log(`${temperature} is Hot`)
+  }else if(temperature > 15 && temperature < 30){
+    console.log(`${temperature} is Warm`)
+  } else {
+    console.log(`${temperature} is Cold`)
+  }
+}
 
+checkTemperature(15, theCallBackFunction);
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +93,17 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+evaluateAnswer = () => {
+  TheCallBackFunction()
+}
+
+TheCallBackFunction = (answer, correctAnswer) => {
+  if(answer === correctAnswer){
+    console.log("10: Correct");
+  } else {
+    console.log(`15: Incorrect, The correct answer is 10`)
+  }
+}
+
+evaluateAnswer("What is 5 + 5?", "10", TheCallBackFunction)
