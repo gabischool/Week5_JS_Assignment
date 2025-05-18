@@ -15,7 +15,13 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+/*
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.push("Oranges", "Bananas");
+inventory.shift(0);
+console.log(inventory);
 
+*/
 
 
 
@@ -39,16 +45,26 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+/*
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(name) {
+  if (students.includes(name)) {
+    return `${name} is present.`;
+  } else {
+    return `${name} is absent.`;
+  }
+}
+console.log(isPresent("Ali")); 
 
-
-
+*/
 
 
 
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
 
-You are creating a leaderboard for a soccer game. The array `topScorers` contains the names of players and their scores.
+You are creating a leaderboard for a soccer game. The array `topScorers` contains the 
+names of players and their scores.
 
 1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, add the score to their total. If not, add the player to the array with the given score.
 2. Write another function called `printLeaderboard` that sorts the leaderboard in descending order of scores and prints it.
@@ -66,10 +82,32 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+/*
+function updateScore(playerName, scoreToAdd) {
+  const player = topScorers.find(player => player.name === playerName);
+  if (player) {
+    player.score += scoreToAdd;
+  } else {
+    topScorers.push({ name: playerName, score: scoreToAdd });
+  }
+}
+function printLeaderboard() {
+  topScorers.sort((a, b) => b.score - a.score);
+  console.log("Leaderboard:");
+  topScorers.forEach(player => {
+    console.log(`${player.name}: ${player.score}`);
+  });
+}
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
+updateScore("Ronaldo", 2);
+printLeaderboard();
 
 
-
-
+*/
 
 
 
@@ -139,3 +177,45 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+// ✍️ Solve it here ✍️
+
+/*
+function findClue(clues, clueName) {
+  if (clues.includes(clueName)) {
+    return `Clue ${clueName} found!`;
+  } else {
+    return `Clue ${clueName} is missing, search again!`;
+  }
+}
+function decipherMessage(clueMessages) {
+  for (let i = 0; i < clueMessages.length; i++) {
+    clueMessages[i] = clueMessages[i].split("").reverse().join("");
+  }
+  return clueMessages;
+}
+function followSteps(treasureMapSteps) {
+  for (let i = 0; i < treasureMapSteps.length; i++) {
+    console.log(`Step ${i + 1}: ${treasureMapSteps[i]}`);
+    if (treasureMapSteps[i] === "Danger") {
+      console.log("Stopped at danger. Cannot continue.");
+      return;
+    }
+  }
+}
+const clues = ["Map", "Compass", "Key", "Shovel"];
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"]; 
+const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+console.log(findClue(clues, "Map"));
+console.log(decipherMessage(clueMessages));
+followSteps(treasureMapSteps);
+
+if (clues.includes("Map") && clues.includes("Compass") && clues.includes("Key") && clues.includes("Shovel") && !treasureMapSteps.includes("Danger") && treasureMapSteps[treasureMapSteps.length - 1] === "Treasure") {
+  console.log("Congratulations! You found the ultimate treasure!");
+}else{
+  console.log("The treasure remains hidden. Try again!");
+}
+*/
+
+
+
+
