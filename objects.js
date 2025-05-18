@@ -31,6 +31,26 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+}
+
+  function updateOnlineStatus( gamerProfile,boolean){
+   gamerProfile.isOnline=boolean
+   if(boolean){
+      console.log(`${gamerProfile.username} is now online`);
+   }
+   else{
+      console.log(`${gamerProfile.username} is now offline`);
+   }
+
+  }
+
+updateOnlineStatus(gamerProfile,true)
+
+
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -64,6 +84,22 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+function checkAvailability(dress1){
+   dress.inStock
+   if(dress.inStock){
+      console.log(`${dress.name} is available in zise ${dress.size}.`)
+   }
+   else{
+      console.log(`${dress.nmae}is out of stocke`)
+   }
+
+}
+checkAvailability(dress)
 
 
 /*
@@ -104,3 +140,25 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+function addFeature(car,name){
+   car.features[name]=true
+   console.log(`${name} has been added to${car.model}.`)
+   console.log("features")
+   for (let key in car.features) {
+
+   
+    console.log(`- ${key}: ${car.features[key]}`);
+}
+}
+addFeature(supercar, "turbo");
+
