@@ -18,6 +18,16 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const sendMessage = (name, callBackFunction) => {
+  callBackFunction(name)
+}
+
+const theCallBackFunction = (name) => {
+  console.log(`Welcome, ${name}!`)
+}
+
+sendMessage("Amina", theCallBackFunction)
+
 
 
 
@@ -48,7 +58,21 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const checkTemperature = (temperature, callBackFunction) => {
+  callBackFunction(temperature)
+}
 
+const CallBackFunction = (temperature) => {
+  if (temperature > 30) {
+    console.log(`${temperature}°C is Hot.`)
+  } else if (temperature > 15 && temperature <= 30) {
+    console.log(`${temperature}°C is Warm.`)
+  } else {
+    console.log(`${temperature}°C is Cold.`)
+  }
+}
+
+checkTemperature(35, CallBackFunction)
 
 
 /*
@@ -73,3 +97,17 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+const evaluateAnswer = (question, correctAnswer, callBackFunction) => {
+  callBackFunction(question, correctAnswer)
+}
+
+const callBackFunction = (question, correctAnswer) => {
+  if (question === correctAnswer) {
+    console.log("Correct!")
+  } else {
+    console.log(`Incorrect. The correct answer is ${correctAnswer}.`)
+  }
+}
+
+evaluateAnswer("What is 5 + 5?", "10", callBackFunction)
