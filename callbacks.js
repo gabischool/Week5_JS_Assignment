@@ -18,8 +18,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const sendMessage = (name, cb) => {
+  return cb(name)
+}
 
 
+const theCallBackFunction = (name) => {
+  console.log(`welcome, ${name}!`);
+}
+sendMessage("Amina", theCallBackFunction)
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,8 +55,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const checkTemperature = (temperatureValue, callback) => {
+  return callback(temperatureValue);
+}
+  
 
 
+const evaluateWeather = (temperatureValue) => {
+  
+  if (temperatureValue >= 30) {
+    console.log(`${temperatureValue}°C is is Hot.`);
+  } else if (temperatureValue >= 15) {
+    console.log(`${temperatureValue}°C is is Warm.`);
+  } else {
+    console.log(`${temperatureValue}°C is is Cold.`);
+  }
+}
+
+checkTemperature(10, evaluateWeather)
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +96,19 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+const evaluateAnswer = (question, userAnswer ,correctAnswer, cb) => {
+  return cb(userAnswer, correctAnswer)
+}
+
+const compareAnswer = (userAnswer, correctAnswer) => { 
+
+  if (userAnswer == correctAnswer) {
+    console.log("Correct!")
+  } else {
+    console.log(`Incorrect. The correct answer is  ${correctAnswer}.`)
+  }
+}
+evaluateAnswer("What is 5 + 5?", "10", "10", compareAnswer);
+
+
