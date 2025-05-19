@@ -16,6 +16,13 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+
+let last = inventory.push("Oranges", "Bananas");
+
+let fast = inventory.shift();
+
+console.log(inventory);
 
 
 
@@ -40,6 +47,19 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+const students = ["Ali Cabdi", "Fatima", "Hassan", "Layla"];
+
+function isPresent(name) {
+  for (let i = 0; i < students.length; i++) {
+    if (students[i] === name) {
+      return name + " is present.";
+    }
+  }
+  return name + " is absent.";
+}
+
+console.log(isPresent("Ali Cabdi"));    
+console.log(isPresent("Omar"));   
 
 
 
