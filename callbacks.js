@@ -18,7 +18,18 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessage (user_name, cb) {
+  return cb(user_name)
 
+
+}
+
+function messeage (user_name) {
+ console.log(`welcome, ${user_name}!`)
+}
+
+
+sendMessage ("aamina", messeage);
 
 
 /*
@@ -48,6 +59,30 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature (temperature_value, callback) {
+  return callback (temperature_value)
+
+}
+
+function evaluatetemp (temperature) {
+
+  
+
+  if (temperature > 30 ) {
+console.log (`${temperature}°C is Hot.`)
+
+
+} else if (temperature > 15 && temperature <= 30) {
+  console.log(`${temperature}°C is Warm.`)
+} else {
+console.log(`${temperature}°C is Cold.`)
+}
+
+}
+
+checkTemperature(35, evaluatetemp)
+checkTemperature(22, evaluatetemp)
+checkTemperature(10, evaluatetemp)
 
 
 
@@ -72,4 +107,20 @@ Expected Output:
 - If user's input is "15": "Incorrect. The correct answer is 10."
 */
 
-// ✍️ Solve it here ✍️
+// ✍️ Solve it here ✍️ 
+
+/*
+
+function evaluateAnswer (correctAnswer, question, cb) {
+return cb (correctAnswer, question)
+
+}
+
+
+function  evaluate (correctAnswer, question) {
+
+
+
+}
+
+*/
