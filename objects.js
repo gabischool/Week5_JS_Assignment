@@ -28,7 +28,21 @@ Expected Output:
 "ShadowSlayer is now online."
 */
 
-// ✍️ Solve it here ✍️
+
+
+// const gamerProfile = {
+//   username: "ShadowSlayer",
+//   level: 5,
+//   isOnline: true,
+// };
+
+
+// const updateOnlineStatus =(username, isonline,) =>{
+//    console.log(`${gamerProfile.username} is now ${gamerProfile.isOnline}`)
+
+// }
+// updateOnlineStatus(gamerProfile, true);
+
 
 
 
@@ -63,6 +77,18 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+// const dress = {
+//   name: "Evening Gown",
+//   size: "M",
+//   inStock: true
+// };
+
+// const checkAvailability =(name, size)=>{
+// console.log(`${dress.name} is available in size ${dress.size} `)
+// }
+
+// checkAvailability(dress);
 
 
 
@@ -104,3 +130,25 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+// const supercar = {
+//   model: "Ferrari SF90",
+//   price: 500000,
+//   features: {
+//     color: "Red"
+//   }
+// };
+
+// supercar.features = "turbo";
+
+// supercar.features.turbo = true;
+
+// const addFeature =(feature, model) =>{
+// console.log(`${supercar.features} has been added to ${supercar.model}`)
+// }
+
+
+// addFeature(supercar, "turbo");
+
+
+
