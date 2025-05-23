@@ -20,6 +20,20 @@ Expected Output:
 
 
 
+// const sendMessage = (name, cb,) => {
+//   return cb(name,)
+// }
+
+// const sayhi = (name) =>{
+//   console.log(`welcome ${name}`)
+// }
+
+// sendMessage("amina", sayhi)
+
+
+
+
+
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,7 +62,25 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// const checkTemperature = (temperature, cb,) =>{
+//   return cb(temperature,)
 
+
+// }
+// const theCallBackFunction =(temperature,) =>{
+//   if(temperature >= 35){
+//     console.log(`${temperature} is hot`)
+//   }else if(temperature >=15 &&  temperature <30){
+//     console.log(`${temperature} is warm`)
+
+//   }else if(temperature < 15) {
+//     console.log(`${temperature} is cold`)
+//   }else{
+//     console.log(`${temperature}`)
+//   }
+// }
+
+// checkTemperature(35, theCallBackFunction);
 
 
 /*
@@ -73,3 +105,24 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+// const evaluateAnswer = (question, correctAnswer, cb,) =>{
+//   return cb (question, correctAnswer, )
+
+
+// }
+
+// const CallBackFunction = (question,correctAnswer,) =>{
+//   if(correctAnswer === 10){
+//     console.log("correct")
+//   }else{
+//     console.log(`incorrect th correct answer is 10.  `)
+//   }
+//   // console.log(`${question} ${correctAnswer}`)
+// }
+
+// evaluateAnswer("What is 5 + 5?", "15", CallBackFunction);
+
+
+
+

@@ -16,6 +16,14 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+
+// inventory.push("oranges")
+// inventory.push("bananas")
+
+// inventory.shift()
+// console.log(inventory)
+
 
 
 
@@ -40,7 +48,15 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+// const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
+
+// const isPresent = (name) => students.includes(name) ? `${name} is present.` : `${name} is absent.`;
+
+// console.log(isPresent("Ali")); 
+// console.log(isPresent("Sara")); 
+
+  
 
 
 
@@ -67,8 +83,25 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+// const topScorers = [
+//   { name: "Messi", score: 5 },
+//   { name: "Ronaldo", score: 3 },
+//   { name: "Neymar", score: 4 }
+// ];
 
+// const updateScore =(name, score) => {
+//   console.log(`${name} ${score} `)
 
+// }
+// updateScore ("messi", 5)
+// updateScore ("ronaldo", 3)
+
+// const printLeaderboard = (name, score,) =>{
+//   console.log(`${name} ${score}`)
+// }
+// printLeaderboard ("messi" 5,)
+// printLeaderboard ("ronaldo", 4)
+// printLeaderboard ("neymar", 3,)
 
 
 
