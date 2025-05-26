@@ -29,7 +29,25 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// 1. Create gamer profile
+const gamerProfile = {
+  username: "axmedYare",
+  level: 5,
+  isOnline: false
+};
 
+// 2. Function to update online status
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
+  if (status) {
+    console.log(`${profile.username} is now online.`);
+  } else {
+    console.log(`${profile.username} is now offline.`);
+  }
+}
+
+// Example usage
+updateOnlineStatus(gamerProfile, true); 
 
 
 /*
@@ -63,7 +81,24 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// 1. Create dress object
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
 
+// 2. Function to check availability
+function checkAvailability(dressItem) {
+  if (dressItem.inStock) {
+    console.log(`${dressItem.name} is available in size ${dressItem.size}.`);
+  } else {
+    console.log(`${dressItem.name} is out of stock.`);
+  }
+}
+
+// Example usage
+checkAvailability(dress); // Output: Evening Gown is available in size M.
 
 
 /*
@@ -104,3 +139,26 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+// 1. Create supercar object
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+// 2. Function to add feature
+function addFeature(car, featureName) {
+  car.features[featureName] = true;
+  console.log(`${featureName.charAt(0).toUpperCase() + featureName.slice(1)} has been added to ${car.model}.`);
+}
+
+// Example usage
+addFeature(supercar, "turbo"); // Output: Turbo has been added to Ferrari SF90.
+
+// 3. For...in loop to log features
+console.log("Features:");
+for (let key in supercar.features) {
+  console.log(-`${key}: ${supercar.features[key]}`);
+}

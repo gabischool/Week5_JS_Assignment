@@ -17,7 +17,18 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Callback function
+function theCallBackFunction(name) {
+  console.log(Welcome, `${name}!`);
+}
 
+// Main function
+function sendMessage(userName, callback) {
+  callback(userName);
+}
+
+// (Test)
+sendMessage("Axmed", theCallBackFunction);
 
 
 
@@ -47,7 +58,26 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Callback function
+function temperatureEvaluator(temp) {
+  if (temp > 30) {
+    console.log(`${temp}°C is Hot.`);
+  } else if (temp >= 15) {
+    console.log(`${temp}°C is Warm.`);
+  } else {
+    console.log(`${temp}°C is Cold.`);
+  }
+}
 
+// Main function
+function checkTemperature(tempValue, callback) {
+  callback(tempValue);
+}
+
+// (Tests)
+checkTemperature(35, temperatureEvaluator); // "35°C is Hot."
+checkTemperature(22, temperatureEvaluator); // "22°C is Warm."
+checkTemperature(10, temperatureEvaluator); // "10°C is Cold."
 
 
 
