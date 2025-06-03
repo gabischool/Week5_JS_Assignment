@@ -16,9 +16,16 @@ Expected Output:
 - "Welcome, Amina!"
 */
 
-// ✍️ Solve it here ✍️
+// ✍️ Solve   it here ✍️
+function sendMessage(name, callback) {
+  callback(name);
+}
+function welcomeCallback(name) {
+  console.log(`Welcome, ${name}!`);
+}
 
-
+// Example usage:
+sendMessage("Amina", welcomeCallback);
 
 
 /*
@@ -47,8 +54,24 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function checkTemperature(temp, callback) {
+  callback(temp);
+} 
 
+function temperatureCallback(temp) {
+  if (temp > 30) {
+    console.log(`${temp}°C is Hot.`);
+  } else if (temp >= 15) {
+    console.log(`${temp}°C is Warm.`);
+  } else {
+    console.log(`${temp}°C is Cold.`);
+  }
+}
 
+// Example usage:
+checkTemperature(35, temperatureCallback);
+checkTemperature(22, temperatureCallback);
+checkTemperature(10, temperatureCallback);
 
 
 /*

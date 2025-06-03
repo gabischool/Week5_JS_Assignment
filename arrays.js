@@ -17,9 +17,16 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
+// 1. Add "Oranges" and "Bananas" to the inventory.
+inventory.push("Oranges", "Bananas");
 
+// 2. Remove the first item from the array.
+inventory.shift();
 
+// 3. Print the updated inventory.
+console.log("Updated inventory:", inventory);
 /*
 Task 2: Student Attendance Checker 📚✅
 
@@ -39,11 +46,18 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
-
-
-
-
-
+function isPresent(name) {
+  const students = ["Ali", "Fatima", "Hassan", "Layla"];
+  
+  if (students.includes(name)) {
+    return `${name} is present.`;
+  } else {
+    return `${name} is absent.`;
+  }
+}   
+// Example usage:
+console.log(isPresent("Ali"));    // Output: "Ali is present."
+console.log(isPresent("John"));   // Output: "John is absent."
 
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
@@ -68,10 +82,34 @@ Output: Sorted leaderboard with updated scores
 // ✍️ Write your functions here ✍️
 
 
+function updateScore(playerName, scoreToAdd) {
+  const topScorers = [
+    { name: "Messi", score: 5 },
+    { name: "Ronaldo", score: 3 },
+    { name: "Neymar", score: 4 }
+  ];
 
+  const player = topScorers.find(p => p.name === playerName);
+  if (player) {
+    player.score += scoreToAdd;
+  } else {
+    topScorers.push({ name: playerName, score: scoreToAdd });
+  }
 
+  topScorers.sort((a, b) => b.score - a.score);
+  printLeaderboard(topScorers);
+}
 
-
+function printLeaderboard(leaderboard) {
+  console.log("Leaderboard:");
+  leaderboard.forEach(player => {
+    console.log(`${player.name}: ${player.score}`);
+  });
+} 
+// Example usage:
+updateScore("Ronaldo", 2);  
+updateScore("Mbappe", 6);  // Adding a new player
+updateScore("Messi", 1);
 
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
