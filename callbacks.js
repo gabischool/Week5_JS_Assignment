@@ -1,6 +1,7 @@
 /*
 Task 1: Simple Welcome Message 💌💌💌💌
 
+
 You are building a simple messaging system. Write a function called `sendMessage` that:
 1. Takes a user name and a callback function as arguments.
 2. The callback function should log a welcome message.
@@ -18,8 +19,17 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+/*console.log("Welcome")
 
+function sendMessage(userName, callBack) {
+  callBack(userName);
+}
 
+function theCallBackFunction(name) {
+  console.log(`Welcome, ${name}!`);
+}
+
+sendMessage("Amina", theCallBackFunction);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,6 +58,25 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+/*function checkTemperature(temperature, callBack) {
+  let condition;
+  if (temperature > 30) {
+    condition = "Hot";
+  } else if (temperature >= 15 && temperature <= 30) {
+    condition = "Warm";
+  } else {
+    condition = "Cold";
+  }
+   callBack(temperature, condition);
+}
+
+function logTemperatureStatus(temp, status) {
+  console.log(`${temp}°C is ${status}.`);
+}
+
+checkTemperature(35, logTemperatureStatus);
+checkTemperature(22, logTemperatureStatus);
+checkTemperature(10, logTemperatureStatus);
 
 
 
@@ -71,5 +100,21 @@ Expected Output:
 - If user's input is "10": "Correct!"
 - If user's input is "15": "Incorrect. The correct answer is 10."
 */
-
 // ✍️ Solve it here ✍️
+
+/*function evaluateAnswer(question, correctAnswer, callback) {
+  const userAnswer = prompt(question);
+  callback(correctAnswer, userAnswer);
+  }
+
+  function TheCallBackFunction(correctAnswer, userAnswer) {
+    if (userAnswer === correctAnswer) {
+      console.log("Correct!");
+    } else {
+      console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+    }
+  }
+
+  evaluateAnswer("What is 5 + 5?", "10", TheCallBackFunction);
+  evaluateAnswer("What is 5 + 5?", "10", TheCallBackFunction);
+  */

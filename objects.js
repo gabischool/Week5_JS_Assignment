@@ -30,9 +30,37 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+/*const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false
+};
+
+function updateOnlineStatus(gamerProfile, status) {
+   gamerProfile.isOnline = status;
+   if (gamerProfile.isOnline) {
+      console.log(`${gamerProfile.username} is now online.`);
+   } else {
+      console.log(`${gamerProfile.username} is now offline.`);
+   }
+}
+
+const player1 = {
+  username: "EpicGamer",
+  isOnline: false
+};
+
+updateOnlineStatus(gamerProfile, true);
+
+console.log(gamerProfile.username);
+console.log(gamerProfile["level"]);
+
+updateOnlineStatus(player1, true);
+updateOnlineStatus(player1, false);
 
 
-/*
+
+
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
 
 You are helping a fashion designer manage their dress inventory.
@@ -64,7 +92,27 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+/*const dress = {
+   name: "Summer Dress",
+   size: "Medium",
+   InStock: true
+};
 
+function checkAvailability(dress) {
+   if (dress.inStock) {
+      console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+      console.log(`${dress.name} is out of stock.`);
+   }
+}
+
+const dress1 = { name: 'Evening Gown', size: 'M', inStock: true };
+const dress2 = { name: 'Cocktail Dress', size: 'S', inStock: false };
+const dress3 = { name: 'Summer Dress', size: 'L' };
+
+checkAvailability(dress1);
+checkAvailability(dress2);
+checkAvailability(dress3);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +152,27 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+/*const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+      color: "Red"
+   }
+};
+
+function addFeature(car, featureName) {
+   car.features[featureName] = true;
+   console.log(`${featureName} has been added to ${car.model}.`);
+   }
+
+   addFeature(supercar, "turbo");
+   addFeature(supercar, "spoiler");
+
+   console.log("\nSupercar Features:");
+for (const feature in supercar.features) {
+   if (supercar.features.hasOwnProperty(feature)) {
+      console.log(`- ${feature}: ${supercar.features[feature]}`);
+   }
+}
+*/
