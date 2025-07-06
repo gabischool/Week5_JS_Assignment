@@ -31,6 +31,27 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
+
+
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
+  
+  if (status) {
+    console.log(`${profile.username} is now online.`);
+  } else {
+    console.log(`${profile.username} is now offline.`);
+  }
+}
+
+// ✅ Example usage:
+updateOnlineStatus(gamerProfile, true); 
+updateOnlineStatus(gamerProfile, false); 
+
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -64,6 +85,23 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+
+
+function checkAvailability(dress) {
+  if (dress.inStock) {
+    console.log(`${dress.name} is available in size ${dress.size}.`);
+  } else {
+    console.log(`${dress.name} is out of stock.`);
+  }
+}
+
+
+checkAvailability(dress); 
 
 
 /*
@@ -104,3 +142,30 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+function addFeature(car, featureName) {
+  car.features[featureName] = true;
+  console.log(`${capitalize(featureName)} has been added to ${car.model}.`);
+  
+  
+  console.log("Features:");
+  for (let key in car.features) {
+    console.log(`- ${key}: ${car.features[key]}`);
+  }
+}
+
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+addFeature(supercar, "turbo");
