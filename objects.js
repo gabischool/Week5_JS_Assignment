@@ -30,7 +30,23 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamer = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
 
+function setOnlineStatus(player, status) {
+  player.isOnline = status; 
+  
+  if (status === true) {
+    console.log(player.username + " is now online.");
+  } else {
+    console.log(player.username + " is now offline.");
+  }
+}
+setOnlineStatus(gamer, true);  
+setOnlineStatus(gamer, false); 
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -63,6 +79,24 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+let dress = {
+  name: "mucaawis",  
+  size: "M",             
+  inStock: true          
+};
+
+function checkDressAvailability(dressItem) {
+  if (dressItem.inStock) {
+    console.log(dressItem.name + " is available in size " + dressItem.size + ".");
+  } else {
+    console.log(dressItem.name + " is out of stock.");
+  }
+}
+
+checkDressAvailability(dress); 
+dress.inStock = false;
+checkDressAvailability(dress);
 
 
 

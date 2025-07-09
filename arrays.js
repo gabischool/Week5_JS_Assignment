@@ -15,9 +15,13 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+ const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
+inventory.push("Oranges", "Bananas");
 
+inventory.shift();
 
+console.log("Updated inventory:", inventory);
 
 
 /*
@@ -39,7 +43,15 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
-
+function isPresent(name) {
+  if (name === "Ali") return "Ali is present!";
+  if (name === "Fatima") return "Fatima is present!";
+  if (name === "Hassan") return "Hassan is present!";
+  if (name === "Layla") return "Layla is present!";
+  return name + " is absent!";
+}
+console.log(isPresent("Ali"));   
+console.log(isPresent("Ahmed"));  
 
 
 
@@ -67,7 +79,14 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+let messi = 5;
 
+let ronaldo = 3;
+//Add goals manually
+ronaldo += 5;  
+
+console.log("Messi: " + messi);
+console.log("Ronaldo: " + ronaldo);
 
 
 
