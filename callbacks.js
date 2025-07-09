@@ -1,75 +1,93 @@
-/*
-Task 1: Simple Welcome Message 💌💌💌💌
-
-You are building a simple messaging system. Write a function called `sendMessage` that:
-1. Takes a user name and a callback function as arguments.
-2. The callback function should log a welcome message.
-
-Steps:
-- Create the callback function to log: "Welcome, [name]!"
-
-Example:
-Input:
-sendMessage("Amina", theCallBackFunction);
-
-Expected Output:
-- "Welcome, Amina!"
-*/
-
-// ✍️ Solve it here ✍️
+// ✅ Task 1: Welcome 📨
+function sendMessage(name, cb) {
+  cb(name);
+}
+function welcomeCallback(username) {
+  console.log(`\n📨 Welcome, ${username}!\n`);
+}
 
 
+// ✅ Task 2: Temperature Checker 🌡️
+function checkTemperature(temp, cb) {
+  cb(temp);
+}
+function temperatureCallback(temp) {
+  const status = temp > 30 ? "Hot" : temp >= 15 ? "Warm" : "Cold";
+  console.log(`${temp}°C is ${status}.`);
+}
 
 
-/*
-Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
+// ✅ Task 3: Quiz with Randomization & Timer ⏱️
+const readline = require('readline');
 
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-You are creating a temperature monitoring system. Write a function called `checkTemperature` that:
-1. Takes a temperature value and a callback function as arguments.
-2. The callback function should evaluate whether the temperature is "Hot", "Warm", or "Cold" based on the following:
-   - "Hot" if the temperature is above 30.
-   - "Warm" if the temperature is between 15°C and 30.
-   - "Cold" if the temperature is below 15.
+// Shuffle function (Fisher‑Yates)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
-Steps:
-- Create the callback function to evaluate and log:
-  - "[temperature]°C is Hot/Warm/Cold."
+function askQuestion(qObj, cb, timeLimit, done) {
+  let timeout = setTimeout(() => {
+    console.log(`\n⏰ Time's up! The correct answer is: ${qObj.answer}`);
+    done(false);
+  }, timeLimit * 1000);
 
-Example:
-Input:
-checkTemperature(35, theCallBackFunction);
+  rl.question(`${qObj.question} `, answer => {
+    clearTimeout(timeout);
+    cb(answer.trim(), qObj.answer, done);
+  });
+}
 
-Expected Output:
-- "35°C is Hot."
-- "22°C is Warm."
-- "10°C is Cold."
-*/
+function answerCallback(userAnswer, correctAnswer, done) {
+  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    console.log("✔️ Correct!");
+    done(true);
+  } else {
+    console.log(`❌ Incorrect. The correct answer is ${correctAnswer}.`);
+    done(false);
+  }
+}
 
-// ✍️ Solve it here ✍️
+// Quiz questions
+const quiz = [
+  { question: "What is 5 + 5?", answer: "10" },
+  { question: "Capital of France?", answer: "Paris" },
+  { question: "Color from blue + yellow?", answer: "Green" }
+];
 
+shuffle(quiz);
 
+let score = 0, idx = 0;
+const TIME_LIMIT = 10; // seconds
 
+function next() {
+  if (idx >= quiz.length) {
+    console.log(`\n🎉 Quiz complete! Your score: ${score}/${quiz.length}`);
+    rl.close();
+    return;
+  }
 
-/*
-STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
+  askQuestion(quiz[idx], answerCallback, TIME_LIMIT, isCorrect => {
+    if (isCorrect) score++;
+    idx++;
+    next();
+  });
+}
 
-You are building a quiz system. Write a function called `evaluateAnswer` that:
-1. Takes a question, a correct answer, and a callback function as arguments.
-2. The callback function should compare the user's answer with the correct answer and log whether the answer is correct or not.
+// ✅ Run all tasks
+sendMessage("Amina", welcomeCallback);
 
-Steps:
-- Create the callback function to evaluate:
-  - If the user's answer matches the correct answer, log: "Correct!"
-  - Otherwise, log: "Incorrect. The correct answer is [correctAnswer]."
+[35, 22, 10].forEach(temp => {
+  checkTemperature(temp, temperatureCallback);
+});
 
-Example:
-Input:
-evaluateAnswer("What is 5 + 5?", "10", TheCallBackFunction);
-
-Expected Output:
-- If user's input is "10": "Correct!"
-- If user's input is "15": "Incorrect. The correct answer is 10."
-*/
-
-// ✍️ Solve it here ✍️
+console.log("\n📝 Starting quiz (10s per question):");
+next();
+// The quiz will run in the console, and you can answer the questions interactively.
