@@ -29,7 +29,24 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
 
+function updateOnlineStatus (gamerProfile, status){
+  gamerProfile.isOnline = status;
+  if (status === true) {console.log (`${gamerProfile.username} is now online`)
+
+  }
+  else {console.log(`${gamerProfile.username} is offline`)
+
+  }
+}
+
+updateOnlineStatus(gamerProfile, true);
+updateOnlineStatus(gamerProfile, false);
 
 
 /*
@@ -64,7 +81,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
 
+
+function checkAvailability(dress) {
+  if (dress.inStock) 
+   {
+    console.log(`${dress.name} is available in size ${dress.size}.`);
+  } 
+  else {
+    console.log(`${dress.name} is out of stock.`);
+  }
+}
+
+checkAvailability(dress); 
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -74,7 +108,7 @@ You are building a configurator for a supercar.
 Steps:
 1. Create an object named `supercar` with the following properties:
    - `model` (string): The car's model.
-   - `price` (number): The base price.
+   - `price` (number): The base price.+
    - `features` (object): An object with a `color` property.
 
 2. Write a function `addFeature` that:
@@ -82,7 +116,10 @@ Steps:
    - Adds the feature to the `features` object and sets it to `true`.
    - Logs: "[featureName] has been added to [model]."
 
+  
+
 3. Use a **for...in loop** to log all the features of the `supercar` object.
+
 
 Example:
 Input:
@@ -104,3 +141,39 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+function addFeatures(supercar, newFeatures) {
+  for (let i = 0; i < newFeatures.length; i++) {
+    const feature = newFeatures[i];
+   
+    if (!supercar.features[feature]) {
+      supercar.features[feature] = true;
+      console.log(`${feature} has been added to ${supercar.model}`);
+    } else {
+      console.log(`${feature} is already present in ${supercar.model}`);
+    }
+  }
+}
+
+const newFeatures = ["Turbo", "GPS", "Bluetooth"];
+addFeatures(supercar, newFeatures);
+
+
+
+
