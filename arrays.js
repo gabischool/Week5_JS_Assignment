@@ -16,9 +16,16 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// const inventory = ["Apple", "Bread", "Milk", "Eggs"];
 
+// inventory.push("Oranges");
+// inventory.push("Bananas");
 
+// inventory.shift(0);
 
+// const myinventory = inventory.with(4, "Oranges");
+
+// console.log(inventory);
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -40,10 +47,17 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+// const student = ["Ali", "Fatima", "Hassan", "Layla"];
 
+// function isPresent(name) {
+//   if (student.includes(name)) {
+//     return `${name} is present.`;
+//   } else {
+//     return `${name} is absent`;
+//   }
+// }
 
-
-
+// console.log(isPresent("Hassan"));
 
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
@@ -67,11 +81,28 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+// const topScorers = [
+//   { name: "Messi", score: 5 }, 
+//   { name: "Ronaldo", score: 3 },
+//   { name: "Neymar", score: 4 },
+// ];
 
+// function updateScore(playerName, scoreToAd) {
+//   const player = topScorers.find((p) => p.name === playerName);
+//   if (player) {
+//     return (player.score += scoreToAd);
+//   } else {
+//     topScorers.push({ name: playerName, score: scoreToAd });
+//   }
+// }
 
-
-
-
+// function printLeaderboard() {
+//   const Sorted = [topScorers].sort((a, b) => b.score - a.score);
+// }
+// console.log("🏆 Leaderboard:");
+// Sorted.forEach((player, index) => {
+//   console.log(`${index + 1}. ${player.name} - ${player.score}`)
+// })
 
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
