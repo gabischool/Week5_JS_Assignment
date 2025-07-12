@@ -18,15 +18,21 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// function sendMessage(userName, callback) {
+//   callback(userName);
+// }
 
+// function aniga(name) {
+//   console.log(`welcome, ${name}!`);
+// }
 
+// sendMessage("Amina", aniga);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
 
 
-You are creating a temperature monitoring system. Write a function called `checkTemperature` that:
-1. Takes a temperature value and a callback function as arguments.
+Y1. Takes a temperature value and a callback function as arguments.
 2. The callback function should evaluate whether the temperature is "Hot", "Warm", or "Cold" based on the following:
    - "Hot" if the temperature is above 30.
    - "Warm" if the temperature is between 15°C and 30.
@@ -43,13 +49,26 @@ checkTemperature(35, theCallBackFunction);
 Expected Output:
 - "35°C is Hot."
 - "22°C is Warm."
-- "10°C is Cold."
+- "10°C is Cold."ou are creating a temperature monitoring system. Write a function called `checkTemperature` that:
+
 */
 
 // ✍️ Solve it here ✍️
 
+// function evaluateTemperature(temperature) {
+//   if (temperature > 30) {
+//     console.log(`${temperature}°C is hot`);
+//   } else if (temperature >= 15 && temperature <= 30) {
+//     console.log(`${temperature}°C is warm`);
+//   } else {
+//     console.log(`${temperature}°C is cold.`);
+//   }
+// }
 
-
+// function checkTemperature(temperature, callback) {
+//   callback(temperature);
+// }
+// checkTemperature(10, evaluateTemperature);
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
