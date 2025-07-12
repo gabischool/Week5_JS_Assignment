@@ -80,11 +80,12 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-const dress={
+const dress = {
    name: "Evening Gown",
-   size: "M"
-   instock:true
-};
+   size: "M",
+   inStock: true
+ };
+
 function checkAvailabilit(dress){
    if (dress.instock){
       console.log(`${dress.name} is avilabe in size ${dress.size}.`);

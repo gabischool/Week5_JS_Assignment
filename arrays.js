@@ -186,3 +186,7 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+
+function findClue(clues, Map){
+
+}
