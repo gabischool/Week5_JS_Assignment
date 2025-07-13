@@ -18,7 +18,13 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function welcomeCallback(name) {
+  console.log(`Welcome, ${name}!`);
+}
 
+function sendMessage(userName, callback) {
+  callback(userName);
+}
 
 
 /*
@@ -49,7 +55,19 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+function evaluateTemperature(temperature) {
+  if (temperature > 30) {
+    console.log(`${temperature}°C is Hot.`);
+  } else if (temperature >= 15 && temperature <= 30) {
+    console.log(`${temperature}°C is Warm.`);
+  } else {
+    console.log(`${temperature}°C is Cold.`);
+  }
+}
 
+function checkTemperature(temperatureValue, callback) {
+  callback(temperatureValue);
+}
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +91,27 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function evaluateQuizAnswer(question, correctAnswer, userAnswer) {
+  if (userAnswer === correctAnswer) {
+    console.log("Correct!");
+  } else {
+    console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+function evaluateAnswer(question, correctAnswer, callback) {
+  // The problem description implies a user's answer needs to be passed to the callback.
+  // Since there's no mechanism for user input in this context,
+  // I'll demonstrate with two hardcoded user answers as per the example.
+  // In a real scenario, 'userAnswer' would come from actual user interaction.
+
+  // Example for correct answer
+  const userAnswerCorrect = "10";
+  console.log(`Question: ${question}`); // Added to clarify output
+  callback(question, correctAnswer, userAnswerCorrect);
+
+  // Example for incorrect answer
+  const userAnswerIncorrect = "15";
+  console.log(`Question: ${question}`); // Added to clarify output
+  callback(question, correctAnswer, userAnswerIncorrect);
+}

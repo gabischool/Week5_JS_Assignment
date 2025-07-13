@@ -30,7 +30,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
 
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
+  if (profile.isOnline) {
+    console.log(`${profile.username} is now online.`);
+  } else {
+    console.log(`${profile.username} is now offline.`);
+  }
+}
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -64,7 +77,19 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
 
+function checkAvailability(dressObject) {
+  if (dressObject.inStock) {
+    console.log(`${dressObject.name} is available in size ${dressObject.size}.`);
+  } else {
+    console.log(`${dressObject.name} is out of stock.`);
+  }
+}
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +129,22 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+function addFeature(car, featureName) {
+  car.features[featureName] = true;
+  console.log(`${featureName} has been added to ${car.model}.`);
+}
+
+// After calling addFeature (e.g., addFeature(supercar, "turbo");)
+// Use this loop to print features:
+// console.log("Features:");
+// for (const feature in supercar.features) {
+//   console.log(`- ${feature}: ${supercar.features[feature]}`);
+// }
