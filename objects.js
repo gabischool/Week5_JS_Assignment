@@ -30,6 +30,28 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false 
+};
+
+ function updateOnlineStatus(profile,status) {
+   profile.isOnline = status;
+   if (status) {
+      console.log(`${profile.username} is now ononline.`);
+   } else {
+      console.log(`${profile.username} is now offline`);
+   }
+ }
+
+updateOnlineStatus(gamerProfile,true);
+updateOnlineStatus(gamerProfile, false);
+
+
+
+
+
 
 
 /*
@@ -63,6 +85,21 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+const dress = {
+   name: "Evening Gown",
+   size: "M",
+   inStock: true
+};
+
+// checkAvailability(dress) {
+if (dress.inStock) {
+   console.log(`${dress.name} is available in size ${dress.size}.`);
+}else {
+   console.log(`${dress.name} is out of stock`)
+}
+
+
 
 
 
@@ -104,3 +141,20 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+
+//The superCar object
+
+const supercar = {
+   model: "Ferrari SF90",
+   price: 500000,
+   features: {
+      color: "Red"
+   }
+};
+
+// addFeature Function
+function addFeature(Car, featureName) {
+   Car.feature[featureName] = true;
+   console.log(`featureName.charAt(0) .toUpperCase() + featureName.slice(1} has been added to $ {car.model})`);
+}
