@@ -30,6 +30,26 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
+
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
+
+  if (status) {
+    console.log(`${profile.username} is now online.`);
+  } else {
+    console.log(`${profile.username} is now offline.`);
+  }
+}
+
+// Tusaale:
+updateOnlineStatus(gamerProfile, true);   // Output: ShadowSlayer is now online.
+updateOnlineStatus(gamerProfile, false);  // Output: ShadowSlayer is now offline.
+
 
 
 /*
@@ -64,6 +84,22 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+
+function checkAvailability(item) {
+  if (item.inStock) {
+    console.log(`${item.name} is available in size ${item.size}.`);
+  } else {
+    console.log(`${item.name} is out of stock.`);
+  }
+}
+
+// Tusaale:
+checkAvailability(dress);  // Output: Evening Gown is available in size M.
 
 
 /*
@@ -104,3 +140,33 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+// 1. Create the supercar object
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+function addFeature(car, featureName) {
+  car.features[featureName] = true;
+  console.log(`${featureName.charAt(0).toUpperCase() + featureName.slice(1)} has been added to ${car.model}.`);
+
+  console.log("Features:");
+  for (let key in car.features) {
+    console.log(`- ${key}: ${car.features[key]}`);
+  }
+}
+
+// Tusaale:
+addFeature(supercar, "turbo");
+/*
+Output:
+Turbo has been added to Ferrari SF90.
+Features:
+- color: Red
+- turbo: true
+*/
+
