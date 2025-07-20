@@ -17,9 +17,18 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Step 1: Define the callback function
+function welcomeMessage(name) {
+  console.log(`Welcome, ${name}!`);
+}
 
+// // Step 2: Define the main function that takes name and callback
+function sendMessage(userName, callback) {
+  callback(userName);
+}
 
-
+// Step 3: Call the main function with name and callback
+sendMessage("Amina", welcomeMessage);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -47,9 +56,26 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Step 1: Define the callback function
+function evaluateTemperature(temp) {
+  if (temp > 30) {
+    console.log(`${temp}°C is Hot.`);
+  } else if (temp >= 15 && temp <= 30) {
+    console.log(`${temp}°C is Warm.`);
+  } else {
+    console.log(`${temp}°C is Cold.`);
+  }
+}
 
+// Step 2: Define the main function that accepts temp and callback
+function checkTemperature(temperature, callback) {
+  callback(temperature);
+}
 
-
+// Step 3: Test with different inputs
+checkTemperature(35, evaluateTemperature);
+checkTemperature(22, evaluateTemperature);
+checkTemperature(10, evaluateTemperature);
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +99,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Step 1: Define the callback function
+function checkUserAnswer(userAnswer, correctAnswer) {
+  if (userAnswer === correctAnswer) {
+    console.log("Correct!");
+  } else {
+    console.log(`Incorrect. The correct answer is ${correctAnswer}.`);
+  }
+}
+
+// Step 2: Define the main function
+function evaluateAnswer(question, correctAnswer, callback) {
+  const userResponse = prompt(question);
+  callback(userResponse, correctAnswer);
+}
+
+// Step 3: Use the function
+evaluateAnswer("What is 5 + 5?", "10", checkUserAnswer);

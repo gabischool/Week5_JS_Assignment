@@ -15,10 +15,15 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+// 1. Add "Oranges" and "Bananas" to the inventory
+inventory.push("Oranges", "Bananas");
 
+// 2. Remove the first item from the array
+inventory.shift();
 
-
-
+// 3. Print the updated inventory
+console.log("Updated inventory:", inventory);
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -39,11 +44,22 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+// Array of student names
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
+// 1. Function to check attendance
+function isPresent(name) {
+  // 2. Check if the name exists in the array
+  if (students.includes(name)) {
+    return name + " is present";
+  } else {
+    return name + " is absent";
+  }
+}
 
-
-
-
+// Example usage:
+console.log(isPresent("Ali"));
+console.log(isPresent("Zara"));
 
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
@@ -66,13 +82,39 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+// Initial leaderboard
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 },
+];
 
+// 1. Function to update or add a player's score
+function updateScore(playerName, addedScore) {
+  const player = topScorers.find((p) => p.name === playerName);
 
+  if (player) {
+    player.score += addedScore;
+  } else {
+    topScorers.push({ name: playerName, score: addedScore });
+  }
+}
 
+// 2. Function to print sorted leaderboard
+function printLeaderboard() {
+  // Sort in descending order of score
+  const sorted = [...topScorers].sort((a, b) => b.score - a.score);
 
+  // Print the leaderboard
+  console.log("🏆 Leaderboard:");
+  sorted.forEach((player, index) => {
+    console.log(`${index + 1}. ${player.name} - ${player.score}`);
+  });
+}
 
-
-
+// Example usage
+updateScore("Ronaldo", 2);
+printLeaderboard();
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
 
@@ -139,3 +181,74 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+// 1. Check if a clue exists
+function findClue(clues, name) {
+  if (clues.includes(name)) {
+    return `Clue ${name} found!`;
+  } else {
+    return `Clue ${name} is missing, search again!`;
+  }
+}
+
+// 2. Decipher each clue message
+function decipherMessage(clueMessages) {
+  const decoded = [];
+  for (let message of clueMessages) {
+    decoded.push(message.split("").reverse().join(""));
+  }
+  return decoded;
+}
+
+// 3. Follow the steps on the treasure map
+function followSteps(steps) {
+  for (let i = 0; i < steps.length; i++) {
+    if (steps[i] === "Danger") {
+      console.log("Stopped at danger. Cannot continue.");
+      return false;
+    }
+    console.log(`Step ${i + 1}: ${steps[i]}`);
+  }
+  return true;
+}
+
+// 4. The ultimate treasure hunt logic
+function ultimateTreasureHunt(clues, clueMessages, treasureMapSteps) {
+  let allCluesFound = true;
+
+  // Check every clue
+  for (let clue of clues) {
+    const result = findClue(clues, clue);
+    console.log(result);
+    if (result.includes("missing")) {
+      allCluesFound = false;
+    }
+  }
+
+  // Decode the clues
+  const decoded = decipherMessage(clueMessages);
+  console.log("Decoded messages:", decoded);
+
+  // Follow the map
+  const journeySuccess = followSteps(treasureMapSteps);
+
+  // Check the final step
+  const finalStep = treasureMapSteps[treasureMapSteps.length - 1];
+
+  // Final output
+  if (allCluesFound && journeySuccess && finalStep === "Treasure") {
+    console.log("🎉 Congratulations! You found the ultimate treasure!");
+  } else {
+    console.log("🪙 The treasure remains hidden. Try again!");
+  }
+}
+
+const clues = ["Map", "Compass", "Key", "Shovel"];
+const clueMessages = ["paM", "ssapmoC", "yeK", "levohS"];
+const treasureMapSteps = [
+  "Start at the beach",
+  "Cross the forest",
+  "Climb the mountain",
+  "Treasure",
+];
+
+ultimateTreasureHunt(clues, clueMessages, treasureMapSteps);
