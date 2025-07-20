@@ -29,8 +29,27 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+// Step 1: Create the gamerProfile object
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false,
+};
 
+// Step 2: Define the function to update online status
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
 
+  if (status) {
+    console.log(`${profile.username} is now online.`);
+  } else {
+    console.log(`${profile.username} is now offline.`);
+  }
+}
+
+// Step 3: Call the function with a new status
+updateOnlineStatus(gamerProfile, true);
+updateOnlineStatus(gamerProfile, false);
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -64,7 +83,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+// Step 1: Create the dress object
+const dress = {
+  name: "white t-shirt",
+  size: "M",
+  inStock: true,
+};
 
+// Step 2: Define the function to check availability
+function checkAvailability(dressObj) {
+  if (dressObj.inStock) {
+    console.log(`${dressObj.name} is available in size ${dressObj.size}.`);
+  } else {
+    console.log(`${dressObj.name} is out of stock.`);
+  }
+}
+
+// Step 3: Call the function
+checkAvailability(dress);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +140,30 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red",
+  },
+};
+
+// Step 2: Define the addFeature function
+function addFeature(car, featureName) {
+  car.features[featureName] = true; // Add new feature
+  console.log(`${capitalize(featureName)} has been added to ${car.model}.`);
+}
+
+// Optional helper to capitalize first letter
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+// Step 3: Call the function to add a feature
+addFeature(supercar, "turbo");
+
+// Step 4: Use for...in to log all features
+console.log("Features:");
+for (let key in supercar.features) {
+  console.log(`- ${key}: ${supercar.features[key]}`);
+}
