@@ -29,6 +29,22 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+var gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
+
+
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
+
+  if (status == true) {
+    console.log(profile.username + " is now online.");
+  } else {
+    console.log(profile.username + " is now offline.");
+  }
+}
 
 
 
@@ -63,6 +79,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+var dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+
+
+function checkAvailability() {
+  if (dress.inStock == true) {
+    console.log(dress.name + " is available in size " + dress.size + ".");
+  } else {
+    console.log(dress.name + " is out of stock.");
+  }
+}
 
 
 
@@ -104,3 +134,25 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+var supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+    color: "Red"
+  }
+};
+
+
+function addFeature(car, featureName) {
+  car.features[featureName] = true;
+  console.log(featureName + " has been added to " + car.model + ".");
+}
+
+
+addFeature(supercar, "turbo");
+
+
+console.log("Features:");
+for (var feature in supercar.features) {
+  console.log("- " + feature + ": " + supercar.features[feature]);
+}

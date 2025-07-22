@@ -15,6 +15,9 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+inventory.push("Oranges", "Bananas");
+inventory.shift();
+console.log(inventory);
 
 
 
@@ -39,6 +42,14 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
+function isPresent(name) {
+  if (students.includes(name)) {
+    return `${name} is present.`;
+  } else {
+    return `${name} is absent.`;
+  }
+}
+
 
 
 
@@ -66,6 +77,28 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+function updateScore(playerName, scoreToAdd) {
+ 
+  const player = topScorers.find(p => p.name === playerName);
+
+  if (player) {
+   
+    player.score += scoreToAdd;
+  } else {
+   
+    topScorers.push({ name: playerName, score: scoreToAdd });
+  }
+}
+
+function printLeaderboard() {
+  
+  const sorte = topScorers.sort((b, t) => b.score - t.score);
+
+  console.log("Top Scorers Leaderboard:");
+  sorte.forEach((player, index) => {
+    console.log(`${index + 1}. ${player.name} - ${player.score}`);
+  });
+}
 
 
 
