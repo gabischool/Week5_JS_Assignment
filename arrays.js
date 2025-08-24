@@ -17,9 +17,10 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
-
-
-
+const inventory =["Apples","Bread","Milk","Eggs"];
+inventory.push("Orange","Banana")
+inventory.shift()
+console.log(inventory)
 /*
 Task 2: Student Attendance Checker 📚✅
 
@@ -41,10 +42,23 @@ Output: "Ali is present."
 // ✍️ Write your function here ✍️
 
 
+const student= {ali: true,     
+                fatima: false,  
+                 hassan: true,    
+                layla: false
+}
+      Object.entries(student).forEach(([name, isPresent]) => {
+  if (isPresent) {
+
+    console.log( name,"is present");
+   } else 
+   {
+      console.log(name ," is Absent");
+    }
 
 
-
-
+ });
+  
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
 
@@ -68,8 +82,32 @@ Output: Sorted leaderboard with updated scores
 // ✍️ Write your functions here ✍️
 
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 },
+];
 
+function updateScore(playerName, additionalScore) {
+  const foundPlayer = topScorers.find(scorer => scorer.name === playerName);
+  if (foundPlayer) {
+    foundPlayer.score += additionalScore;
+  } else {
+    topScorers.push({ name: playerName, score: additionalScore });
+  }
+}
 
+function printLeaderboard() {
+  const sortedScorers = [...topScorers].sort((a, b) => b.score - a.score);
+  sortedScorers.forEach(scorer => {
+    console.log(`${scorer.name}: ${scorer.score}`);
+  });
+}
+
+// Example usage:
+updateScore("Ronaldo", 2); // Adds 2 to Ronaldo's score
+updateScore("Mbappe", 6);  // Adds Mbappe to the leaderboard with a score of 6
+printLeaderboard();        // Prints the sorted leaderboard
 
 
 
@@ -138,4 +176,59 @@ Final Output:
 - "The treasure remains hidden. Try again!" (if danger is encountered)
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
-*/
+// */
+const clues = ["Map", "Compass", "Key", "Shovel"];
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"];
+const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+
+function findClue(clues, clueName) {
+  return clues.includes(clueName);
+}
+
+function decipherMessage(clueMessages) {
+  return clueMessages.map(message => message.split('').reverse().join(''));
+}
+
+function followSteps(treasureMapSteps) {
+  for (let i = 0; i < treasureMapSteps.length; i++) {
+    console.log(`Step ${i + 1}: ${treasureMapSteps[i]}`);
+    if (treasureMapSteps[i] === "Danger") {
+      console.log("Stopped at danger. Cannot continue.");
+      break;
+    }
+  }
+}
+
+function finalTreasureHunt() {
+  let allCluesFound = true;
+  for (const clue of clues) {
+    if (!findClue(clues, clue)) {
+      allCluesFound = false;
+      break;
+    }
+  }
+
+  const decipheredMessages = decipherMessage(clueMessages);
+  let messagesMatch = true;
+  for (let i = 0; i < clues.length; i++) {
+    if (clues[i] !== decipheredMessages[i]) {
+      messagesMatch = false;
+      break;
+    }
+  }
+
+  followSteps(treasureMapSteps);
+  let reachedTreasure = treasureMapSteps[treasureMapSteps.length - 1] === "Treasure";
+
+  if (allCluesFound && messagesMatch && reachedTreasure) {
+    console.log("Congratulations! You found the ultimate treasure!");
+  } else {
+    console.log("The treasure remains hidden. Try again!");
+  }
+}
+
+// Test the functions
+console.log(findClue(clues, "Map")); // "Clue Map found!"
+console.log(decipherMessage(clueMessages)); // ["Map", "Compass", "Key", "Shovel"]
+followSteps(treasureMapSteps); 
+finalTreasureHunt();
