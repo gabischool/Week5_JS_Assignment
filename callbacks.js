@@ -17,6 +17,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+let sendMessage = (name, callback) => {
+  callback(name);
+};
+
+let theCallBackFunction = (name) => {
+  console.log(`Welcome, ${name}!`);
+};
+
+sendMessage("Amina", theCallBackFunction);
+
 
 
 
@@ -47,29 +57,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+let checkTemperature = (temperature, callback) => {
+  callback(temperature);
+};
+let temperatureEvaluator = (temperature) => {
+  if (temperature > 30) {
+    console.log(`${temperature}°C is Hot.`);
+  } else if (temperature >= 15 && temperature <= 30) {
+    console.log(`${temperature}°C is Warm.`);
+  } else {
+    console.log(`${temperature}°C is Cold.`);
+  }
+};
 
-
-
-
-/*
-STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
-
-You are building a quiz system. Write a function called `evaluateAnswer` that:
-1. Takes a question, a correct answer, and a callback function as arguments.
-2. The callback function should compare the user's answer with the correct answer and log whether the answer is correct or not.
-
-Steps:
-- Create the callback function to evaluate:
-  - If the user's answer matches the correct answer, log: "Correct!"
-  - Otherwise, log: "Incorrect. The correct answer is [correctAnswer]."
-
-Example:
-Input:
-evaluateAnswer("What is 5 + 5?", "10", TheCallBackFunction);
-
-Expected Output:
-- If user's input is "10": "Correct!"
-- If user's input is "15": "Incorrect. The correct answer is 10."
-*/
+checkTemperature(35, temperatureEvaluator);
 
 // ✍️ Solve it here ✍️
+

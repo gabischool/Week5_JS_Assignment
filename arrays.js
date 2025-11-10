@@ -15,7 +15,9 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
+let inventory = ["Apples", "Bread", "Milk", "Eggs"];
+ let first = inventory.shift();
+ console.log(inventory);
 
 
 
@@ -39,12 +41,15 @@ Output: "Ali is present."
 */
 
 // ✍️ Write your function here ✍️
-
-
-
-
-
-
+let students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(name) {
+  if (students.includes(name)) {
+    return name + " is present.";
+  } else {
+    return name + " is absent.";
+  }
+}
+console.log(isPresent("Ali"));
 /*
 Task 3: Top Scorers Leaderboard 🏆⚽
 
@@ -66,11 +71,30 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
+let topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+]; 
 
+function updateScore(playerName, scoreToAdd) {
+  let player = topScorers.find(p => p.name === playerName);
+  if (player) {
+    player.score += scoreToAdd;
+  } else {
+    topScorers.push({ name: playerName, score: scoreToAdd });
+  }
+}
 
-
-
-
+function printLeaderboard() {
+  topScorers.sort((a, b) => b.score - a.score);
+  console.log("Leaderboard:");
+  topScorers.forEach(player => {
+    console.log(`${player.name}: ${player.score}`);
+  });
+}
+updateScore("Ronaldo", 2);
+printLeaderboard();
 
 
 /*
@@ -88,6 +112,15 @@ Here’s the plan:
    - Check if the clue exists in the array:
      - If it exists, return "Clue [name] found!"
      - If it doesn’t exist, return "Clue [name] is missing, search again!"
+
+     let clues = ["Map", "Compass", "Key", "Shovel"];
+function findClue(clues, name) {
+  if (clues.includes(name)) {
+    return `Clue ${name} found!`;
+  } else {
+    return `Clue ${name} is missing, search again!`;
+  }
+} console.log(findClue(clues, "Map"));
 
 2. **Decipher Hidden Messages**:
    - Each clue is a scrambled message stored in the `clueMessages` array.
