@@ -18,9 +18,14 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
-
+const sendMessage =  (userName, cb ) => {
+return cb(userName)
+}
+ 
+const theCallBackFunction = (userName) => {
+  console.log(`Welcome, ${userName}`)
+}
+sendMessage("Amina", theCallBackFunction);
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
 
@@ -49,8 +54,21 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
-
-
+const checkTemperature = (tempvalue, cb) => {
+return cb (tempvalue)
+}
+ const callbackFunction = (tempvalue) => {
+  if (tempvalue > 30) {
+    console.log(`${tempvalue} is Hot `)
+  }
+   else if (tempvalue >= 15 && tempvalue <= 30 ) {
+    console.log(`${tempvalue} is warm `)
+  }
+  else {
+    console.log(`${tempvalue} is warm `)
+  }
+ }
+checkTemperature(35, callbackFunction)
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
 

@@ -29,9 +29,22 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false,
+  
+};
+const  updateOnlineStatus = (gamerProfile, status) => {
+if(status) {
+   console.log(`${gamerProfile.username} is now online`)
+}
+else {
+   console.log(`${gamerProfile.username} is  offline`)
+}
+  }
+updateOnlineStatus(gamerProfile, true)
+ 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
 
@@ -63,8 +76,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+const checkAvailability = (dress) => {
+   if(dress.inStock) {
+      console.log(`${dress.name} is available in size ${dress.size}.`)
+   }
+   else {
+      console.log(`${dress.name} is  not available in size ${dress.size}.`)
+   }
+}
+checkAvailability(dress);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
