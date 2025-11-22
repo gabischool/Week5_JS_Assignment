@@ -15,8 +15,15 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+let inventory = ["Apples", "Bread", "Milk", "Eggs"];
+console.log(inventory);
+inventory.push("orange", "banana")
+console.log(inventory)
 
+inventory.shift()
+console.log(inventory)
 
+// i done  
 
 
 
@@ -40,9 +47,13 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
-
-
-
+const student = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent (studentsName){
+if(student.includes(studentsName)){
+  return `${studentsName} is present`
+} else return `${studentsName} is absent`
+}
+console.log(isPresent("Hassan"));
 
 
 /*
@@ -50,7 +61,8 @@ Task 3: Top Scorers Leaderboard 🏆⚽
 
 You are creating a leaderboard for a soccer game. The array `topScorers` contains the names of players and their scores.
 
-1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard, add the score to their total. If not, add the player to the array with the given score.
+1. Write a function called `updateScore` that takes a player's name and a score to add. If the player exists in the leaderboard,
+ add the score to their total. If not, add the player to the array with the given score.
 2. Write another function called `printLeaderboard` that sorts the leaderboard in descending order of scores and prints it.
 
 Array:
@@ -67,7 +79,16 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
-
+const  topScorers = [
+  {name: "Abdi", score: 8},
+  {name: "Duraan", score:10},
+  {name:"Ahmed", score:6}
+];
+function printLeaderboard  (){
+  return `${topScorers} Sorted leaderboard with updated scores`;
+}
+console.log(printLeaderboard("Abdi", 2));
+// this i confuse
 
 
 

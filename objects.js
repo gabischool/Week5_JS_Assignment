@@ -30,6 +30,31 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
+
+// 2. Function to update online status
+function updateOnlineStatus(profile, status) {
+  profile.isOnline = status;
+
+  if (status === true) {
+    console.log(`${profile.username} is now online.`);
+  } else {
+    console.log(`${profile.username} is now offline.`);
+  }
+}
+
+// Example call:
+updateOnlineStatus(gamerProfile, true);
+
+
+
+
+
+   
 
 
 /*
@@ -63,8 +88,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+function checkAvailability(dress){
+   if(checkAvailability===dress){
+  console.log(`${dress} is available in size ${size}, `)
+   } else {
+       console.log(`${dress} is not available`)
+   }
+ 
+} 
+console.log(checkAvailability(dress.name))
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +141,25 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+    color: "Red"
+  };
+
+function addFeature(car, featureName) {
+ // car.features[featureName] = true;
+  console.log(featureName + " has been added to " + car.model);
+}
+
+addFeature(supercar, "turbo");
+
+console.log("Features:");
+for (let key in supercar.features) {
+  console.log("- " + key + ": " + supercar.features[key]);
+}
+
+
+// i tried unfortunitly i confuse i couldn't solve 
