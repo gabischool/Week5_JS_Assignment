@@ -18,7 +18,12 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+function sendMessage(username,cb) {
+          return cb(`Welcome, ${username}`)
+         }
+sendMessage("Amina", theCallBackFunction)
+function theCallBackFunction(welcome){
+console.log(welcome)}
 
 
 /*
@@ -48,7 +53,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+function checkTemperature(tempv,cb){
+  
+return cb(tempv)}
+function theCallbackFunction(tempv){
+  if (tempv >30){
+    console.log("hot")
+  }
+  else if (tempv >= 15 && tempv <= 30){
+    console.log("warm")}
+  else {
+   console.log("cold") 
+  }
+}
+checkTemperature(35,theCallbackFunction)
 
 
 /*
