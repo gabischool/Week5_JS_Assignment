@@ -16,6 +16,14 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+
+inventory.push("Oranges","Bananas");
+console.log(inventory.shift())
+
+
+console.log(inventory)
+
 
 
 
@@ -40,7 +48,17 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
+function isPresent(name) {
+  if (students.includes(name)) {
+    return `${name} is present.`
+  } else {
+    return `${name} is absent.`;
+  }
+}
+
+console.log(isPresent("Ali"))
 
 
 
@@ -66,11 +84,6 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
-
-
-
-
-
 
 
 /*
