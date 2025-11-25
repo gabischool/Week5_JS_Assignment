@@ -19,7 +19,19 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+function theCallBackFunction(name) {
+  
+  console.log(`Welcome, ${name}`);
+}
 
+
+function sendMessage (userName, callback) {
+  
+  callback(userName);
+}
+
+
+sendMessage("Amina", theCallBackFunction);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,7 +60,32 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature(temperature, callback) {
+  
+  callback(temperature);
+}
 
+function temperatureMessage(temperature) {
+  
+  if (temperature > 30) {
+    
+    console.log(`${temperature} is hot`);
+  } 
+  else if (temperature > 15 & temperature < 30) {
+    
+    console.log(`${temperature} is warm`);
+  } 
+  else {
+    
+    console.log(`${temperature} is cold`);
+  }
+}
+
+checkTemperature(35, temperatureMessage);
+
+checkTemperature(22, temperatureMessage);
+
+checkTemperature(10, temperatureMessage);
 
 
 /*
