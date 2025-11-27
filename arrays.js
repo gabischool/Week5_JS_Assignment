@@ -15,9 +15,12 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
+/*
+const inventory = ["Apples", "Bread", "Milk", "Eggs"]
+inventory.push("Oranges","Banana")
+inventory.shift()
+console.log("Updated inventory" ,inventory)
+*/
 
 
 /*
@@ -40,9 +43,22 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+/*
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
+function isPresent(stdName){
+  if(students.includes(stdName)){
+    console.log(`${stdName} is present`)
+  }
+  else{
+    console.log(`${stdName} is absent`)
+  }
 
+}
 
+isPresent("Ali")
+
+*/
 
 
 /*
@@ -67,11 +83,34 @@ Output: Sorted leaderboard with updated scores
 
 // ✍️ Write your functions here ✍️
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
 
+function updateScore(playerName, scoreToAdd) {
 
+  let player = topScorers.find(p => p.name === playerName);
 
+  if (player) {
+    player.score = player.score + scoreToAdd;
+  } else {
+    topScorers.push({ name: playerName, score: scoreToAdd });
+  }
+}
 
+function printLeaderboard() {
+  const sorted = topScorers.sort(function(a, b) {
+    return b.score - a.score;
+  });
+  console.log("Sorted Leaderboard:");
+  console.log(sorted);
+}
 
+// Test
+updateScore("Haland", 7);
+printLeaderboard();
 
 /*
 STRETCH TASK: **The Ultimate Treasure Hunt** 🗺️💎🏴‍☠️
