@@ -30,6 +30,19 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false,
+updateOnlineStatus: function(gamerStatus){
+   if(gamerStatus === true)
+      return `${this.username} is now online.`
+   else{
+      return `${this.username} is now absent`
+   }
+  }
+};
+console.log(gamerProfile.updateOnlineStatus(true))
 
 
 /*
@@ -63,6 +76,20 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+ const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true,
+checkAvailability: function(dressAvailability){
+ if(dressAvailability === true)
+   return`${this.name} is available in size ${this.size}`
+else{
+   return `${this.name} is not available in size ${this.size}`
+}
+}
+}
+console.log(dress.checkAvailability(true))
 
 
 
@@ -104,3 +131,23 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+const supercar = {
+  model: "Ferrari SF90",
+  price: 500000,
+  features: {
+  color: "Red",
+  }
+};
+
+function addFeature(supercar,featureName){
+ supercar.features[featureName] = true
+ console.log(`${featureName} has been added to ${supercar.model}`)
+}
+
+for (let key in supercar.features){
+   console.log(`${key}: ${supercar.features[key]}`)
+}
+
+addFeature(supercar, "turbo")
+
