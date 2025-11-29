@@ -18,12 +18,17 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+ function sendMessage(userName, cb) {
+  return cb (userName)
+}
+function theCallBackFunction(userName){
+  console.log(`Welcome ${userName}`)
+}
+sendMessage("Amina", theCallBackFunction)
 
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
-
 
 You are creating a temperature monitoring system. Write a function called `checkTemperature` that:
 1. Takes a temperature value and a callback function as arguments.
@@ -48,6 +53,24 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature(tempretureValue, cb){
+   return cb(tempretureValue)
+}
+
+function theCallBackFunction(tempretureValue){
+ if(tempretureValue >= 30){
+  console.log(`${tempretureValue}°C is hot`)
+ } else if(tempretureValue >= 15 && tempretureValue <= 30) {
+  console.log(`${tempretureValue}°C is Warm`)
+ } else if(tempretureValue <= 15) {
+  console.log(`${tempretureValue}°C is cold`)
+ } else {
+  console.log("put the tempreture value here")
+ }
+
+}
+
+checkTemperature(10, theCallBackFunction)
 
 
 
