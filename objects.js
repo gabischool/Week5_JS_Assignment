@@ -29,7 +29,22 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+  
+ const gamerProfile = {
+    username: "nightHunter",
+    level: 12,
+    isOnline: false
+ }
+ function updateonlineStatus(profile, status) {
+    profile.isOnline = status;
 
+    if (status === true) {
+        console.log(profile.username + " is now online.");
+    } else {
+        console.log(profile.username + " is now offline.");
+    }
+}
+ updateonlineStatus(gamerProfile,true);
 
 
 /*
@@ -64,7 +79,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+const dress = {
+    name: "Summer Dress",
+    size: "L",
+    inStock: false
+};
 
+function checkAvailability(dressItem) {
+    if (dressItem.inStock === true) {
+        console.log(dressItem.name + " is available in size " + dressItem.size + ".");
+    } else {
+        console.log(dressItem.name + " is out of stock.");
+    }
+}
+ checkAvailability(dress);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +132,20 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+
+ const supercar = {
+    model: "Lambo V12",
+    price: 450000,
+    features: {
+        color: "Black"
+    }
+};
+ function addFeature(car, featureName) {
+    car.features[featureName] = true;
+    console.log(featureName + " has been added to " + car.model + ".");
+}
+addFeature(supercar, "spoiler");
+console.log("Features:");
+for (let item in supercar.features) {
+    console.log("- " + item + ": " + supercar.features[item]);
+}
