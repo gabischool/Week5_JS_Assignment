@@ -19,6 +19,14 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+   function showWelcome(name) {
+    console.log("Welcome, " + name + "!");
+  }
+   function sendMessage(userName, callbackFn) {
+    callbackFn(userName);
+}
+   sendMessage("Ahmed", showWelcome);
+
 
 
 /*
@@ -47,6 +55,23 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+ 
+ function readTemperature(value) {
+    if (value > 30) {
+        console.log(value + "°C is Hot.");
+    } else if (value >= 15 && value <= 30) {
+        console.log(value + "°C is Warm.");
+    } else {
+        console.log(value + "°C is Cold.");
+    }
+}
+ function checkTemperature(temp, callbackFn) {
+    callbackFn(temp);
+}
+
+ checkTemperature(35, readTemperature); 
+ checkTemperature(22, readTemperature); 
+ checkTemperature(10, readTemperature); 
 
 
 
@@ -73,3 +98,16 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+  function checkUserAnswer(userAnswer, rightAnswer) {
+    if (userAnswer === rightAnswer) {
+        console.log("Correct!");
+    } else {
+        console.log("Incorrect. The correct answer is " + rightAnswer + ".");
+    }
+}
+
+  function checkUserAnswer(){
+    let userInput = prompt(question);
+    callbackFn(userInput, correctAnswer);
+  }
+
