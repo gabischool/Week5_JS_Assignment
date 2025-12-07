@@ -30,6 +30,25 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function updateOnlineStatus(gamerProfile, status) {
+   gamerProfile.isOnline = status;
+   if (status) {
+       console.log(`${gamerProfile.username} is now online.`);
+   } else {
+
+         1
+         console.log(`${gamerProfile.username} is now offline.`);
+   }
+}
+const gamerProfile = {
+   username: "ShadowSlayer",
+   level: 5,
+   isOnline: false
+};
+updateOnlineStatus(gamerProfile, true);
+
+
+
 
 
 /*
@@ -64,7 +83,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkAvailability(dress) {
+   if (dress.inStock) {
+       console.log(`${dress.name} is available in size ${dress.size}.`);
+   } else {
+       console.log(`${dress.name} is out of stock.`);
+   }
+}
 
+
+
+
+
+
+      
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
