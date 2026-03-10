@@ -16,8 +16,10 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
-
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.push("Oranges", "Bananas"); // Add to end
+inventory.shift(); // Remove first item
+console.log("Updated inventory:", inventory);
 
 
 /*
@@ -40,7 +42,15 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
 
+function isPresent(name) {
+    if (students.includes(name)) {
+        return `${name} is present.`;
+    } else {
+        return `${name} is absent.`;
+    }
+}
 
 
 
@@ -68,7 +78,25 @@ Output: Sorted leaderboard with updated scores
 // ✍️ Write your functions here ✍️
 
 
+const topScorers = [
+  { name: "Messi", score: 5 },
+  { name: "Ronaldo", score: 3 },
+  { name: "Neymar", score: 4 }
+];
 
+function updateScore(playerName, points) {
+    const player = topScorers.find(p => p.name === playerName);
+    if (player) {
+        player.score += points;
+    } else {
+        topScorers.push({ name: playerName, score: points });
+    }
+}
+
+function printLeaderboard() {
+    const sorted = [...topScorers].sort((a, b) => b.score - a.score);
+    console.log("Leaderboard:", sorted);
+}
 
 
 
@@ -139,3 +167,38 @@ Final Output:
 - "Congratulations! You found the ultimate treasure!" (if all conditions are met)
 
 */
+
+const clues = ["Map", "Compass", "Key", "Shovel"];
+const clueMessages = ["ppaM", "ssapmoC", "yeK", "levohS"];
+const treasureMapSteps = ["Start at the beach", "Cross the forest", "Climb the mountain", "Danger", "Treasure"];
+
+function findClue(arr, name) {
+    return arr.includes(name) ? `Clue ${name} found!` : `Clue ${name} is missing, search again!`;
+}
+
+function decipherMessage(messages) {
+    return messages.map(msg => msg.split('').reverse().join(''));
+}
+
+function followSteps(steps) {
+    let completed = true;
+    for (let i = 0; i < steps.length; i++) {
+        if (steps[i] === "Danger") {
+            console.log("Stopped at danger. Cannot continue.");
+            completed = false;
+            break;
+        }
+        console.log(`Step ${i + 1}: ${steps[i]}`);
+    }
+    return completed;
+}
+
+
+const allCluesFound = clues.every(c => findClue(clues, c).includes("found"));
+const stepsSafe = followSteps(treasureMapSteps);
+
+if (allCluesFound && stepsSafe) {
+    console.log("Congratulations! You found the ultimate treasure!");
+} else {
+    console.log("The treasure remains hidden. Try again!");
+}
