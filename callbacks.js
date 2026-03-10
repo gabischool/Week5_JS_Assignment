@@ -91,7 +91,7 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 function evaluateAnswer(question, correctAnswer, callback) {
-    const userAnswer = prompt(question); // Simulating user input
+    const userAnswer = prompt(question); 
     callback(userAnswer, correctAnswer);
 }
 
