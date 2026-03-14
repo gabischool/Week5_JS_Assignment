@@ -8,17 +8,17 @@ You manage a grocery store. The array `inventory` shows the items currently in s
 3. Print the updated inventory.
 
 Array:
-const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+// const inventory = ["Apples", "Bread", "Milk", "Eggs"];
 
 Expected Output:
 - Updated inventory
 */
 
 // ✍️ Solve it here ✍️
-
-
-
-
+const inventory = ["Apples", "Bread", "Milk", "Eggs"];
+inventory.push("Oranges", "Bananas");
+inventory.shift();
+console.log("Updated inventory:", inventory);
 
 /*
 Task 2: Student Attendance Checker 📚✅
@@ -40,9 +40,15 @@ Output: "Ali is present."
 
 // ✍️ Write your function here ✍️
 
-
-
-
+const students = ["Ali", "Fatima", "Hassan", "Layla"];
+function isPresent(studentName) {
+  if(students.includes(studentName)) {
+    console.log(`${studentName} is present`)
+  } else {
+    console.log(`${studentName} is absent`)
+  }
+}
+isPresent("Ali")
 
 
 /*
@@ -66,7 +72,6 @@ Output: Sorted leaderboard with updated scores
 */
 
 // ✍️ Write your functions here ✍️
-
 
 
 
