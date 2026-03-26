@@ -18,9 +18,15 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessage(userName, callback) {
+  return callback(userName);
+}
 
+function theCallBackFunction(name) {
+  console.log(" Welcome " + name);
+}
 
-
+sendMessage("Liban", theCallBackFunction);
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
 
@@ -47,9 +53,19 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
-
-
+function checkTemperature(value, callback) {
+  return callback(value);
+}
+function theCallBackFunction(value) {
+  return value > 30
+    ? `${value}°C is Hot.`
+    : value >= 15
+      ? `${value}°C is Warm.`
+      : value < 15
+        ? `${value}°C is Cold.`
+        : "Enjoy!";
+}
+console.log(checkTemperature(38, theCallBackFunction));
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
@@ -73,3 +89,22 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+
+function evaluateAnswer(question, answer, callback) {
+  return callback(answer);
+}
+
+function theCallBackFunction2(answer) {
+  const correctAnswer = "Mogadishu";
+
+  return answer === correctAnswer
+    ? `Correct!`
+    : `Incorrect. The correct answer is ${correctAnswer}.`;
+}
+console.log(
+  evaluateAnswer(
+    "What is the capital city of Somalia?",
+    "Mogadishu",
+    theCallBackFunction2,
+  ),
+);
