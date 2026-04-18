@@ -18,7 +18,13 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function sendMessage(name, callback) {
+  callback(name)
+}
 
+function callbackFunction(name) {
+  console.log(`Welcome, ${name}!`)
+}
 
 
 /*
@@ -48,8 +54,19 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
+function checkTemperature(temperature, callback) {
+  callback(temperature)
+}
 
-
+function temperatureCallback(temperature) {
+  if (temperature > 30) {
+    console.log(`${temperature}°C is Hot.`)
+  } else if (temperature >= 15 && temperature <= 30) {
+    console.log (`${temperature}°C is Warm.`)
+  } else {
+    console.log(`${temperature}°C is Cold.`)
+  }
+}
 
 /*
 STRETCH: Task 3: Quiz Evaluator 📚📚📚📚
