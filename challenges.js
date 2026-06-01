@@ -18,8 +18,11 @@ const fruits = ["apple", "banana", "orange"];
 // 3. Log the final array
 // 4. Log fruits.length
 
-// ✍️ Solve it here ✍️
-
+//
+fruits.push("mango");
+fruits.shift();
+console.log(fruits);
+console.log(fruits.length);
 
 
 
@@ -37,8 +40,9 @@ const fruits = ["apple", "banana", "orange"];
 
 const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
-// ✍️ Solve it here ✍️
-
+cities.forEach((city, index) => {
+  console.log(`${index + 1}. ${city}`);
+});
 
 
 
@@ -50,9 +54,16 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
    3. Update student.age (add 1)
    4. Log the whole student object
    ------------------------------------------------------------ */
+const student = {
+   name: "Abdi",
+   age:30,
+   isEnrolled: true 
 
-// ✍️ Solve it here ✍️
+}
 
+console.log(student.name);
+student.age += 1;
+console.log(student);
 
 
 
@@ -65,13 +76,16 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
      "Khadija scored 85"
    ------------------------------------------------------------ */
 
-const students = [
-  { name: "Fatuma",  score: 92 },
-  { name: "Asha",    score: 68 },
-  { name: "Khadija", score: 85 }
-];
 
-// ✍️ Solve it here ✍️
+const students = [
+   { name: "fatuma", score: 92 },
+   { name: "Asha", score: 68 },
+    { name: "khadija", score: 85 },
+
+]
+students.forEach((student) => {
+  console.log(`${student.name} scored ${student.score}`);
+});
 
 
 
@@ -83,4 +97,8 @@ const students = [
    with a score >= 70.
    ------------------------------------------------------------ */
 
-// ✍️ Stretch: solve it here ✍️
+   students.forEach((student=>{
+      if(student.score >= 70)
+         console.log(student.name);
+
+   }));
