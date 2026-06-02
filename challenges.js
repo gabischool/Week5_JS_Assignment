@@ -20,6 +20,11 @@ const fruits = ["apple", "banana", "orange"];
 
 // ✍️ Solve it here ✍️
 
+fruits.push("mango");
+fruits.shift();
+console.log(fruits);
+console.log(fruits.length);
+
 
 
 
@@ -37,7 +42,10 @@ const fruits = ["apple", "banana", "orange"];
 
 const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
-// ✍️ Solve it here ✍️
+
+  cities.forEach((cities, index) => {
+  console.log(`Index ${index}: ${cities}`);
+  });
 
 
 
@@ -53,8 +61,15 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
 // ✍️ Solve it here ✍️
 
+const student = {
+ name:"ali",
+ age: 25,
+ isEnrolled:true
+};
 
-
+console.log(student.name);
+student.age += 1;
+console.log(student);
 
 /* ------------------------------------------------------------
    Task 4: Array of Objects 🎓
@@ -71,7 +86,9 @@ const students = [
   { name: "Khadija", score: 85 }
 ];
 
-// ✍️ Solve it here ✍️
+students.forEach(student => {
+  console.log(student);
+});
 
 
 
@@ -83,4 +100,7 @@ const students = [
    with a score >= 70.
    ------------------------------------------------------------ */
 
-// ✍️ Stretch: solve it here ✍️
+students.forEach(student => {
+   if (student.score>= 70 )
+  console.log(student.name);
+});
