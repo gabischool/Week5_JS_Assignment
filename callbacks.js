@@ -17,7 +17,13 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
-
+function sendMessage(name, callback){
+  callback(name);
+}
+function welcomeMessage(name){
+  console.log(`Welcome, ${name}!`);
+}
+sendMessage("Amina", welcomeMessage);
 
 
 
@@ -47,6 +53,22 @@ Expected Output:
 */
 
 // ✍️ Solve it here ✍️
+function checkTemperature(temp, callback){
+  callback(temp);
+}
+function evaluateTemperature(temp){
+  if(temp > 30){
+    console.log(`${temp}°C is Hot.`);
+  } else if(temp >= 15){
+    console.log(`${temp}°C is Warm.`);
+  } else {
+    console.log(`${temp}°C is Cold.`);
+  }
+}
+checkTemperature(35, evaluateTemperature);
+checkTemperature(22, evaluateTemperature);
+checkTemperature(10, evaluateTemperature);
+
 
 
 
