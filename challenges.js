@@ -20,7 +20,10 @@ const fruits = ["apple", "banana", "orange"];
 
 // ✍️ Solve it here ✍️
 
-
+fruits.push("mango")
+fruits.shift()
+console.log(`"The final array is",${fruits[fruits.length-1]}`)
+console.log(fruits[fruits.length])
 
 
 /* ------------------------------------------------------------
@@ -35,11 +38,16 @@ const fruits = ["apple", "banana", "orange"];
    Hint: the forEach callback gets (item, index) as arguments.
    ------------------------------------------------------------ */
 
-const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
+
 
 // ✍️ Solve it here ✍️
 
+const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
+cities.forEach((cities,index) => {
+   console.log(`${index + 1} ${cities}`)
+   
+})
 
 
 /* ------------------------------------------------------------
@@ -53,6 +61,17 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
 // ✍️ Solve it here ✍️
 
+const student ={
+
+   name: "Mahad",
+   age: 20,
+   isEnrolled: true
+
+}
+student.age = student.age + 1
+
+console.log(student.name)
+console.log(student)
 
 
 
@@ -73,6 +92,11 @@ const students = [
 
 // ✍️ Solve it here ✍️
 
+students.forEach((students) => {
+   console.log(`${students.name} scored ${students.score}`)
+}
+
+)
 
 
 
@@ -84,3 +108,11 @@ const students = [
    ------------------------------------------------------------ */
 
 // ✍️ Stretch: solve it here ✍️
+
+students.forEach((student) => {
+   if (student.score >= 70) {
+      console.log(student.name)
+   }
+}
+
+)
