@@ -20,7 +20,11 @@ const fruits = ["apple", "banana", "orange"];
 
 // ✍️ Solve it here ✍️
 
-
+// fruits.push("mango");
+// fruits.unshift();
+console.log(fruits)
+console.log(fruits[2])
+console.log(fruits.length)
 
 
 /* ------------------------------------------------------------
@@ -39,7 +43,9 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
 // ✍️ Solve it here ✍️
 
-
+cities.forEach((city)=>{
+   console.log(city)
+});
 
 
 /* ------------------------------------------------------------
@@ -52,8 +58,16 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
    ------------------------------------------------------------ */
 
 // ✍️ Solve it here ✍️
+const student={
+   name: "ubax",
+   age: 30,
+   isEnrolled: true
+}
+student.age++,
 
+console.log(student)
 
+console.log(student.name)
 
 
 /* ------------------------------------------------------------
@@ -73,7 +87,11 @@ const students = [
 
 // ✍️ Solve it here ✍️
 
-
+students.forEach((studentname)=>{
+  
+   console.log(`${studentname.name},${studentname.score}!`);
+   
+});
 
 
 /* ------------------------------------------------------------
@@ -84,3 +102,15 @@ const students = [
    ------------------------------------------------------------ */
 
 // ✍️ Stretch: solve it here ✍️
+const studentIfro=[
+    { name: "Fatuma",  score: 92 },
+  { name: "Asha",    score: 68 },
+  { name: "Khadija", score: 85 }
+
+
+];
+studentIfro.forEach((student) => { 
+  if (student.score >= 70) {       
+    console.log(`${student.name} passed with ${student.score}!`);
+  }
+});
