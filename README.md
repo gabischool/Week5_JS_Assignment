@@ -30,8 +30,19 @@ Do the following, **in order**:
 [ 'banana', 'orange', 'mango' ]
 3
 ```
+const fruits = ["apple", "banana", "orange"];
 
----
+// 1. Add "mango"
+fruits.push("mango");
+
+// 2. Remove first item
+fruits.shift();
+
+// 3. Log final array
+console.log(fruits);
+
+// 4. Log number of items
+console.log(fruits.length);
 
 ### Task 2 — forEach Loop 🔁
 
@@ -41,6 +52,10 @@ Given this array:
 const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 ```
 
+// cities.forEach((city, index) => {
+//   console.log(`${index + 1}. ${city}`);
+// });
+
 Use `.forEach()` to log each city in this format:
 ```
 1. Mogadishu
@@ -48,6 +63,8 @@ Use `.forEach()` to log each city in this format:
 3. Bosaso
 4. Garowe
 ```
+const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
+
 
 > 💡 The forEach callback can take a **second argument** which is the index. Look it up if you forget the syntax.
 
@@ -65,7 +82,20 @@ Then:
 2. Update the `age` property to be 1 higher
 3. Log the whole object
 
----
+const student = {
+  name: "Your Name",
+  age: 20,
+  isEnrolled: true
+};
+
+// 1. log name
+console.log(student.name);
+
+// 2. increase age by 1
+student.age += 1;
+
+// 3. log full object
+console.log(student);
 
 ### Task 4 — Array of Objects 🎓
 
@@ -86,6 +116,15 @@ Fatuma scored 92
 Asha scored 68
 Khadija scored 85
 ```
+const students = [
+  { name: "Fatuma", score: 92 },
+  { name: "Asha", score: 68 },
+  { name: "Khadija", score: 85 }
+];
+
+students.forEach((student) => {
+  console.log(`${student.name} scored ${student.score}`);
+});
 
 > 🎯 Why this matters: this is exactly the shape of data every API will give you. Lock it in now.
 
@@ -110,3 +149,9 @@ Submit your repo link.
 ## 🚀 Stretch (optional)
 
 Add a Task 5: Take the `students` array from Task 4 and use `.forEach()` to log only the names of students who scored **70 or higher**. (We'll learn `.filter()` next week to do this more elegantly!)
+ 
+ students.forEach((student) => {
+  if (student.score >= 70) {
+    console.log(student.name);
+  }
+});
