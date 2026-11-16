@@ -20,8 +20,15 @@ const fruits = ["apple", "banana", "orange"];
 
 // ✍️ Solve it here ✍️
 
+fruits.push("mango")
+console.log(fruits)
 
+// 2. Remove the FIRST item (.shift())
+fruits.shift()
+console.log(fruits)
+//  Log fruits.length
 
+console.log(fruits.length)
 
 /* ------------------------------------------------------------
    Task 2: forEach Loop 🔁
@@ -40,6 +47,9 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 // ✍️ Solve it here ✍️
 
 
+let city = cities.forEach((item, index) =>{
+   console.log(item)
+})
 
 
 /* ------------------------------------------------------------
@@ -53,7 +63,14 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
 // ✍️ Solve it here ✍️
 
-
+let student = {
+   name: "Rooble",
+   age: 30,
+   isEnrolled: true
+}
+console.log(student.name)
+student.age = 20
+console.log(student)
 
 
 /* ------------------------------------------------------------
@@ -73,6 +90,9 @@ const students = [
 
 // ✍️ Solve it here ✍️
 
+students.forEach((student) =>{
+   console.log(student)
+})
 
 
 
@@ -84,3 +104,18 @@ const students = [
    ------------------------------------------------------------ */
 
 // ✍️ Stretch: solve it here ✍️
+
+let studentLists = [
+   {name: "Rooble", score: 80},
+   {name: "Fadumo", score: 89},
+   {name: "Ahmed", score: 90},
+   {name: "nur", score: 20},
+]
+
+studentLists.forEach((student) =>{
+   if(student.score >= 80){
+      console.log(student.name)
+   }
+})
+
+console.log("first")
