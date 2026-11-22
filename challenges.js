@@ -4,7 +4,6 @@
    Open the browser console to see your output.
    ============================================================ */
 
-
 /* ------------------------------------------------------------
    Task 1: Array Basics 📋
 
@@ -19,9 +18,10 @@ const fruits = ["apple", "banana", "orange"];
 // 4. Log fruits.length
 
 // ✍️ Solve it here ✍️
-
-
-
+fruits.push("mango");
+fruits.shift();
+console.log(fruits);
+console.log(fruits.length);
 
 /* ------------------------------------------------------------
    Task 2: forEach Loop 🔁
@@ -38,9 +38,9 @@ const fruits = ["apple", "banana", "orange"];
 const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
 
 // ✍️ Solve it here ✍️
-
-
-
+cities.forEach((city) => {
+  console.log(city);
+});
 
 /* ------------------------------------------------------------
    Task 3: Build an Object 👤
@@ -52,9 +52,16 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
    ------------------------------------------------------------ */
 
 // ✍️ Solve it here ✍️
+const student = {
+  name: "Axmed",
+  age: 22,
+  isInroled: true,
+};
 
-
-
+console.log(student.name);
+student.age += 1;
+console.log(student.age);
+console.log(student);
 
 /* ------------------------------------------------------------
    Task 4: Array of Objects 🎓
@@ -66,15 +73,15 @@ const cities = ["Mogadishu", "Hargeisa", "Bosaso", "Garowe"];
    ------------------------------------------------------------ */
 
 const students = [
-  { name: "Fatuma",  score: 92 },
-  { name: "Asha",    score: 68 },
-  { name: "Khadija", score: 85 }
+  { name: "Fatuma", score: 92 },
+  { name: "Asha", score: 68 },
+  { name: "Khadija", score: 85 },
 ];
 
 // ✍️ Solve it here ✍️
-
-
-
+students.forEach((studant) => {
+  console.log(`${studant.name} scored ${studant.score}`);
+});
 
 /* ------------------------------------------------------------
    🚀 STRETCH (optional)
@@ -84,3 +91,8 @@ const students = [
    ------------------------------------------------------------ */
 
 // ✍️ Stretch: solve it here ✍️
+students.forEach((std) => {
+  if (std.name && std.score >= 70) {
+    console.log(std.name);
+  }
+});
